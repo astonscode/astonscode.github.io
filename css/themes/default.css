@@ -1,0 +1,8 @@
+:root {
+    --background-pri: #202020;
+    --text-pri: #fff;
+    --accent: #1d9b92;
+    --bg-g1: #414141;
+    --bg-g2: #414141;
+    --bdr-clr: var(--accent);
+}

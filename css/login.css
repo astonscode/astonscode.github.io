@@ -1,0 +1,95 @@
+* {
+    color: #000;
+}
+
+#loginContainer {
+    background: #fff;
+    width: calc(100vw - 50%);
+    height: calc(100vh - 55%);
+    position: absolute;
+    left: calc(100vw - 76%);
+    top: calc(100vh - 76%);
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-header {
+    font-size: 32px;
+    text-align: center;
+    margin: 8px;
+    border-bottom: 2px solid #0001;
+    padding: 5px;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px;
+}
+
+.inputField {
+    width: 520px;
+    margin-top: 18px;
+    padding: 10px;
+    border: 0;
+    background: #0002;
+    border-radius: 4px;
+    transition: .3s;
+    outline: 0;
+}
+
+.inputField:focus-visible {
+    box-shadow: -5px 5px black;
+}
+
+.bottomLink {
+    margin-top: 8px;
+}
+
+.submitButton {
+    border: 0;
+    background: var(--accent);
+    color: white;
+    width: 530px;
+    padding: 13px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background: #2ab1a8;
+}
+
+#bottomBar {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    padding: 12px;
+    flex-direction: column;
+}
+
+.barItem {
+    margin-right: 8px;
+    color: #fff;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 6px;
+}
+
+.switch {
+    margin: 8px;
+    cursor: pointer;
+}
+
+.switch:hover {
+    color: #404040;
+}
