@@ -211,3 +211,16 @@ function windowContent(tab) {
 
     }
 }
+
+let welcomeMsg = document.querySelector(".welcome-msg");
+let dateDisplay = document.querySelector(".date");
+let timeDisplay = document.querySelector(".time");
+
+function play() {
+    if (
+        e.key.toLowerCase() === "a" &&
+        e.ctrlKey
+    ) {
+        document.getElementById("algo").play()
+    }
+}
