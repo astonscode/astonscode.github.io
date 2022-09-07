@@ -19,6 +19,7 @@
 </head>
 
 <body onload="checkTime();">
+    <audio id="algo" src="/audio/canweget.mp3"></audio>
 
     <div id="backgroundImageHolder">
         <div class="backgroundImage">
@@ -227,7 +228,7 @@
             e.key.toLowerCase() === "a" &&
             e.ctrlKey
         ) {
-            playIt();
+            document.getElementById("algo").play()
         }
     })
 </script>
