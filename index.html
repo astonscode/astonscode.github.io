@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1d9b92">
     <title> INDEX </title>
     <script src="/script/script.js" defer></script>
     <script src="/script/themes.js"></script>
+    <script src="/script/worker.js"></script>
+    <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="/img/icon_a.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/icon_a.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/font.css">
     <link rel="stylesheet" href="/css/themes/default.css" id="themeLink">
@@ -35,8 +39,8 @@
 
     <div id="navBar">
         <a class="navItem item-100 active"> Home </a>
-        <a class="navItem item-200" href="about.html"> About </a>
-        <a class="navItem item-300" href="projects.html"> Projects </a>
+        <a class="navItem item-200" href="/about"> About </a>
+        <a class="navItem item-300" href="/projects"> Projects </a>
     </div>
 
     <div id="mainContent">
@@ -171,91 +175,6 @@
         console.log("has")
     }
     // let backgroundImg = document.querySelector(".backgroundImg");
-    let welcomeMsg = document.querySelector(".welcome-msg");
-    let dateDisplay = document.querySelector(".date");
-    let timeDisplay = document.querySelector(".time");
-    let themeLink = document.getElementById("themeLink");
-    let themeSelect = document.getElementById("themeSelector");
-    let settings = document.getElementById("settingsWindow");
-    let iconDefault = document.querySelector(".default");
-    let iconLight = document.querySelector(".light");
-    let iconDecode = document.querySelector(".decode");
-    let iconKoawa = document.querySelector(".koawa");
-    let iconScorpion = document.querySelector(".scorpion");
-    let iconYann = document.querySelector(".yannmatrix");
-    let iconJosin = document.querySelector(".josin");
-
-    document.addEventListener("keydown", e => {
-        if (
-            e.key.toLowerCase() === "d" &&
-            e.shiftKey
-        ) {
-            activateTheme("default");
-            moveCheck(1);
-        }
-
-        if (
-            e.key.toLowerCase() === "l" &&
-            e.shiftKey
-        ) {
-            activateTheme("light");
-            moveCheck(2);
-        }
-
-        if (
-            e.key.toLowerCase() === "x" &&
-            e.shiftKey
-        ) {
-            activateTheme("decode");
-            moveCheck(3);
-        }
-
-        if (
-            e.key.toLowerCase() === "k" &&
-            e.shiftKey
-        ) {
-            activateTheme("koawa");
-            moveCheck(4);
-        }
-
-        if (
-            e.key.toLowerCase() === "s" &&
-            e.shiftKey
-        ) {
-            activateTheme("scorpion");
-            moveCheck(5);
-        }
-
-        if (
-            e.key.toLowerCase() === "y" &&
-            e.shiftKey
-        ) {
-            activateTheme("yannmatrix");
-            moveCheck(6);
-        }
-
-        if (
-            e.key.toLowerCase() === "j" &&
-            e.shiftKey
-        ) {
-            activateTheme("josin");
-            moveCheck(7);
-        }
-
-        if (
-            e.key.toLowerCase() === "u" &&
-            e.shiftKey
-        ) {
-            console.log("DXConsole Beta Opened.");
-        }
-
-        if (
-            e.key.toLowerCase() === "a" &&
-            e.ctrlKey
-        ) {
-            document.getElementById("algo").play()
-        }
-    })
 </script>
 
 </html>

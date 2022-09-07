@@ -1,0 +1,16 @@
+{
+    "name": "DECODEX",
+    "shortname": "INDEX",
+    "start_url": ".",
+    "background_color": "#414141",
+    "theme_color": "#1d9b92",
+    "display": "standalone",
+    "icons": [{
+            "src": "/img/icon_a.png",
+            "sizes": "512x512",
+            "type": "image/png"
+
+        }
+
+    ]
+}
