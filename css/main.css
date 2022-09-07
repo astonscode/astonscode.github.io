@@ -91,6 +91,7 @@ a:visited {
 
 .navItem:hover {
     border-color: rgba(var(--accentrgba), 0.7);
+    font-size: 21px;
 }
 
 .navItem.active {
