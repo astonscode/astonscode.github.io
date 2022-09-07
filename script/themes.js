@@ -4,7 +4,6 @@ function activateTheme(theme) {
 
 let themeLink = document.getElementById("themeLink");
 let themeSelect = document.getElementById("themeSelector");
-let settings = document.getElementById("settingsWindow");
 let iconDefault = document.querySelector(".default");
 let iconLight = document.querySelector(".light");
 let iconDecode = document.querySelector(".decode");
