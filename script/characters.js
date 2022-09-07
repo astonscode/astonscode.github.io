@@ -4,7 +4,7 @@ var activeChar;
 function setCharacterList(character) {
     if (character === "Endorius") {
         activeChar = "Endorius";
-        charImg.src = "img/chars/endorius-ts-c.png";
+        charImg.src = "/img/chars/endorius-ts-c.png";
         charName.innerHTML = "Endorius";
         charAge.innerHTML = "A: 31";
         charGen.innerHTML = "Demi-God / Human";
@@ -21,7 +21,7 @@ function setCharacterList(character) {
 
     if (character === "Kaze") {
         activeChar = "Kaze";
-        charImg.src = "img/chars/kaze-c.png";
+        charImg.src = "/img/chars/kaze-c.png";
         charName.innerHTML = "Kaze";
         charAge.innerHTML = "A: 22";
         charGen.innerHTML = "Human";
@@ -38,7 +38,7 @@ function setCharacterList(character) {
 
     if (character === "Nunchuck") {
         activeChar = "Nunchuck";
-        charImg.src = "img/chars/nunchuck-c.png";
+        charImg.src = "/img/chars/nunchuck-c.png";
         charName.innerHTML = "Nunchuck";
         charAge.innerHTML = "A: 31";
         charGen.innerHTML = "Human / Reflection";
@@ -54,7 +54,7 @@ function setCharacterList(character) {
 
     if (character === "Accelero") {
         activeChar = "Accelero";
-        charImg.src = "img/chars/accelero-c.png";
+        charImg.src = "/img/chars/accelero-c.png";
         charName.innerHTML = "Accelero";
         charAge.innerHTML = "A: 31";
         charGen.innerHTML = "Human / Reflection";
@@ -70,7 +70,7 @@ function setCharacterList(character) {
 
     if (character === "Conal") {
         activeChar = "Conal";
-        charImg.src = "img/chars/conal-c.png";
+        charImg.src = "/img/chars/conal-c.png";
         charName.innerHTML = "Conal";
         charAge.innerHTML = "A: 18";
         charGen.innerHTML = "Human";
@@ -88,7 +88,7 @@ function setCharacterList(character) {
 
     if (character === "Rakkshas") {
         activeChar = "Rakkshas";
-        charImg.src = "img/chars/rakkshas-c.png";
+        charImg.src = "/img/chars/rakkshas-c.png";
         charName.innerHTML = "Rakkshas";
         charAge.innerHTML = "A: 23";
         charGen.innerHTML = "Human / Demon";
@@ -104,7 +104,7 @@ function setCharacterList(character) {
 
     if (character === "Auroras") {
         activeChar = "Auroras";
-        charImg.src = "img/chars/auroras-c.png";
+        charImg.src = "/img/chars/auroras-c.png";
         charName.innerHTML = "Auroras";
         charAge.innerHTML = "A: 23";
         charGen.innerHTML = "Human / Demon";
@@ -120,7 +120,7 @@ function setCharacterList(character) {
 
     if (character === "Malakas") {
         activeChar = "Malakas";
-        charImg.src = "img/chars/malakas-c.png";
+        charImg.src = "/img/chars/malakas-c.png";
         charName.innerHTML = "Malakas";
         charAge.innerHTML = "A: 23";
         charGen.innerHTML = "Human / Demon";
@@ -136,7 +136,7 @@ function setCharacterList(character) {
 
     if (character === "Yadu") {
         activeChar = "Yadu";
-        charImg.src = "img/chars/0-c.png";
+        charImg.src = "/img/chars/0-c.png";
         charName.innerHTML = "Yadu";
         charAge.innerHTML = "A: 23";
         charGen.innerHTML = "Human / Demon";

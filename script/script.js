@@ -1,3 +1,8 @@
+let welcomeMsg = document.querySelector(".welcome-msg");
+let dateDisplay = document.querySelector(".date");
+let timeDisplay = document.querySelector(".time");
+let settings = document.getElementById("settingsWindow");
+
 const settingsContent = document.querySelector(".settingsContent");
 var imgId = 0;
 var userName = "";
@@ -211,10 +216,6 @@ function windowContent(tab) {
 
     }
 }
-
-let welcomeMsg = document.querySelector(".welcome-msg");
-let dateDisplay = document.querySelector(".date");
-let timeDisplay = document.querySelector(".time");
 
 function play() {
     if (
