@@ -81,6 +81,7 @@ function moveCheck(themeId) {
         iconKoawa.classList.add("hide");
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
+        iconJosin.classList.add("hide");
     }
 
     if (themeId == 2) {
@@ -90,6 +91,7 @@ function moveCheck(themeId) {
         iconKoawa.classList.add("hide");
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
+        iconJosin.classList.add("hide");
     }
 
     if (themeId == 3) {
@@ -100,6 +102,7 @@ function moveCheck(themeId) {
         iconKoawa.classList.add("hide");
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
+        iconJosin.classList.add("hide");
     }
 
     if (themeId == 4) {
@@ -110,6 +113,7 @@ function moveCheck(themeId) {
         iconKoawa.classList.remove("hide");
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
+        iconJosin.classList.add("hide");
     }
 
     if (themeId == 5) {
@@ -120,6 +124,7 @@ function moveCheck(themeId) {
         iconKoawa.classList.add("hide");
         iconScorpion.classList.remove("hide");
         iconYann.classList.add("hide");
+        iconJosin.classList.add("hide");
     }
 
     if (themeId == 6) {
@@ -130,6 +135,18 @@ function moveCheck(themeId) {
         iconKoawa.classList.add("hide");
         iconScorpion.classList.add("hide");
         iconYann.classList.remove("hide");
+        iconJosin.classList.add("hide");
+    }
+
+    if (themeId == 7) {
+        activateTheme("josin");
+        iconDefault.classList.add("hide");
+        iconLight.classList.add("hide");
+        iconDecode.classList.add("hide");
+        iconKoawa.classList.add("hide");
+        iconScorpion.classList.add("hide");
+        iconYann.classList.add("hide");
+        iconJosin.classList.remove("hide");
     }
 }
 

@@ -102,6 +102,12 @@
                         check_circle </span> Yannmatrix </div>
                 <div class="theme-sub">[ SFT + Y ] Find all the clues, fix the game. </div>
             </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("josin"); moveCheck(7);'> <span class="themeIcon material-icons hide josin active">
+                        check_circle </span> Josin </div>
+                <div class="theme-sub">[ SFT + J ] :skull: </div>
+            </div>
         </div>
 
         <div class="close material-icons" onclick="toggleWindow(3)"> close </div>
@@ -172,6 +178,7 @@
     let iconKoawa = document.querySelector(".koawa");
     let iconScorpion = document.querySelector(".scorpion");
     let iconYann = document.querySelector(".yannmatrix");
+    let iconJosin = document.querySelector(".josin");
 
     document.addEventListener("keydown", e => {
         if (
@@ -218,8 +225,16 @@
             e.key.toLowerCase() === "y" &&
             e.shiftKey
         ) {
-            activateTheme("scorpion");
+            activateTheme("yannmatrix");
             moveCheck(6);
+        }
+
+        if (
+            e.key.toLowerCase() === "j" &&
+            e.shiftKey
+        ) {
+            activateTheme("josin");
+            moveCheck(7);
         }
 
         if (
