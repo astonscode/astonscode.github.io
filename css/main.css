@@ -2,7 +2,7 @@
 
 * {
     color: var(--text-pri);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', 'Poppins', sans-serif;
     user-select: none;
 }
 
