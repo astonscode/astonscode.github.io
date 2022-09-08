@@ -211,17 +211,4 @@ function windowContent(tab) {
                 </div>`;
         settingsContent.classList.remove("profile");
     }
-
-    if (tab == 3) {
-
-    }
-}
-
-function play() {
-    if (
-        e.key.toLowerCase() === "a" &&
-        e.ctrlKey
-    ) {
-        document.getElementById("algo").play()
-    }
 }
