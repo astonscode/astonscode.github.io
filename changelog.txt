@@ -1,0 +1,44 @@
+[9/6/22] Main Launch
+ - Uploaded Website on Github
+
+ [9/7/22] Icon Update 
+ - Uploaded Different Page Icons
+
+ [9/7/22] CSS Fixes + New Theme
+ > Minor CSS Fixes
+  - Nav now correctly colors on hover
+ > New Theme {Josin}
+  - Unlockable through Kombat League
+ > Added Poppins to the Fontface
+
+ [9/7/22] Update 1
+ > Projects Page Finished
+ > Main Page Content Added
+ > New Theme {Josin}
+  - A purplish theme for josin 💀
+
+ [9/7/22] Progressive Web Application Update
+ > Added Installation compatibilities
+ > Changed around the place of some files
+
+ [9/7/22] Projects Update
+ > Added Projects
+ > Added Embeds to all pages
+
+ [9/7/22] More PWA Stuff
+ > Added PWA Support to other pages
+ > Changed Theme Colors
+
+ [9/8/22] Koawa's Suggestion
+ > Added Koawa's Suggestion to make dThemes work with local storage.
+
+ [9/8/22] Update 2
+ > New Theme - Scorpion // SHIRAI RYU HEART
+ > Added About Page Content
+ > Added a separate container for content
+ > Added News
+ > Updated Themes
+
+ [9/8/22] Removal 1
+ > Removed Testing HTML
+ > Removed Versions HTML
