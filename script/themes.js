@@ -19,6 +19,7 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("default");
         moveCheck(1);
+        localStorage.setItem("theme", 1)
     }
 
     if (
@@ -27,6 +28,7 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("light");
         moveCheck(2);
+        localStorage.setItem("theme", 2)
     }
 
     if (
@@ -35,6 +37,7 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("decode");
         moveCheck(3);
+        localStorage.setItem("theme", 3)
     }
 
     if (
@@ -43,6 +46,7 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("koawa");
         moveCheck(4);
+        localStorage.setItem("theme", 4)
     }
 
     if (
@@ -51,6 +55,7 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("scorpion");
         moveCheck(5);
+        localStorage.setItem("theme", 5)
     }
 
     if (
@@ -59,6 +64,7 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("yannmatrix");
         moveCheck(6);
+        localStorage.setItem("theme", 6)
     }
 
     if (
@@ -67,5 +73,43 @@ document.addEventListener("keydown", e => {
     ) {
         activateTheme("josin");
         moveCheck(7);
+        localStorage.setItem("theme", 7)
     }
 })
+
+//Local Storage Framing 
+
+if (curTheme == 1) {
+    activateTheme("default");
+    moveCheck(1);
+}
+
+if (curTheme == 2) {
+    activateTheme("light");
+    moveCheck(2);
+}
+
+if (curTheme == 3) {
+    activateTheme("decode");
+    moveCheck(3);
+}
+
+if (curTheme == 4) {
+    activateTheme("koawa");
+    moveCheck(4);
+}
+
+if (curTheme == 5) {
+    activateTheme("scorpion");
+    moveCheck(5);
+}
+
+if (curTheme == 6) {
+    activateTheme("yannmatrix");
+    moveCheck(6);
+}
+
+if (curTheme == 7) {
+    activateTheme("josin");
+    moveCheck(7);
+}
