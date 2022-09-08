@@ -87,6 +87,7 @@ function moveCheck(themeId) {
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
         iconJosin.classList.add("hide");
+        activateTooltip("Default Theme Selected.")
     }
 
     if (themeId == 2) {
@@ -97,6 +98,7 @@ function moveCheck(themeId) {
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
         iconJosin.classList.add("hide");
+        activateTooltip("Light Theme Selected.")
     }
 
     if (themeId == 3) {
@@ -108,6 +110,7 @@ function moveCheck(themeId) {
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
         iconJosin.classList.add("hide");
+        activateTooltip("Decode Theme Selected.")
     }
 
     if (themeId == 4) {
@@ -119,6 +122,7 @@ function moveCheck(themeId) {
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
         iconJosin.classList.add("hide");
+        activateTooltip("Koawa Theme Selected.")
     }
 
     if (themeId == 5) {
@@ -130,6 +134,7 @@ function moveCheck(themeId) {
         iconScorpion.classList.remove("hide");
         iconYann.classList.add("hide");
         iconJosin.classList.add("hide");
+        activateTooltip("Scorpion Theme Selected.")
     }
 
     if (themeId == 6) {
@@ -141,6 +146,7 @@ function moveCheck(themeId) {
         iconScorpion.classList.add("hide");
         iconYann.classList.remove("hide");
         iconJosin.classList.add("hide");
+        activateTooltip("Yannmatrix Theme Selected.")
     }
 
     if (themeId == 7) {
@@ -152,6 +158,19 @@ function moveCheck(themeId) {
         iconScorpion.classList.add("hide");
         iconYann.classList.add("hide");
         iconJosin.classList.remove("hide");
+        activateTooltip("Josin Theme Selected.")
+    }
+
+    if (themeId == 8) {
+        activateTheme("scorpion-sh");
+        iconDefault.classList.add("hide");
+        iconLight.classList.add("hide");
+        iconDecode.classList.add("hide");
+        iconKoawa.classList.add("hide");
+        iconScorpion.classList.add("hide");
+        iconYann.classList.add("hide");
+        iconJosin.classList.add("hide");
+        activateTooltip("Scorpion Theme Selected. (Shirai Ryu Heart) ")
     }
 }
 
@@ -210,5 +229,22 @@ function windowContent(tab) {
 
                 </div>`;
         settingsContent.classList.remove("profile");
+    }
+}
+
+let tooltip = document.getElementById("tooltip");
+
+function activateTooltip(text) {
+    tooltip.innerHTML = text
+    tooltip.classList.toggle("active");
+    var tooltipTime = 1;
+    if (tooltipTime == 1) {
+        setTimeout(() => {
+            tooltip.classList.toggle("active");
+            tooltipTime = 0;
+        }, 5000)
+    } else {
+        tooltipTime = 0;
+        tooltip.classList.remove("active");
     }
 }

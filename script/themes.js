@@ -75,6 +75,15 @@ document.addEventListener("keydown", e => {
         moveCheck(7);
         localStorage.setItem("theme", 7)
     }
+
+    if (
+        e.key.toLowerCase() === "m" &&
+        e.shiftKey
+    ) {
+        activateTheme("scorpion-sh");
+        moveCheck(8);
+        localStorage.setItem("theme", 8)
+    }
 })
 
 //Local Storage Framing 

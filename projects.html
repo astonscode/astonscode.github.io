@@ -30,6 +30,8 @@
 <body onload="checkTime();">
     <audio id="algo" src="/audio/canweget.mp3"></audio>
 
+    <div id="tooltip"> Ya selectado. </div>
+
     <div id="backgroundImageHolder">
         <div class="backgroundImage">
             <img class="backgroundImg" width="1460px" height="830px">
@@ -49,80 +51,81 @@
         <a class="navItem item-300 active"> Projects </a>
     </div>
 
-    <div id="mainContent">
-        <div class="titleHolder">
-            <div class="title"> Projects </div>
-            <div class="title-subtitle"> Stuff I like working on when I'm bored. </div>
-        </div>
-        <div class="content">
-            <div class="projectItem">
-                <div class="topContent">
-                    <div class="projectName">
-                        <img src="/img/projects/pro_1.png" class="projectImg">Red Odyssey
-                    </div>
-                    <div class="projectDate"> 15.6.22</div>
-                    <div class="projectDescription"> Overcome the Odyssey and avenge your father. </div>
-                </div>
-
-                <div class="bottomContent">
-                    <button class="projectLaunch">
-                        <span class="launchIcon material-icons-outlined"> play_circle </span> Start </button>
-                </div>
-
+    <div id="contentHolder">
+        <div id="mainContent">
+            <div class="titleHolder">
+                <div class="title"> Projects </div>
+                <div class="title-subtitle"> Stuff I like working on when I'm bored. </div>
             </div>
-            <div class="projectItem">
-                <div class="topContent">
-                    <div class="projectName">
-                        <img src="/img/projects/pro_2.png" class="projectImg"> DXClient Support
+            <div class="content">
+                <div class="projectItem">
+                    <div class="topContent">
+                        <div class="projectName">
+                            <img src="/img/projects/pro_1.png" class="projectImg">Red Odyssey
+                        </div>
+                        <div class="projectDate"> 15.6.22</div>
+                        <div class="projectDescription"> Overcome the Odyssey and avenge your father. </div>
                     </div>
-                    <div class="projectDate"> 15.6.22</div>
-                    <div class="projectDescription"> Support for DXClient </div>
-                </div>
 
-                <div class="bottomContent">
-                    <button class="projectLaunch">
-                        <span class="launchIcon material-icons"> download </span> Download </button>
-                </div>
-            </div>
-
-            <div class="projectItem">
-                <div class="topContent">
-                    <div class="projectName">
-                        <img src="/img/projects/pro_3.png" class="projectImg"> Alluvirum
-                    </div>
-                    <div class="projectDate"> TBD </div>
-                    <div class="projectDescription"> made of soil deposits </div>
-                </div>
-
-                <div class="bottomContent">
-                    <a href="https://github.com/HeyImKoa1a/Alluvirum">
+                    <div class="bottomContent">
                         <button class="projectLaunch">
-                            <span class="launchIcon material-icons"> download </span> Download
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="projectItem">
-                <div class="topContent">
-                    <div class="projectName">
-                        <img src="/img/projects/pro_4.png" class="projectImg"> Enwor Directory
+                            <span class="launchIcon material-icons-outlined"> play_circle </span> Start </button>
                     </div>
-                    <div class="projectDate"> TBD </div>
-                    <div class="projectDescription"> A character directory for the Enwor Server </div>
+
+                </div>
+                <div class="projectItem">
+                    <div class="topContent">
+                        <div class="projectName">
+                            <img src="/img/projects/pro_2.png" class="projectImg"> DXClient Support
+                        </div>
+                        <div class="projectDate"> 15.6.22</div>
+                        <div class="projectDescription"> Support for DXClient </div>
+                    </div>
+
+                    <div class="bottomContent">
+                        <button class="projectLaunch">
+                            <span class="launchIcon material-icons"> download </span> Download </button>
+                    </div>
                 </div>
 
-                <div class="bottomContent">
-                    <a href="/other/character-card.html">
-                        <button class="projectLaunch">
-                            <span class="launchIcon material-icons-outlined"> play_circle </span> Start
-                        </button>
-                    </a>
+                <div class="projectItem">
+                    <div class="topContent">
+                        <div class="projectName">
+                            <img src="/img/projects/pro_3.png" class="projectImg"> Alluvirum
+                        </div>
+                        <div class="projectDate"> TBD </div>
+                        <div class="projectDescription"> made of soil deposits </div>
+                    </div>
+
+                    <div class="bottomContent">
+                        <a href="https://github.com/HeyImKoa1a/Alluvirum">
+                            <button class="projectLaunch">
+                                <span class="launchIcon material-icons"> download </span> Download
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="projectItem">
+                    <div class="topContent">
+                        <div class="projectName">
+                            <img src="/img/projects/pro_4.png" class="projectImg"> Enwor Directory
+                        </div>
+                        <div class="projectDate"> TBD </div>
+                        <div class="projectDescription"> A character directory for the Enwor Server </div>
+                    </div>
+
+                    <div class="bottomContent">
+                        <a href="/other/character-card.html">
+                            <button class="projectLaunch">
+                                <span class="launchIcon material-icons-outlined"> play_circle </span> Start
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!-- 
         <div id="progressBar">
@@ -132,12 +135,14 @@
     </div>
     -->
 
-    <div id="settings" class="bottomItem" onclick="toggleWindow(2)">
-        <span class="settingsIcon material-icons"> settings </span>
-    </div>
+    <div class="bottomItemHolder">
+        <div id="settings" class="bottomItem" onclick="toggleWindow(2)">
+            <span class="settingsIcon material-icons"> settings </span>
+        </div>
 
-    <div id="themes" class="bottomItem" onclick="toggleWindow(1)">
-        <span class="paletteIcon material-icons"> palette </span>
+        <div id="themes" class="bottomItem" onclick="toggleWindow(1)">
+            <span class="paletteIcon material-icons"> palette </span>
+        </div>
     </div>
 
     <div id="themeSelector" class="menuWindow">
