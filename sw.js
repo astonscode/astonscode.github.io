@@ -15,6 +15,7 @@ self.addEventListener("install", e => {
                 "./css/themes/koawa.css",
                 "./css/themes/light.css",
                 "./css/themes/scorpion.css",
+                "./css/themes/scorpion-sh.css",
                 "./css/themes/yannmatrix.css",
                 "./script/progressbar.js",
                 "./script/script.js",
