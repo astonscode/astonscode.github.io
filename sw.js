@@ -3,6 +3,10 @@ self.addEventListener("install", e => {
         caches.open("static").then(cache => {
             return cache.addAll([
                 "./",
+                "./about.html",
+                "./login.html",
+                "./404.html",
+                "./projects.html",
                 "./css/main.css",
                 "./css/font.css",
                 "./css/themes/decode.css",
