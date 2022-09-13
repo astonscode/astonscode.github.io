@@ -1,0 +1,65 @@
+#profileHolder {
+    background: #0004;
+    width: 800px;
+    height: 500px;
+    padding: 12px;
+    border-radius: 4px;
+    position: absolute;
+    top: 150px;
+    left: 308px
+}
+
+.pfpImg {
+    width: 120px;
+    border-radius: 5px;
+}
+
+.profileTopRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profileRank {
+    width: 60px;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.pfpBadge {
+    margin-right: 12px;
+    margin-left: 12px;
+    font-size: 128px;
+}
+
+.profileName {
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.profileTop {
+    display: flex;
+    flex-direction: row;
+}
+
+.profileLevel {
+    position: relative;
+    top: -24px;
+    left: 0;
+    background: #000000b3;
+    display: inline;
+    padding: 4px;
+    border-radius: 0 5px;
+}
+
+.dataContainer {
+    display: flex;
+}
+
+.data {
+    background: #0004;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 4px;
+}
