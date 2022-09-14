@@ -1,5 +1,21 @@
+:root {
+    --pfp-bg: url('/img/backgrounds/unchained-1.jpeg');
+    --bg-position: center;
+}
+
+@keyframes borderAnim {
+    from {
+        box-shadow: 0 0 0 5px #f55
+    }
+    to {
+        box-shadow: 0 0 0 5px #ffb4b4
+    }
+}
+
 #profileHolder {
-    background: #0004;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/backgrounds/unchained-1.jpeg');
+    animation: borderAnim 2s infinite alternate;
+    background-position: 65% 10%;
     width: 800px;
     height: 500px;
     padding: 12px;
@@ -62,4 +78,13 @@
     padding: 8px;
     margin: 8px;
     border-radius: 4px;
+}
+
+.dataCol {
+    overflow-y: scroll;
+    height: 315px;
+}
+
+.dataTitle {
+    font-size: 26px;
 }
