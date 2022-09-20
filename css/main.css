@@ -472,19 +472,3 @@ input:focus+.slider {
 .slider.round {
     border-radius: 34px;
 }
-
-
-/* Progress Bar */
-
-#progressBar {
-    background: linear-gradient(45deg, #0006, #0002);
-    margin: 10px;
-    border-radius: 4px;
-}
-
-.progressBarInner {
-    background: var(--accent);
-    width: 24%;
-    padding: 8px;
-    border-radius: 4px 0 0 4px;
-}

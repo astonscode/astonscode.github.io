@@ -1,11 +1,253 @@
+@font-face {
+    font-family: 'Albertus';
+    src: url(/css/fonts/Albertus.otf);
+}
+
+* {
+    color: white;
+    font-family: 'Albertus', sans-serif;
+    user-select: none;
+}
+
+:root {
+    --accent: #c88d10;
+    --accent-light: #e9b340;
+    --healthBarXSize: 40vw;
+    --healthBarYSize: 25px;
+    --healthBarPosY: 24px;
+    --healthBarOffX: 24px;
+    --roundSize: 15px;
+}
+
 body {
+    margin: 0;
     top: 0;
     left: 0;
-    margin: 0;
     overflow: hidden;
 }
 
-canvas {
+@keyframes progressGrow {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+#focusContainer {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #1a1a1aba;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 17;
+    align-items: center;
+    transition: 300ms;
+    ;
+}
+
+#focusContainer:hover {
+    background: #383838ba;
+}
+
+.focus-message {
+    margin-bottom: 15px;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progressBar {
+    position: absolute;
+    width: 80vw;
+    height: 12px;
+    bottom: 40px;
+    border: 2px solid #777;
+    border-radius: 0 0 60px 60px;
+    transition: 800ms;
+}
+
+.progressBarInner {
+    background: white;
+    height: 12px;
+    animation: progressGrow 4s 1;
+    border-radius: 0 0 60px 60px;
+}
+
+.loaderTrail {
+    position: absolute;
+}
+
+.loaderLogo {
+    opacity: 0;
+    position: absolute;
+}
+
+.loaderLogo.anim {
+    animation: logoActive 13s 1;
+}
+
+.loaderLogo.active {
+    opacity: 1;
+    width: unset;
+}
+
+@keyframes logoActive {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        width: unset;
+    }
+}
+
+#loadedText {
+    opacity: 0;
+    position: absolute;
+    bottom: 40px;
+    color: var(--accent);
+    font-size: 22px;
+    transition: 1200ms;
+    display: flex;
+    align-items: center;
+}
+
+.controllerIcon {
+    width: 30px;
+    margin: 0 5px;
+}
+
+#loadedText:hover {
+    transition: 300ms;
+    color: var(--accent-light);
+    cursor: pointer;
+}
+
+.backgroundImg {
+    width: 110vw;
+    height: 100vh;
+}
+
+#bottomHolder {
+    bottom: 0;
+    background: linear-gradient(180deg, #0000, black, black);
+    position: absolute;
+    width: 100vw;
+    height: 13vh;
+}
+
+.player {
+    position: fixed;
+    top: var(--healthBarPosY);
+}
+
+#playerLeft {
+    left: var(--healthBarOffX);
+}
+
+#playerRight {
+    right: var(--healthBarOffX);
+}
+
+#healthBar {
+    width: var(--healthBarXSize);
+    height: var(--healthBarYSize);
+    background: black;
+    box-shadow: 0 0 0 5px white, 0 0 10px 5px black;
+}
+
+.healthBarLeft {
+    transform: skewX(-25deg) scaleX(-1)
+}
+
+.healthBarRight {
+    transform: skewX(25deg);
+}
+
+.healthBarInner {
+    width: 100%;
+    height: var(--healthBarYSize);
+}
+
+.healthBarInner.left {
+    background: linear-gradient(90deg, #eab724, #ffd75e);
+}
+
+.healthBarInner.right {
+    background: linear-gradient(270deg, #eab724, #ffd75e);
+}
+
+#timeDisplay {
+    position: absolute;
+    font-size: 32px;
+    top: 12px;
+    left: 682px;
+    background: black;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    display: flex;
+    border-radius: 50%;
+    border: 3px solid #c88d10;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.version {
+    color: #fff4;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    transition: 300ms;
+}
+
+#roundHolder {
+    position: relative;
+    top: 14px;
+    display: flex;
+}
+
+.roundHolderLeft {
+    left: 3%;
+}
+
+.roundHolderRight {
+    left: 90%;
+}
+
+.roundIcon {
+    margin-right: 12px;
+    width: var(--roundSize);
+    height: var(--roundSize);
+    box-shadow: inset 0 0 0 1px white;
+    border-radius: 50%;
+}
+
+.roundIcon.filled {
+    background: white;
 }
