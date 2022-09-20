@@ -6,6 +6,11 @@
 
 .content {
     display: flex;
+    flex-direction: column;
+}
+
+.row-100 {
+    display: flex;
 }
 
 .projectItem {

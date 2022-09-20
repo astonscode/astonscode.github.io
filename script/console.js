@@ -51,8 +51,8 @@ function activateConsole() {
     dxConsole.classList.add("active");
 }
 
-function dxCommand(command) {
-    if (command == "getVersion") {
+function dx(command) {
+    if (command == "version") {
         return "DXConsole Beta v1.2.1 - Aug 2022";
     }
 
