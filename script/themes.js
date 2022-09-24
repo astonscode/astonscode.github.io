@@ -122,3 +122,8 @@ if (curTheme == 7) {
     activateTheme("josin");
     moveCheck(7);
 }
+
+if (curTheme == 8) {
+    activateTheme("scorpion-sh");
+    moveCheck(8);
+}
