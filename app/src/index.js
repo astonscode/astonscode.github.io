@@ -65,12 +65,14 @@ function startMatch() {
     var timerUpdate = setInterval(() => {
         timeleft = timeleft - 1;
         document.getElementById("timeDisplay").innerHTML = timeleft;
-        playerHealthBar1.style.width = `${player1Health/10}%`;
-        playerHealthBar2.style.width = `${player2Health/10}%`;
         if (timeleft == 0) {
             endRound(1)
         }
     }, 1000);
+    var healthBarUpdate = setInterval(() => {
+        playerHealthBar1.style.width = `${player1Health/10}%`;
+        playerHealthBar2.style.width = `${player2Health/10}%`;
+    }, 50)
 }
 
 function endRound(condition) {
@@ -83,6 +85,8 @@ function endRound(condition) {
         backAudio.play();
     }, 7000);
 
+    //Condition 1; Timeout
+
     if (condition == 1) {
         if (player1Health > player2Health) {
             clearInterval(timerUpdate);
@@ -91,6 +95,26 @@ function endRound(condition) {
         } else if (player2Health > player1Health) {
             clearInterval(timerUpdate);
             console.log(`Timer is finished, ${player2} wins the round. `);
+            playerHealthBar1.style.width = "0%"
+        } else if (player1Health == player2Health) {
+            timeleft = timeleft + 60;
+            player1Health = 300.00;
+            player2Health = 300.00;
+            console.log(`${player1} and ${player2} have tied. Extending Match by 60 seconds.`);
+            matchExtended = 1;
+        }
+    }
+
+    //Condition 2; Health 
+
+    if (condition == 2) {
+        if (player1Health > player2Health) {
+            clearInterval(timerUpdate);
+            console.log(`${player1} wins the round. `);
+            playerHealthBar2.style.width = "0%"
+        } else if (player2Health > player1Health) {
+            clearInterval(timerUpdate);
+            console.log(`${player2} wins the round. `);
             playerHealthBar1.style.width = "0%"
         } else if (player1Health == player2Health) {
             timeleft = timeleft + 60;
@@ -139,87 +163,109 @@ var forward = "d";
 
 var duck = "s";
 
-var back = "a";
+var backward = "a";
 
 //attack 
 var punchFor = "j";
 var dmgPunchFor = 2.00;
 
 var punchBack = "i";
-var dmgPunchBack = 2.00;
+var dmgPunchBack = 3.00;
 
 var kickFor = "k";
-var dmgKickFor = 2.00;
+var dmgKickFor = 5.00;
 
 var kickBack = "l";
-var dmgKickBack = 2.00;
+var dmgKickBack = 7.00;
 
 var grab = " ";
-var dmgGrab = 130.00;
+var dmgGrab = 13.00;
 
 var block = "o";
 
 var interact = ";";
 
+//spc atk 
+
+var back1 = "Gut Slice";
+var back1Dmg = '3.00';
+
+var down1 = "Low Jab";
+var down1Dmg = '3.00';
+
 // Player 1
 
 //Attack Functions
 document.body.addEventListener("keydown", e => {
+    // Forward Punches
     if (
+        e.key.toLowerCase() === punchFor && e.key.toLowerCase() === backward
+    ) {
+        console.log(`${player1} did a ${back1} for ${dmgPunchFor*10} damage!`);
+        player2Health = player2Health - back1Dmg * 10;
+
+    } else if (
         e.key.toLowerCase() === punchFor
     ) {
-        console.log(`${player1} threw a forward punch for ${dmgPunchFor}!`);
-        player2Health = player2Health - dmgPunchFor;
+        console.log(`${player1} threw a forward punch for ${dmgPunchFor*10} damage!`)
+        player2Health = player2Health - dmgPunchFor * 10;
 
     } else if (
         e.key.toLowerCase() === punchBack
     ) {
-        console.log(`${player1} threw a back punch for ${dmgPunchBack}!`)
-        player2Health = player2Health - dmgPunchBack;
+        console.log(`${player1} threw a back punch for ${dmgPunchBack*10} damage!`)
+        player2Health = player2Health - dmgPunchBack * 10;
 
     } else if (
         e.key.toLowerCase() === kickFor
     ) {
-        console.log(`${player1} threw a forward kick for ${dmgKickFor}!`)
-        player2Health = player2Health - dmgKickFor;
+        console.log(`${player1} threw a forward kick for ${dmgKickFor*10} damage!`)
+        player2Health = player2Health - dmgKickFor * 10;
 
     } else if (
         e.key.toLowerCase() === kickBack
     ) {
-        console.log(`${player1} threw a back kick for ${dmgKickBack}!`)
-        player2Health = player2Health - dmgKickBack;
+        console.log(`${player1} threw a back kick for ${dmgKickBack*10} damage!`)
+        player2Health = player2Health - dmgKickBack * 10;
 
     } else if (
         e.key.toLowerCase() === grab
     ) {
-        console.log(`${player1} grabbed the opponent for ${dmgGrab}!`)
-        player2Health = player2Health - dmgGrab;
+        console.log(`${player1} grabbed the opponent for ${dmgGrab*10} damage!`)
+        player2Health = player2Health - dmgGrab * 10;
 
     }
 })
+
+//Special Moveset 
+
 
 //Move Functions
 
 document.body.addEventListener("keydown", e => {
     if (
-        e.key.toLowerCase() === punchFor
+        e.key.toLowerCase() === jump
     ) {
-        console.log(`${player1} threw a forward punch!`)
+        console.log(`${player1} jumped!`)
     } else if (
-        e.key.toLowerCase() === punchBack
+        e.key.toLowerCase() === forward && e.key.toLowerCase() === jump
     ) {
-        console.log(`${player1} threw a back punch!`)
+        console.log(`${player1} jumped forwards!`)
     } else if (
-        e.key.toLowerCase() === kickFor
+        e.key.toLowerCase() === backward && e.key.toLowerCase() === jump
     ) {
-        console.log(`${player1} threw a forward kick!`)
+        console.log(`${player1} jumped backwards!`)
     } else if (
-        e.key.toLowerCase() === kickBack
+        e.key.toLowerCase() === forward
     ) {
-        console.log(`${player1} threw a back kick!`)
+        console.log(`${player1} walked forwards!`)
     } else if (
-        e.key.toLowerCase() === grab
+        e.key.toLowerCase() === backward
     ) {
-        console.log(`${player1} grabbed the opponent for 140.00 damage!`)
+        console.log(`${player1} walked backwards!`)
+    } else if (
+        e.key.toLowerCase() === duck
+    ) {
+        console.log(`${player1} ducked!`)
     }
 })
