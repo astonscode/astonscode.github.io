@@ -3,24 +3,13 @@ self.addEventListener("install", e => {
         caches.open("static").then(cache => {
             return cache.addAll([
                 "./",
-                "./about.html",
-                "./login.html",
+                "./index.html",
                 "./404.html",
-                "./projects.html",
-                "./css/main.css",
-                "./css/font.css",
-                "./css/themes/decode.css",
-                "./css/themes/default.css",
-                "./css/themes/josin.css",
-                "./css/themes/koawa.css",
-                "./css/themes/light.css",
-                "./css/themes/scorpion.css",
-                "./css/themes/scorpion-sh.css",
-                "./css/themes/yannmatrix.css",
-                "./script/progressbar.js",
-                "./script/script.js",
-                "./script/themes.js",
-                "./audio/canweget.mp3"
+                "/src/css/animate.css",
+                "/src/css/font.css",
+                "/src/css/main.css",
+                "/src/css/game.css",
+                "/src/css/animate.css",
             ])
         })
     )

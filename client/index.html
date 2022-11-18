@@ -1,0 +1,100 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1be">
+    <meta name="description" content="woah its a decode website">
+    <meta content="dx v7" property="og:title">
+    <meta content="we don't talk about that" property="og:description">
+    <meta content="https://decodexuwu.github.io" property="og:url">
+    <meta content="https://decodexuwu.github.io/src/img/icon.png" property="og:image">
+    <title> DXL </title>
+    <script src="./script/game.js" defer></script>
+    <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/src/css/game.css">
+    <link rel="stylesheet" href="/src/css/font.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+    <div class="windowHolder nofocus">
+        <div id="logWindow">
+            <div class="logWindow-top"> Waiting... </div>
+            <div class="logWindow-history">
+                <div class="logWindow-item server"> ... </div>
+                <!--
+                <div class="logWindow-item game">
+                    <div class="logItem-name">Game</div>
+                    <div class="logItem-value">Scorpion dealt
+                        <div class="damageVal"> 116.5 </div> damage to Baraka!
+                    </div>
+                </div>
+                -->
+            </div>
+            <div class="logWindow-input">
+                <input type="text" class="logInput-input" placeholder="Start your journey...">
+                <button class="logInput-post" onclick="issueNew(2, 1)">
+                    <div class="button-icon material-icons"> send</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="stats">
+        <div id="version" class="statItem">1.0.0</div>
+        <div id="vt-S"> </div>
+        <div id="userProfile">
+            <div class="upperLevel"> </div>
+            <div class="upperName"> </div>
+        </div>
+        <div id="vt-S"> </div>
+        <div class="menuItem">
+            <div class="material-icons menuItemIcon"> settings </div>
+            <div class="menuItemTitle"> settings </div>
+        </div>
+
+        <div class="menuItem">
+            <div class="material-icons menuItemIcon"> brush </div>
+            <div class="menuItemTitle"> customize </div>
+        </div>
+
+        <a class="menuItem" href="/index.html">
+            <div class="material-icons menuItemIcon"> exit_to_app </div>
+            <div class="menuItemTitle"> exit </div>
+        </a>
+    </div>
+
+    <div id="customizeWindow">
+        <div class="customize-title"> Customize </div>
+        <div id="customizeItems">
+            <div class="customizeItem item-100">
+                <div class="customizeIcon material-icons"> person </div>
+                <div class="customizeTitle"> Head </div>
+            </div>
+            <div class="customizeItem item-200">
+                <div class="customizeIcon material-icons"> accessibility </div>
+                <div class="customizeTitle"> Body </div>
+            </div>
+            <div class="customizeItem item-300">
+                <div class="customizeIcon material-symbols-outlined"> front_hand </div>
+                <div class="customizeTitle"> Held </div>
+            </div>
+            <div class="customizeItem item-400">
+                <div class="customizeIcon material-symbols-outlined"> temp_preferences_custom </div>
+                <div class="customizeTitle"> Skill </div>
+            </div>
+            <div class="customizeItem item-500">
+                <div class="customizeIcon material-symbols-outlined"> swords </div>
+                <div class="customizeTitle"> Ability I </div>
+            </div>
+            <div class="customizeItem item-600">
+                <div class="customizeIcon material-symbols-outlined"> security </div>
+                <div class="customizeTitle"> Ability II </div>
+            </div>
+        </div>
+    </div>
+</body>
