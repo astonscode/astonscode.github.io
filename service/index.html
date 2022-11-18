@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1be">
+    <meta name="description" content="woah its a decode website">
+    <meta content="DECODEX" property="og:title">
+    <meta content="we don't talk about that" property="og:description">
+    <meta content="https://decodexuwu.github.io" property="og:url">
+    <meta content="https://decodexuwu.github.io/img/icon_a.png" property="og:image">
+    <title> INDEX </title>
+    <script src="/script/script.js" defer></script>
+    <script src="/script/themes.js" defer></script>
+    <script src="/script/worker.js" defer></script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="/img/icon_a.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/icon_a.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/themes/default.css" id="themeLink">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body onload="checkTime();">
+    <audio id="algo" src="/audio/canweget.mp3"></audio>
+
+    <div id="tooltip"> Ya selectado. </div>
+
+    <div id="backgroundImageHolder">
+        <div class="backgroundImage">
+            <img class="backgroundImg" width="1460px" height="830px">
+        </div>
+    </div>
+
+    <div id="welcome">
+        <div class="date-time">
+            <div class="time"> </div>
+            <div class="date"> </div>
+        </div>
+    </div>
+
+    <div id="navBar">
+        <a class="navItem item-100 active"> Home </a>
+        <a class="navItem item-200" href="/about.html"> About </a>
+        <a class="navItem item-300" href="/projects.html"> Projects </a>
+    </div>
+
+    <div id="contentHolder">
+        <div id="mainContent">
+            <div class="titleHolder">
+                <div class="title"> Hello! </div>
+                <div class="title-subtitle"> And welcome to the Los Pollos Hermanos© Family™!</div>
+            </div>
+            <div class="content"> &nbsp;&nbsp;&nbsp;&nbsp;My name is Gustavo, but you can call me Gus. I am thrilled that you will be joining our team! Each and every day we serve our customers exceptional food with impeccable service. We take pride in everything that we do,
+                and after this ten week online seminar, I am confident that you will fit right in. I like to think I see things in people. To begin, I like to talk about the cornerstone of the Los Pollos Hermanos brand. Communication. As an employee of
+                Los Pollos Hermanos, you set the tone for the entire dining experience. Be mindful of what your words and behaviour communicate to our guests. Always be aware of your posture. Remember to stand up straight. Your customers and your back
+                will thank you for it. Put effort into your appearance. All employees are required to dress appropriately. Keep your uniform clean and pressed. If you want respect, you must look respectfully. Speak in complete sentences. We never use
+                one word greetings like; "Hey" or "Yeah". Always make eye contact. And finally, whether your with a customer or not, remain composed. Inside, you can be thinking about your homework, or your friends, or your side buissness. But no one
+                should ever know it. Because at Los Pollos Hermanos, someone is always watching. So don't forget to smile! That's all for today!
+            </div>
+        </div>
+
+        <div id="mainContent">
+            <div class="titleHolder">
+                <div class="title"> News </div>
+            </div>
+            <div class="content">
+                <div class="content-flex">
+                    <img src="/img/icon_p.png" class="imgFlex" width="100px">
+                    <div class="flex-content">
+                        <div class="content-title"> Projects Tab Update! </div>
+                        The Projects Tab has been updated! Go check out the stuff I make when im bored or im going to get you in your sleep >:)
+                    </div>
+                </div>
+
+                <div class="content-flex">
+                    <img src="/img/icon_ab.png" class="imgFlex" width="100px">
+                    <div class="flex-content">
+                        <div class="content-title"> About Tab Update! </div>
+                        The About Tab has been updated! Go find out more about me :)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 
+        <div id="progressBar">
+        <div class="progressBarInner">
+            <div class="progressBarPercent"> 24 </div>
+        </div>
+    </div>
+    -->
+    <div class="bottomItemHolder">
+        <div id="settings" class="bottomItem" onclick="toggleWindow(2)">
+            <span class="settingsIcon material-icons"> settings </span>
+        </div>
+
+        <div id="themes" class="bottomItem" onclick="toggleWindow(1)">
+            <span class="paletteIcon material-icons"> palette </span>
+        </div>
+    </div>
+
+    <div id="themeSelector" class="menuWindow">
+        <div class="window-title"> Themes </div>
+        <div class="themeContainer">
+            <div class="theme active">
+                <div class="theme-name" onclick='activateTheme("default"); moveCheck(1);'> <span class="themeIcon material-icons default active">
+                        check_circle </span> Default </div>
+                <div class="theme-sub"> [ SFT + D ] The classic. </div>
+            </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("light"); moveCheck(2);'> <span class="themeIcon material-icons hide light active">
+                        check_circle </span> Light </div>
+                <div class="theme-sub">[ SFT + L ] For people who don't like the dark. </div>
+            </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("decode"); moveCheck(3);'> <span class="themeIcon material-icons hide decode active">
+                        check_circle </span> Decode </div>
+                <div class="theme-sub">[ SFT + X ] Coders only. </div>
+            </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("koawa"); moveCheck(4);'> <span class="themeIcon material-icons hide koawa active">
+                        check_circle </span> Koawa </div>
+                <div class="theme-sub">[ SFT + K ] For all the funny uwu clown goth girls :p </div>
+            </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("scorpion"); moveCheck(5);'> <span class="themeIcon material-icons hide scorpion active">
+                        check_circle </span> Scorpion </div>
+                <div class="theme-sub"> [ SFT + S ] Vengeance is mine. </div>
+            </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("yannmatrix"); moveCheck(6);'> <span class="themeIcon material-icons hide yannmatrix active">
+                        check_circle </span> Yannmatrix </div>
+                <div class="theme-sub">[ SFT + Y ] Find all the clues, fix the game. </div>
+            </div>
+
+            <div class="theme inactive">
+                <div class="theme-name" onclick='activateTheme("josin"); moveCheck(7);'> <span class="themeIcon material-icons hide josin active">
+                        check_circle </span> Josin </div>
+                <div class="theme-sub">[ SFT + J ] :skull: </div>
+            </div>
+        </div>
+
+        <div class="close material-icons" onclick="toggleWindow(3)"> close </div>
+    </div>
+
+    <div id="settingsWindow" class="menuWindow">
+        <div class="window-title"> Settings </div>
+        <div class="settingsContainer">
+            <div class="settingsNav-200">
+                <a href="/other/console" class="toConsole">
+                    <button class="openConsole button">
+                        <span class="consoleIcon material-icons-outlined"> data_array </span>
+                        <div class="buttonText"> Open DXConsole </div>
+                    </button>
+                </a>
+
+                <button class="openLogin button" onclick="windowContent(1)">
+                    <span class="consoleIcon material-icons-outlined"> person </span>
+                    <div class="buttonText"> Account </div>
+                </button>
+
+                <button class="generalSettings button" onclick="windowContent(2)">
+                    <span class="generalIcon material-icons-outlined"> settings_suggest </span>
+                    <div class="buttonText"> General </div>
+                </button>
+
+                <button class="nothing button">
+                    <span class="noneIcon material-icons-outlined"> block </span>
+                    <div class="buttonText"> Coming Soon </div>
+                </button>
+
+                <button class="nothing button">
+                    <span class="noneIcon material-icons-outlined"> block </span>
+                    <div class="buttonText"> Coming Soon </div>
+                </button>
+
+                <button class="exit button" onclick="toggleWindow(4)">
+                    <span class="exitIcon material-icons-outlined"> close </span>
+                    <div class="buttonText"> Exit Window </div>
+                </button>
+            </div>
+
+            <div class="settingsContent">
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    let themeLock = localStorage.getItem("key");
+    let curTheme = localStorage.getItem("theme");
+
+
+
+    if (themeLock == 1) {
+        console.log("has")
+    }
+    // let backgroundImg = document.querySelector(".backgroundImg");
+
+    document.body.addEventListener("keydown", e => {
+        if (
+            e.key.toLowerCase() === "a" &&
+            e.metaKey || e.key.toLowerCase() === "a" &&
+            e.ctrlKey
+        ) {
+            document.getElementById("algo").play()
+        }
+    })
+</script>
+
+</html>

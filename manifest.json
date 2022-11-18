@@ -1,16 +1,13 @@
 {
-    "name": "DECODEX",
-    "shortname": "INDEX",
+    "name": "dx v8.1",
+    "shortname": "house",
     "start_url": ".",
     "background_color": "#414141",
-    "theme_color": "#1d9b92",
+    "theme_color": "#13c0cc",
     "display": "standalone",
     "icons": [{
-            "src": "/img/icon_a.png",
-            "sizes": "512x512",
-            "type": "image/png"
-
-        }
-
-    ]
+        "src": "/src/img/icon.png",
+        "sizes": "128x127",
+        "type": "image/png"
+    }]
 }
