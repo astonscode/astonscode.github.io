@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1be">
-    <meta name="description" content="woah its a decode website">
-    <meta content="dx v7" property="og:title">
-    <meta content="we don't talk about that" property="og:description">
+    <meta name="theme-color" content="#6d7fb2">
+    <meta name="description" content="...">
+    <meta content="dx v8" property="og:title">
+    <meta content="Hello! I'm Decode, or something..." property="og:description">
     <meta content="https://decodexuwu.github.io" property="og:url">
     <meta content="https://decodexuwu.github.io/src/img/icon.png" property="og:image">
-    <title> dx v7 </title>
+    <title> DXOS 8.1 </title>
     <script src="/src/script/index.js" defer></script>
     <script src="/src/script/themeHandler.js" defer></script>
-    <script src="/src/script/worker.js" defer></script>
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="/src/css/theme_de.css" id="themeLink">
     <link rel="stylesheet" href="/src/css/font.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -30,6 +30,14 @@
 </head>
 
 <body>
+    <div id="errorWindow">
+        <div class="error-title"> :( </div>
+        <div class="error-info">
+            <div class="error-body"> It seems your PC has ran into a hardware problem. I'm gonna collect some error info, and restart it for you. </div>
+            <div class="errorPercent"> 99% complete </div>
+            <div class="error-code"> CODE: CRITICAL_FATAL_3 </div>
+        </div>
+    </div>
     <div id="backgroundImage">
         <img src="/src/img/main.png" class="backgroundImage">
     </div>
@@ -76,16 +84,23 @@
 
                 <div id="main-header">
                     <div class="header-title"> welcome. </div>
-                    <div class="header-sub"> it's coming soon. just wait. </div>
+                    <div class="header-sub"> this website is under construction.. beware </div>
                 </div>
 
                 <div id="start">
-                    <div class="startIcon material-icons-outlined" onclick="console.log(startApp())"> web_asset </div>
+                    <div class="startIcon material-icons-outlined" onclick="console.log(startApp())"> power_settings_new
+                    </div>
                 </div>
 
 
             </div>
+
+            <div id="changeTheme" onclick="changeTheme()">
+                <div class="themeIcon material-icons"> roller_shades_closed </div>
+            </div>
         </div>
+
+
     </div>
 
     <!-- App UI -->
@@ -207,6 +222,16 @@
                             <div class="section-flex">
                                 <div class="settingTitle"> Hidden Content </div>
                                 <div class="setting-switch" onclick="settingsMenuToggles(2);">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="section-flex">
+                                <div class="settingTitle"> Toggle Music Visualizer </div>
+                                <div class="setting-switch" onclick="settingsMenuToggles(4);">
                                     <label class="switch">
                                         <input type="checkbox">
                                         <span class="slider round"></span>

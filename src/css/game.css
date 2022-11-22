@@ -41,7 +41,6 @@ a {
     width: calc(100vw - 35%);
     height: calc(100vh - 15%);
     border-radius: 4px 4px 0 0;
-    overflow: hidden;
 }
 
 .logWindow-top {
@@ -81,7 +80,7 @@ a {
 }
 
 .logWindow-input {
-    background: #fff1;
+    background: #0d0d0d;
     padding: 12px;
     margin-top: 8px;
     display: flex;
