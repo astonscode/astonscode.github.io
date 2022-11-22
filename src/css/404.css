@@ -1,0 +1,35 @@
+body {
+    background: var(--main-bg)
+}
+
+.title {
+    font-size: 64px;
+}
+
+.section-404 {
+    display: flex;
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--accent);
+    padding: 12px;
+    border-top-right-radius: 40px;
+    justify-content: center;
+}
+
+.homeLink {
+    padding: 8px;
+    background: white;
+    display: flex;
+    color: var(--accent);
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    transition: .3s;
+}
+
+a.homeLink:hover {
+    background: var(--accent-dark);
+    color: white;
+}

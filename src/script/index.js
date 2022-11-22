@@ -1,5 +1,87 @@
+/**
+ * Code by dom (@dcode)
+ * 
+ */
+
+let dateDisplay = document.querySelector(".date");
+let timeDisplay = document.querySelector(".time");
+
+function checkTime() {
+    var curTime = new Date();
+    let hour = curTime.getHours();
+}
+
+function formatTime(date) {
+    const curHours = date.getHours() % 12 || 12;
+    const curMinutes = date.getMinutes();
+    const checkAm = date.getHours() < 12;
+    return `${curHours.toString().padStart(2,"0")}:${curMinutes.toString().padStart(2,"0")}${checkAm ? "a" : "p"}`
+}
+
+function formatDate(date) {
+    const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+}
+
+// constants
+const clientId = rollRandom(10000000, 99999999)
+
+// variables
+
 let barWidth = 0;
 let searchToggled;
+
+let startupSound = new Audio('/src/audio/startup.mp3');
+let backgroundAudio = new Audio('/src/audio/main_2.mp3');
+
+backgroundAudio.loop = true
+
+// event listeners 
+
+document.addEventListener("keydown", e => {
+    if (
+        e.key === 'Enter'
+    ) {
+        goIframe()
+    }
+})
+
+document.addEventListener("DOMContentLoaded", (() => {
+    int = rollRandom(1, 100)
+    if (int > 95) {
+        crash()
+    }
+    console.log(`Crash rate for window: ${int}%`)
+}))
+
+document.querySelector(`.closeSearch`).addEventListener("click", () => {
+    document.getElementById("searchHolder").classList.toggle("active");
+    backgroundAudio.play()
+    searchToggled = false;
+})
 
 document.getElementById("windowCloser").addEventListener("click", () => {
     document.getElementById("menuWindow").classList.remove("active")
@@ -49,56 +131,6 @@ function toggleWindow(id) {
     }
 }
 
-document.querySelector(`.closeSearch`).addEventListener("click", () => {
-    document.getElementById("searchHolder").classList.toggle("active");
-    backgroundAudio.play()
-    searchToggled = false;
-})
-
-// Code by dom (@dcode)
-let dateDisplay = document.querySelector(".date");
-let timeDisplay = document.querySelector(".time");
-
-function checkTime() {
-    var curTime = new Date();
-    let hour = curTime.getHours();
-}
-
-function formatTime(date) {
-    const curHours = date.getHours() % 12 || 12;
-    const curMinutes = date.getMinutes();
-    const checkAm = date.getHours() < 12;
-    return `${curHours.toString().padStart(2,"0")}:${curMinutes.toString().padStart(2,"0")}${checkAm ? "a" : "p"}`
-}
-
-function formatDate(date) {
-    const days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-    ];
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-
-    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
-}
-
 setInterval(() => {
     const now = new Date();
 
@@ -107,12 +139,9 @@ setInterval(() => {
     checkTime();
 }, 20);
 
-let startupSound = new Audio('/src/audio/startup.mp3');
-let backgroundAudio = new Audio('/src/audio/main_2.mp3');
-
-backgroundAudio.loop = true
-
 function startApp() {
+    themeLink.setAttribute("href", `src/css/theme_de.css`)
+    theme = 0;
     document.getElementById("startupModal").classList.add("active");
     document.getElementById("startupSplash").classList.add("active");
     document.querySelector(".startupTitle").classList.add("active");
@@ -145,7 +174,7 @@ function startApp() {
 
             if (barWidth >= 100) {
                 clearInterval(progressCheck)
-                console.log("done");
+                console.log("App has been loaded.");
                 backgroundAudio.play();
                 document.getElementById("startupBar").style.width = `100%`;
                 clearInterval(barGrow);
@@ -178,11 +207,9 @@ function getChromeVersion() {
     document.querySelector(".chromeVersion").innerHTML = `${raw ? parseInt(raw[2], 10) : false}.0`
 }
 
-function randomClientId(min, max) {
+function rollRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
-
-const clientId = randomClientId(10000000, 99999999)
 
 console.log(`New Client ID: ${clientId}`)
 
@@ -222,12 +249,18 @@ getChromeVersion();
 
 function settingsMenuToggles(opt) {
     if (opt == 1) {
-        console.log(`i cant`)
+        console.log(`null, decode`)
     } else if (opt == 2) {
-        console.log(`sure`)
-        document.querySelector(`.taskF`).classList.add("active")
+        console.log(`DXL Game has been unlocked.`)
+        console.log(document.querySelector(`.taskF`).classList.toggle("active"))
+    } else if (opt == 3) {
+        console.log(`Force saving enabled.`)
+        localStorage.setItem("force", 1)
+    } else if (opt == 4) {
+        console.log(`Visualizer toggled.`)
+        console.log(document.getElementById(`visualizerCanvas`).classList.toggle("toggled"))
     } else {
-        console.log(`thats cool i guess`)
+        console.log(`That's not a valid option.`)
     }
 }
 
@@ -236,11 +269,7 @@ function goIframe() {
     document.getElementById("windowView").src = `https://${searchInput}`
 }
 
-
-document.addEventListener("keydown", e => {
-    if (
-        e.key === 'Enter'
-    ) {
-        goIframe()
-    }
-})
+function crash() {
+    document.title = "Aw, Snap!"
+    document.getElementById("errorWindow").classList.add("active");
+}
