@@ -280,6 +280,9 @@ function settingsMenuToggles(opt) {
     } else if (opt == 4) {
         console.log(`Visualizer toggled.`)
         console.log(document.getElementById(`visualizerCanvas`).classList.toggle("toggled"))
+    } else if (opt == 5) {
+        console.log(`Music stopped.`)
+        console.log(backgroundAudio.pause())
     } else {
         console.log(`That's not a valid option.`)
     }

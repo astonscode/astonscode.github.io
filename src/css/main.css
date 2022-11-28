@@ -71,11 +71,12 @@ a {
 }
 
 .backgroundImage {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     filter: saturate(0.6);
     box-shadow: inset 0 0 0 5px white;
     transition: .4s;
+    position: fixed;
 }
 
 .backgroundImage.active {
@@ -97,7 +98,7 @@ a {
     width: 100vw;
     height: 25px;
     border-top: 3px solid var(--accent);
-    background: black;
+    background: var(--main-bg);
     display: flex;
     align-items: flex-start;
     padding: 12px;
@@ -134,6 +135,21 @@ a {
 
 .taskC:hover {
     color: #f55;
+}
+
+#taskbarTop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    background: var(--main-bg);
+    border-bottom: 3px solid var(--accent);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
 }
 
 #windowCloser {
@@ -320,16 +336,17 @@ a {
 #alert {
     display: none;
     background: var(--main-bg);
-    padding: 8px;
+    padding: 18px;
     border-radius: 4px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-content: center;
     position: fixed;
     top: 20px;
     left: 20px;
+    width: 35%;
     transition: .8s;
-    align-items: center;
+    border: 3px solid var(--accent);
+    box-shadow: -5px 5px var(--accent);
 }
 
 #alertImg {
@@ -350,7 +367,7 @@ a {
     font-size: 20px;
     margin-bottom: 4px;
     padding-bottom: 4px;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #fff5;
 }
 
 
