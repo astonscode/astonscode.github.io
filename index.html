@@ -152,13 +152,22 @@
             </div>
         </div>
 
-        <div id="taskbar">
+        <div id="taskbarTop">
             <a class="taskbarItem taskF" href="/client/index.html">
                 <span class="taskF taskbar-icon material-symbols-outlined">
                     swords
                 </span>
             </a>
 
+            <div class="taskbarItem taskH"></div>
+        </div>
+
+        <div id="taskbar">
+            <a class="taskbarItem taskF" href="/client/index.html">
+                <span class="taskF taskbar-icon material-symbols-outlined">
+                    swords
+                </span>
+            </a>
             <div class="taskbarItem taskSe" onclick="toggleWindow(4)">
                 <span class="taskSe taskbar-icon material-icons"> search </span>
             </div>
@@ -207,9 +216,9 @@
 
                         <div class="section-flex">
                             <div class="settingTitle"> Save Username/Password </div>
-                            <div class="setting-switch" onclick="settingsMenuToggles(1)">
+                            <div class="setting-switch">
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input type="checkbox" onclick="settingsMenuToggles(1)">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
@@ -221,9 +230,9 @@
                         <div class="windowSettings">
                             <div class="section-flex">
                                 <div class="settingTitle"> Hidden Content </div>
-                                <div class="setting-switch" onclick="settingsMenuToggles(2);">
+                                <div class="setting-switch">
                                     <label class="switch">
-                                        <input type="checkbox">
+                                        <input type="checkbox" onclick="settingsMenuToggles(2);">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -231,9 +240,9 @@
 
                             <div class="section-flex">
                                 <div class="settingTitle"> Toggle Music Visualizer </div>
-                                <div class="setting-switch" onclick="settingsMenuToggles(4);">
+                                <div class="setting-switch">
                                     <label class="switch">
-                                        <input type="checkbox">
+                                        <input type="checkbox" onclick="settingsMenuToggles(4);">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -245,10 +254,10 @@
                         <div class="section-title"> Data </div>
                         <div class="windowSettings">
                             <div class="section-flex">
-                                <div class="settingTitle" onclick="settingsMenuToggles(3)"> Force Save </div>
+                                <div class="settingTitle"> Force Save </div>
                                 <div class="setting-switch">
                                     <label class="switch">
-                                        <input type="checkbox">
+                                        <input type="checkbox" onclick="settingsMenuToggles(3)">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -264,8 +273,8 @@
             <div class="profileInfo">
                 <div class="profTop">
                     <img src="/src/img/pfps/img_0.png" class="profileImg">
-                    <div class="profileName"> koneewa
-                        <div class="profileClan"> [CDX] </div>
+                    <div class="profileName"> Code
+                        <div class="profileClan"> [ゴス] </div>
                         <div class="profileBadges">
                             <span class="badge-100 pfpBadge material-icons"> check_circle </span>
                             <span class="badge-200 pfpBadge material-icons"> beenhere </span>
@@ -273,10 +282,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="profStat"> [] </div>
-                <div class="profStat"> {} </div>
-                <div class="profStat"> () </div>
-                <div class="profStat"> -- </div>
+                <div class="profStat" style="border: 2px solid #6bc1ef" onclick="copyLink(1)"> @enzenra </div>
+                <div class="profStat" style="border: 2px solid #ff5a5a" onclick="copyLink(2)"> @Aston </div>
+                <div class="profStat" style="border: 2px solid #8000ff" onclick="copyLink(3)"> @decodejs </div>
+                <div class="profStat" style="border: 2px solid #8ea6f7" onclick="copyLink(4)"> code#0730 </div>
             </div>
         </div>
 

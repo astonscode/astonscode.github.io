@@ -195,6 +195,8 @@ function startApp() {
     }, 4500)
 }
 
+
+//Shut down DXOS 
 function clearApp() {
     document.querySelector(".ui-app").classList.remove("active");
     setTimeout(() => {
@@ -210,6 +212,8 @@ function getChromeVersion() {
 function rollRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+//Local Storage
 
 console.log(`New Client ID: ${clientId}`)
 
@@ -245,11 +249,28 @@ setInterval(() => {
     }));
 }, 4000)
 
+
 getChromeVersion();
+
+function copyLink(linkId) {
+    if (linkId == 1) {
+        navigator.clipboard.writeText(`https://twitter.com/enzenra`)
+        console.log(`Twitter link copied.`)
+    } else if (linkId == 2) {
+        navigator.clipboard.writeText(`https://www.youtube.com/channel/UCBHkCLZ5cgBb8FGqO9-5rdA`)
+        console.log(`Youtube link copied.`)
+    } else if (linkId == 3) {
+        navigator.clipboard.writeText(`https://www.twitch.tv/decodejs`)
+        console.log(`Twitch link copied.`)
+    } else if (linkId == 4) {
+        navigator.clipboard.writeText(`code#0370`)
+        console.log(`Discord Profile copied.`)
+    }
+}
 
 function settingsMenuToggles(opt) {
     if (opt == 1) {
-        console.log(`null, decode`)
+        console.log(`Saved: undefined, null`)
     } else if (opt == 2) {
         console.log(`DXL Game has been unlocked.`)
         console.log(document.querySelector(`.taskF`).classList.toggle("active"))
@@ -267,9 +288,46 @@ function settingsMenuToggles(opt) {
 function goIframe() {
     let searchInput = document.getElementById("searchInput").value
     document.getElementById("windowView").src = `https://${searchInput}`
+    console.log(`Attempting to connect to https://${searchInput} [5]`)
 }
 
 function crash() {
     document.title = "Aw, Snap!"
     document.getElementById("errorWindow").classList.add("active");
+}
+
+const songArray = [{
+    name: `Freestyle 2`,
+    artist: `Ken Carson`,
+    album: `X`,
+    src: `/src/audio/main_1.mp3`,
+    id: 1,
+}, {
+    name: `pick up the phone`,
+    artist: `Travis Scott and Young Thug`,
+    album: `Birds In the Trap Sing McKnight`,
+    src: `/src/audio/main_2.mp3`,
+    id: 2,
+}]
+
+function audioControls(ctx) {
+    if (ctx == 1) {
+        console.log(`Previous Song...`)
+    } else if (ctx == 2) {
+        console.log(`Song paused.`)
+    } else if (ctx == 3) {
+        console.log(`Next Song...`)
+    } else {
+        console.log(`Context invalid.`)
+    }
+}
+
+function changeSong(newSongId) {
+    backgroundNoise.src = `/src/audio/main_${newSongId}.mp3`;
+    backgroundNoise.load()
+    backgroundNoise.play()
+
+    if (newSongId > 2) {
+        console.log(`Unreadable id provided.`)
+    }
 }
