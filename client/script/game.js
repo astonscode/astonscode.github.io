@@ -1,6 +1,6 @@
 let version = `1.0.0`;
-let userName = "Guest"
-let userLevel = 0;
+let userName = "aiziru"
+let userLevel = 468;
 let colorVal = "#fff";
 
 document.getElementById("version").innerHTML = `v${version}`
