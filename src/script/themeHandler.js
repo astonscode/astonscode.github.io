@@ -58,3 +58,9 @@ function changeTheme() {
         document.querySelector(`.themeIcon`).innerHTML = `roller_shades_closed`
     }
 }
+
+function handleThemeInput() {
+    if (clientTheme == 0) {
+
+    }
+}

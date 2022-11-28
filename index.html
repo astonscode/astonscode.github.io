@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="startApp()">
     <div id="errorWindow">
         <div class="error-title"> :( </div>
         <div class="error-info">
@@ -108,19 +108,13 @@
     <div class="ui ui-app">
         <canvas id="visualizerCanvas" width="1920px" height="1080px"> </canvas>
 
-        <!--
-        <div id="alert">
-            <div class="alert-left">
-                <img src="/src/img/album/1.png" id="alertImg">
-            </div>
 
-            <div class="alert-right">
-                <div id="alert-title"> Song Changed </div>
-                <div class="alert-sub"> Freestyle 2 - Ken Carson </div>
-            </div>
+        <div id="alert">
+            <div id="alert-title"> Achievement reached! </div>
+            <div class="alert-sub"> Started DXClient. </div>
         </div>
 
-        -->
+
 
         <div id="infoWindow">
             <div class="infoWindow-title"> Client Info </div>
@@ -159,7 +153,11 @@
                 </span>
             </a>
 
-            <div class="taskbarItem taskH"></div>
+            <a class="taskbarItem taskY" href="https://yannmatrixdev.github.io">
+                <span class="taskY taskbar-icon material-symbols-outlined">
+                    sports_mma
+                </span>
+            </a>
         </div>
 
         <div id="taskbar">
