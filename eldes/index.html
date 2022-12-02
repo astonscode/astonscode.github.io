@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/eldes/src/main.css">
+    <link rel="stylesheet" href="/src/css/font.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -26,14 +27,110 @@
 </head>
 
 <body>
+    <div id="charBackground">
+        <img src="/src/img/eldes/bg_0.png" id="charBgImg">
+    </div>
     <div id="character">
-        <div class="charName"> </div>
-        <div class="charAge"> </div>
-        <div class="charSex"> </div>
-        <div class="charRace"> </div>
-        <div class="charAbilities"> </div>
-        <div class="charAppearance"></div>
+        <div class="charTop">
+            <div class="charRight">
+                <img class="charImg" src="/service/img/chars/endorius-ts-c.png">
+                <div class="charName"> Endorius </div>
+            </div>
+
+            <div class="charLeft">
+                <div class="charAge"> 35 </div>
+                <div class="charRace"> Demi-God / Human </div>
+                <div class="charAlign"> Rakkshas </div>
+            </div>
+        </div>
+
+        <div class="charBottom">
+            <div class="content-100 content" style="display: none">
+                <div id="charHeader"> Backstory </div>
+                <div class="charBackstory">
+                    Born in an ice cap, he was trained to be one of the greatest across the realms. He won many tournaments and has fought and beaten many opponents. He soon got bored and left home to start anew. He then ended up at Enwor.
+                    <br><br>During his time at Enwor, he met Rakkshas and quickly became friends with him, along with Atticus and Sionnach. In battle, he unlocked his secrets to godhood and learned how to use his god abilities. Endorius then, after teaming
+                    up with Rakkshas, would eventually join his army and create his own empire.
+                </div>
+                <div id="charHeader"> Metadata </div>
+                <div class="charData">
+                    <div class="charDataItem">
+                        <div class="dataName"> Commandment </div>
+                        <div class="dataVal"> Water/Fire Manipulation </div>
+                    </div>
+
+                    <div class="charDataItem">
+                        <div class="dataName"> Weakness </div>
+                        <div class="dataVal"> Liquid Zirconium (Absolute Zero) </div>
+                    </div>
+
+                    <div class="charDataItem">
+                        <div class="dataName"> Allies </div>
+                        <div class="dataVal"> Rakkshas, Atticus </div>
+                    </div>
+
+                    <div class="charDataItem">
+                        <div class="dataName"> Enemies </div>
+                        <div class="dataVal"> Volcatius </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-200 content">
+                <div id="charHeader"> Weapons / Miscellaneous</div>
+                <div class="charWeapons">
+                    <div class="charDataItem">
+                        <div class="dataName" style="color: #cdd7ee"> Cold Iron Knives </div>
+                        <div class="dataVal"> Made by Hakita. You can guess what they do.
+                        </div>
+                    </div>
+
+                    <div class="charDataItem">
+                        <div class="dataName" style="color: #ff97cd"> Iona's Sword </div>
+                        <div class="dataVal"> A sword given to Endorius by his mother, the Goddess of Water, Iona. It has the capability to be used with his water abilities to create new attacks.
+                            <br><br> During the time skip, Endorius experimented with the sword and found out it could be broken into two daggers.
+                        </div>
+                    </div>
+
+                    <div class="charDataItem">
+                        <div class="dataName" style="color: #dd6cd5"> Dragon Plating </div>
+                        <div class="dataVal"> (Inactive)</div>
+                    </div>
+
+                    <div class="charDataItem">
+                        <div class="dataName" style="color: #9500ff"> Smoke Assist </div>
+                        <div class="dataVal"> (Inactive) </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="navigation">
+                <div class="point-100 point"></div>
+                <div class="point-200 point point-selected"></div>
+            </div> -->
+        </div>
     </div>
 
+    <div id="charList">
+        <div class="charList-top"> [C] CHARACTER LIST </div>
+        <div class="charList-bottom">
+            <div class="charItem">
+                <img src="/service/img/chars/endorius-ts-c.png" id="charImg" width="40px">
+                <div class="charNameMini"> Endorius </div>
+            </div>
 
+            <div class="charItem">
+                <img src="/service/img/chars/kaze-c.png" id="charImg" width="40px">
+                <div class="charNameMini"> Kaze </div>
+            </div>
+
+            <div class="charItem">
+                <img src="/service/img/chars/accelero-c.png" id="charImg" width="40px">
+                <div class="charNameMini"> Accelero </div>
+            </div>
+
+            <div class="charItem">
+                <img src="/service/img/chars/nunchuck-c.png" id="charImg" width="40px">
+                <div class="charNameMini"> Nunchuck </div>
+            </div>
+        </div>
+    </div>
 </body>

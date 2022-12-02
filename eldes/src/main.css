@@ -1,0 +1,163 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+}
+
+body {
+    background: #151515;
+}
+
+#charBackground {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 110vw;
+    height: 110vh;
+    filter: blur(3px) brightness(0.5)
+}
+
+#character {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #ffffff12;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    width: 72.5%;
+    height: 92.5%;
+    align-content: space-between;
+    flex-direction: column;
+}
+
+.charImg {
+    width: 150px;
+    border-radius: 8px;
+}
+
+.charTop {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: row;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    width: 100%;
+    border-bottom: 1px solid #fff5;
+}
+
+.charRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.charName {
+    font-size: 32px;
+    margin-left: 12px;
+}
+
+.charLeft {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.charBackstory {
+    margin-bottom: 12px
+}
+
+#charHeader {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+#charList {
+    position: fixed;
+    padding: 12px;
+    background: #202020;
+    bottom: 0;
+    right: 0;
+    height: 85vh;
+    width: 300px;
+    border-top-left-radius: 12px;
+    border: 2px solid white;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.charList-top {
+    text-align: right;
+    font-size: 24px;
+}
+
+.charItem {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.charItem:not(.charItem:first-of-type) {
+    margin-top: 8px
+}
+
+.charItem:hover {
+    background: #fff1;
+}
+
+.charList-bottom {
+    margin-top: 12px;
+}
+
+.charNameMini {
+    margin-left: 12px;
+}
+
+#charImg {
+    border-radius: 8px;
+}
+
+.charDataItem {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 8px;
+    background: #fff3;
+    height: 100px
+}
+
+.charDataItem:not(.charDataItem:first-of-type) {
+    margin-top: 8px
+}
+
+.dataVal {
+    text-align: right;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.point {
+    width: 16px;
+    height: 16px;
+    background: #fff5;
+    cursor: pointer;
+    margin-right: 18px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.point-selected {
+    background: white;
+    cursor: default
+}
