@@ -55,7 +55,8 @@ let barWidth = 0;
 let searchToggled;
 
 let startupSound = new Audio('/src/audio/startup.mp3');
-let backgroundAudio = new Audio('/src/audio/main_2.mp3');
+let backgroundAudio = new Audio('/src/audio/main_1.mp3');
+let backgroundAudioId = 1;
 
 backgroundAudio.loop = true
 
@@ -185,9 +186,13 @@ function startApp() {
                 document.getElementById("startupVersion").classList.remove("active");
                 document.getElementById("startupModal").style.display = "none";
 
-                let visualizer = setTimeout(() => {
+                if (backgroundAudioId == 2) {
+                    let visualizer = setTimeout(() => {
+                        document.querySelector(".backgroundImage").classList.add("active")
+                    }, 28000)
+                } else {
                     document.querySelector(".backgroundImage").classList.add("active")
-                }, 28000)
+                }
             }
         }, 50)
 

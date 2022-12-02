@@ -1,0 +1,61 @@
+@font-face {
+    font-family: gamefont;
+    src: url('./fonts/font0.ttf');
+}
+
+* {
+    font-family: gamefont;
+    color: white;
+    user-select: none;
+    outline: 0;
+    text-decoration: none;
+}
+
+.backgroundImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(0.8)
+}
+
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: -180px;
+    background: #0005;
+    height: 120vh;
+    width: 400px;
+    transform: skewX(-12deg);
+}
+
+.sideBtns {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 165px;
+}
+
+.sidebar-icon {
+    margin-right: 12px;
+}
+
+.sidebar-btn {
+    transition: .3s;
+    cursor: pointer;
+    background: black;
+    border: 5px solid white;
+    box-shadow: 0 0 0 5px black;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 12px;
+    width: 250px;
+    margin-bottom: 18px;
+}
+
+.sidebar-btn:hover {
+    margin-left: 12px;
+}
