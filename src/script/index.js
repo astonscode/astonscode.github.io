@@ -53,16 +53,18 @@ const clientId = rollRandom(10000000, 99999999)
 
 let barWidth = 0;
 let searchToggled;
+let curSongId = 1;
 
 let startupSound = new Audio('/src/audio/startup.mp3');
-let backgroundAudio = new Audio('/src/audio/main_1.mp3');
+let backgroundAudio = new Audio(`/src/audio/main_${curSongId}.mp3`);
 let backgroundAudioId = 1;
+let audioPaused = false;
 
 backgroundAudio.loop = true
 
 // event listeners 
 
-document.addEventListener("keydown", e => {
+searchInput.addEventListener("keydown", e => {
     if (
         e.key === 'Enter'
     ) {
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     if (int > 95) {
         crash()
     }
-    console.log(`Crash rate for window: ${int}%`)
+    console.log("%cCRASH", "background: #61aaff; border-radius: 3px; padding: 0 4px", `Window Crash Rate: ${int}%`)
 }))
 
 document.querySelector(`.closeSearch`).addEventListener("click", () => {
@@ -92,6 +94,14 @@ document.getElementById("windowCloser").addEventListener("click", () => {
 
 document.querySelector(".todoIcon").addEventListener("click", () => {
     document.getElementById("top-todo").classList.toggle("active");
+})
+
+document.getElementById(`songImg`).addEventListener(`click`, () => {
+    document.getElementById(`musicFullscreen`).classList.toggle("active")
+})
+
+document.getElementById(`fullscreenExit`).addEventListener(`click`, () => {
+    document.getElementById(`musicFullscreen`).classList.toggle("active")
 })
 
 function disabled(id) {
@@ -128,7 +138,7 @@ function toggleWindow(id) {
         backgroundAudio.pause()
         searchToggled = true;
     } else {
-        console.log("No hay una ventana que existe con ese identificacíon.")
+        console.log("%cERR", "background: #f55; border-radius: 3px; padding: 0 4px", `No hay una ventana que existe con ese identificacíon.`)
     }
 }
 
@@ -141,6 +151,7 @@ setInterval(() => {
 }, 20);
 
 function startApp() {
+    console.log("%cPROGRESS", "background: #1c9d76; border-radius: 3px; padding: 0 4px", `DXApp loading. Please wait...`)
     themeLink.setAttribute("href", `src/css/theme_de.css`)
     theme = 0;
     document.getElementById("startupModal").classList.add("active");
@@ -175,7 +186,7 @@ function startApp() {
 
             if (barWidth >= 100) {
                 clearInterval(progressCheck)
-                console.log("App has been loaded.");
+                console.log("%cPROGRESS", "background: #1c9d76; border-radius: 3px; padding: 0 4px", `DXApp has been loaded.`)
                 backgroundAudio.play();
                 document.getElementById("startupBar").style.width = `100%`;
                 clearInterval(barGrow);
@@ -219,8 +230,7 @@ function rollRandom(min, max) {
 }
 
 //Local Storage
-
-console.log(`New Client ID: ${clientId}`)
+console.log("%cNEW VAR", "background: #ffe300; border-radius: 3px; padding: 0 4px", `New Client ID logged as ${clientId}`)
 
 localStorage.setItem("localId", clientId)
 
@@ -260,46 +270,54 @@ getChromeVersion();
 function copyLink(linkId) {
     if (linkId == 1) {
         navigator.clipboard.writeText(`https://twitter.com/enzenra`)
-        console.log(`Twitter link copied.`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Twitter link copied.`)
     } else if (linkId == 2) {
         navigator.clipboard.writeText(`https://www.youtube.com/channel/UCBHkCLZ5cgBb8FGqO9-5rdA`)
-        console.log(`Youtube link copied.`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Youtube link copied.`)
     } else if (linkId == 3) {
         navigator.clipboard.writeText(`https://www.twitch.tv/decodejs`)
-        console.log(`Twitch link copied.`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Twitch link copied.`)
     } else if (linkId == 4) {
         navigator.clipboard.writeText(`code#0370`)
-        console.log(`Discord Profile copied.`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Discord profile copied.`)
     }
 }
 
-function settingsMenuToggles(opt) {
+function toggleOpt(opt) {
     if (opt == 1) {
-        console.log(`Saved: undefined, null`)
+        console.log("%cSTORAGE", "background: #ff9b1e; border-radius: 3px; padding: 0 4px", `Saved as array: [username: "undefined", password: "null"]`)
     } else if (opt == 2) {
-        console.log(`DXL Game has been unlocked.`)
-        console.log(document.querySelector(`.taskF`).classList.toggle("active"))
+        console.log("%cSTORAGE", "background: #ff9b1e; border-radius: 3px; padding: 0 4px", `Showing Hidden Content.`)
+        document.getElementById(`taskbarTop`).classList.toggle("active")
     } else if (opt == 3) {
-        console.log(`Force saving enabled.`)
+        console.log("%cSTORAGE", "background: #ff9b1e; border-radius: 3px; padding: 0 4px", `Force saving enabled.`)
         localStorage.setItem("force", 1)
     } else if (opt == 4) {
-        console.log(`Visualizer toggled.`)
-        console.log(document.getElementById(`visualizerCanvas`).classList.toggle("toggled"))
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Music Visualizer toggled.`)
+        document.getElementById(`visualizerCanvas`).classList.toggle("toggled")
     } else if (opt == 5) {
-        console.log(`Music stopped.`)
-        console.log(backgroundAudio.pause())
+        if (audioPaused == false) {
+            backgroundAudio.pause()
+            audioPaused = true
+            console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Music stopped.`)
+        } else if (audioPaused == true) {
+            backgroundAudio.play()
+            audioPaused = false
+            console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Music now playing.`)
+        }
     } else {
-        console.log(`That's not a valid option.`)
+        console.log("%cERR", "background: #f55; border-radius: 3px; padding: 0 4px", `No hay un opcion que existe con ese identificacíon.`)
     }
 }
 
 function goIframe() {
     let searchInput = document.getElementById("searchInput").value
     document.getElementById("windowView").src = `https://${searchInput}`
-    console.log(`Attempting to connect to https://${searchInput} [5]`)
+    console.log("%cGET", "background: #c683ff; border-radius: 3px; padding: 0 4px", `Attempting to connect to https://${searchInput} [5]`)
 }
 
 function crash() {
+    console.log("%cFATAL ERROR", "background: #f00; border-radius: 3px; padding: 0 4px", `Website has crashed. Please reload or wait until DXOS is done analysing the problem. Estimated time: Over 3 billion years`)
     document.title = "Aw, Snap!"
     document.getElementById("errorWindow").classList.add("active");
 }
@@ -320,11 +338,32 @@ const songArray = [{
 
 function audioControls(ctx) {
     if (ctx == 1) {
-        console.log(`Previous Song...`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Previous song...`)
+        if (curSongId == 1) {
+            changeSong(1)
+        } else {
+            changeSong(curSongId - 1)
+
+        }
     } else if (ctx == 2) {
-        console.log(`Song paused.`)
+        if (audioPaused == false) {
+            document.querySelector(`.pausePlayIcon`).innerHTML = `play_arrow`
+            audioPaused = true;
+            backgroundNoise.pause()
+            console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Music stopped.`)
+        } else {
+            document.querySelector(`.pausePlayIcon`).innerHTML = `pause`
+            audioPaused = false;
+            backgroundNoise.play()
+            console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Music now playing.`)
+        }
     } else if (ctx == 3) {
-        console.log(`Next Song...`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Next song...`)
+        if (curSongId == 2) {
+            changeSong(2)
+        } else {
+            changeSong(curSongId + 1)
+        }
     } else {
         console.log(`Context invalid.`)
     }
@@ -334,6 +373,8 @@ function changeSong(newSongId) {
     backgroundNoise.src = `/src/audio/main_${newSongId}.mp3`;
     backgroundNoise.load()
     backgroundNoise.play()
+    audioPaused = false;
+    document.querySelector(`.pausePlayIcon`).innerHTML = `play_arrow`
 
     if (newSongId > 2) {
         console.log(`Unreadable id provided.`)

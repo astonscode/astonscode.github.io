@@ -51,10 +51,12 @@ function changeTheme() {
     if (theme == 0) {
         themeLink.setAttribute("href", `src/css/theme_li.css`)
         theme = 1;
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Theme changed to Light Mode.`)
         document.querySelector(`.themeIcon`).innerHTML = `roller_shades`
     } else {
         themeLink.setAttribute("href", `src/css/theme_de.css`)
         theme = 0;
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Theme changed to Dark Mode.`)
         document.querySelector(`.themeIcon`).innerHTML = `roller_shades_closed`
     }
 }

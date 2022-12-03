@@ -61,13 +61,12 @@ a {
 #backgroundImage {
     z-index: -9;
     position: fixed;
-    transition: .8s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 #backgroundImage.active {
     transform: scale(2.5);
-    right: 200px;
-    transition: 4s;
+    transition: .5s;
 }
 
 .backgroundImage {
@@ -117,14 +116,6 @@ a {
     box-shadow: 0 2px;
 }
 
-.taskF {
-    display: none;
-}
-
-.taskF.active {
-    display: block;
-}
-
 .taskbar-icon {
     transition: .3s;
 }
@@ -139,7 +130,7 @@ a {
 
 #taskbarTop {
     position: fixed;
-    top: 0;
+    top: -400px;
     left: 0;
     padding: 12px;
     background: var(--main-bg);
@@ -150,6 +141,11 @@ a {
     align-items: center;
     align-content: center;
     justify-content: space-around;
+    transition: .3s;
+}
+
+#taskbarTop.active {
+    top: 0
 }
 
 #windowCloser {
@@ -221,6 +217,12 @@ a {
     align-items: center;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.section-flex.disabled {
+    opacity: 0.1;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .settingsInput {
@@ -349,8 +351,12 @@ a {
     box-shadow: -5px 5px var(--accent);
 }
 
-#alertImg {
+#alertImg,
+#songImg {
     width: 80px;
+    margin-left: 8px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .alert-left {
@@ -462,6 +468,111 @@ input:focus+.slider {
 
 #visualizerCanvas.toggled {
     display: block;
+}
+
+#musicControls {
+    position: fixed;
+    bottom: 60px;
+    left: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #00000085, #00000085), url(/src/img/album/1.png);
+    background-size: 830px;
+    background-position: -300px -200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 3px var(--accent), 0 0 15px #000;
+    width: 500px;
+}
+
+.controls-bottom {
+    display: flex;
+}
+
+.controls-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.topControls-right {
+    margin-left: 14px;
+}
+
+.songName {
+    font-size: 32px;
+}
+
+.songArtist {
+    color: var(--accent);
+}
+
+.musicButton {
+    display: flex;
+    background: #0000;
+    padding: 8px;
+    margin: 8px;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 0 0 0 3px #fff1;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.musicButton:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 3px white;
+}
+
+#musicFullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    opacity: 0;
+}
+
+#musicFullscreen.active {
+    display: flex;
+    opacity: 1;
+}
+
+#bigAlbumImg {
+    width: 350px;
+    border-radius: 32px;
+    box-shadow: 0 0 25px var(--accent);
+    border: 3px solid white;
+}
+
+.midContainer {
+    text-align: center;
+}
+
+#fullscreenExit {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+#fullscreenExit:hover {
+    background: #fff3;
 }
 
 #searchWindow {
