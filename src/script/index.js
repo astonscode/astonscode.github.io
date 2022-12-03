@@ -322,19 +322,38 @@ function crash() {
     document.getElementById("errorWindow").classList.add("active");
 }
 
-const songArray = [{
-    name: `Freestyle 2`,
-    artist: `Ken Carson`,
-    album: `X`,
-    src: `/src/audio/main_1.mp3`,
-    id: 1,
-}, {
-    name: `pick up the phone`,
-    artist: `Travis Scott and Young Thug`,
-    album: `Birds In the Trap Sing McKnight`,
-    src: `/src/audio/main_2.mp3`,
-    id: 2,
-}]
+const songArray = {
+    song1: {
+        name: `Freestyle 2`,
+        artist: `Ken Carson`,
+        src: `/src/img/album/1.png`,
+        id: 1,
+    },
+    song2: {
+        name: `pick up the phone`,
+        artist: `Young Thug and Travis Scott`,
+        src: `/src/img/album/0.png`,
+        id: 2,
+    },
+}
+
+function getSongInfo(id) {
+    if (id == 1) {
+        document.getElementById(`musicControls`).style.background = `linear-gradient(to bottom, #00000085, #00000085), url(${songArray.song1.src})`
+        document.querySelector(`.songName`).innerHTML = songArray.song1.name
+        document.querySelector(`.songArtist`).innerHTML = songArray.song1.artist
+        document.getElementById(`songImg`).src = songArray.song1.src
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Playing Freestyle 2 by Ken Carson`)
+    } else if (id == 2) {
+        document.getElementById(`musicControls`).style.background = `linear-gradient(to bottom, #00000085, #00000085), url(${songArray.song2.src})`
+        document.querySelector(`.songName`).innerHTML = songArray.song2.name
+        document.querySelector(`.songArtist`).innerHTML = songArray.song2.artist
+        document.getElementById(`songImg`).src = songArray.song2.src
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Playing pick up the phone by Young Thug and Travis Scott`)
+    } else {
+        console.log("%cERR", "background: #f55; border-radius: 3px; padding: 0 4px", `No hay un opcion que existe con ese identificacíon.`)
+    }
+}
 
 function audioControls(ctx) {
     if (ctx == 1) {
@@ -343,7 +362,6 @@ function audioControls(ctx) {
             changeSong(1)
         } else {
             changeSong(curSongId - 1)
-
         }
     } else if (ctx == 2) {
         if (audioPaused == false) {
@@ -370,6 +388,7 @@ function audioControls(ctx) {
 }
 
 function changeSong(newSongId) {
+    getSongInfo(newSongId)
     backgroundNoise.src = `/src/audio/main_${newSongId}.mp3`;
     backgroundNoise.load()
     backgroundNoise.play()
