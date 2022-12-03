@@ -44,7 +44,7 @@
 
     <div id="startupModal">
         <div id="startupSplash">
-            <div class="startupTitle animate__animated animate__backInLeft"> dxc </div>
+            <div class="startupTitle animate__animated animate__backInLeft"> dxclient </div>
         </div>
 
         <div id="startupBar">
@@ -88,7 +88,7 @@
                 </div>
 
                 <div id="start">
-                    <div class="startIcon material-icons-outlined" onclick="console.log(startApp())"> power_settings_new
+                    <div class="startIcon material-icons-outlined" onclick="startApp()"> power_settings_new
                     </div>
                 </div>
 
@@ -161,11 +161,6 @@
         </div>
 
         <div id="taskbar">
-            <a class="taskbarItem taskF" href="/client/index.html">
-                <span class="taskF taskbar-icon material-symbols-outlined">
-                    swords
-                </span>
-            </a>
             <div class="taskbarItem taskSe" onclick="toggleWindow(4)">
                 <span class="taskSe taskbar-icon material-icons"> search </span>
             </div>
@@ -216,7 +211,7 @@
                             <div class="settingTitle"> Save Username/Password </div>
                             <div class="setting-switch">
                                 <label class="switch">
-                                    <input type="checkbox" onclick="settingsMenuToggles(1)">
+                                    <input type="checkbox" onclick="toggleOpt(1)">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
@@ -230,7 +225,17 @@
                                 <div class="settingTitle"> Hidden Content </div>
                                 <div class="setting-switch">
                                     <label class="switch">
-                                        <input type="checkbox" onclick="settingsMenuToggles(2);">
+                                        <input type="checkbox" onclick="toggleOpt(2);">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="section-flex">
+                                <div class="settingTitle"> Toggle Music </div>
+                                <div class="setting-switch">
+                                    <label class="switch">
+                                        <input type="checkbox" onclick="toggleOpt(5);">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -240,11 +245,12 @@
                                 <div class="settingTitle"> Toggle Music Visualizer </div>
                                 <div class="setting-switch">
                                     <label class="switch">
-                                        <input type="checkbox" onclick="settingsMenuToggles(4);">
+                                        <input type="checkbox" onclick="toggleOpt(4);">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -255,7 +261,7 @@
                                 <div class="settingTitle"> Force Save </div>
                                 <div class="setting-switch">
                                     <label class="switch">
-                                        <input type="checkbox" onclick="settingsMenuToggles(3)">
+                                        <input type="checkbox" onclick="toggleOpt(3)">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -263,6 +269,40 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="musicControls">
+            <div class="controls-top">
+                <div class="topControls-left">
+                    <img src="/src/img/album/1.png" id="songImg">
+                </div>
+                <div class="topControls-right">
+                    <div class="songName"> Freestyle 2 (from X) </div>
+                    <div class="songArtist"> Ken Carson </div>
+                </div>
+            </div>
+            <div class="controls-bottom">
+                <button class="lastButton musicButton" onclick="audioControls(1)">
+                    <div class="lastIcon musicIcon material-icons"> fast_rewind </div>
+                </button>
+                <button class="pausePlayButton musicButton" onclick="audioControls(2)">
+                    <div class="pausePlayIcon musicIcon material-icons"> pause </div>
+                </button>
+                <button class="nextButton musicButton" onclick="audioControls(3)">
+                    <div class="nextIcon musicIcon material-icons"> fast_forward </div>
+                </button>
+            </div>
+        </div>
+
+        <div id="musicFullscreen">
+            <div id="fullscreenExit">
+                <div class="exitIcon material-icons"> fullscreen_exit </div>
+            </div>
+            <div class="midContainer">
+                <img src="/src/img/album/1.png" alt="" id="bigAlbumImg">
+                <div class="songName"> Freestyle 2 (from X) </div>
+                <div class="songArtist"> Ken Carson </div>
             </div>
         </div>
 
