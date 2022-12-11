@@ -11,7 +11,37 @@
     text-decoration: none;
 }
 
+#errorWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--accent-light);
+    z-index: 20;
+    display: none;
+}
+
+#errorWindow.more-fatal {
+    background: red;
+}
+
+#errorWindow.active {
+    display: flex;
+    align-items: center;
+}
+
+.error-title {
+    font-size: 64px;
+    padding: 12px;
+}
+
+.error-info {
+    margin: 12px;
+}
+
 .backgroundImage {
+    z-index: -3;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,14 +50,95 @@
     filter: brightness(0.8)
 }
 
+#backgroundGradient {
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: #0008;
+}
+
+@keyframes changeWindowStart {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes changeWindowEnd {
+    to {
+        position: fixed;
+        right: -800px
+    }
+}
+
+#windowsHolder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: changeWindowStart 1s infinite;
+}
+
+#windowsHolder.onchange {
+    border: 6px solid #fff;
+    border-radius: 80px 0;
+}
+
+#titleWindow {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+}
+
+#gameTitle {
+    z-index: 5;
+    position: fixed;
+    top: 12px;
+    right: 24px;
+    display: flex;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #418d9c;
+    align-items: center;
+    border: 3px solid #fff2;
+    padding: 8px 24px;
+    border-radius: 12px;
+}
+
+.titleVal {
+    font-size: 64px;
+    margin-right: 12px;
+}
+
+.titleSub {
+    color: #ffb900;
+    text-shadow: 0 0 5px #9d8442;
+}
+
+#sidebar.scrolled {
+    right: -400px
+}
+
 #sidebar {
     position: absolute;
     top: 0;
     left: -180px;
-    background: #0005;
+    background: #000;
     height: 120vh;
     width: 400px;
     transform: skewX(-12deg);
+    box-shadow: inset -6px 0 white;
+}
+
+#sidebar.onMenu {
+    z-index: 10;
 }
 
 .sideBtns {
@@ -35,7 +146,8 @@
     flex-direction: column;
     position: absolute;
     top: 20px;
-    left: 165px;
+    left: 175px;
+    transform: skewX(12deg);
 }
 
 .sidebar-icon {
@@ -51,7 +163,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding: 12px;
+    padding: 8px;
     width: 250px;
     margin-bottom: 18px;
 }

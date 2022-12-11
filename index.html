@@ -57,6 +57,19 @@
 
     <!-- Website UI -->
     <div class="ui ui-web active">
+
+        <div id="changelog">
+            <div class="updateItem">
+                <div id="update-title"> 8.1.0 </div>
+                <div class="updateInfo">
+                    <div class="update-heading"> Welcome to DXOS 8.1! </div>
+                    <div class="update-body"> Welcome to DXOS 8.1! A plethora of new features and secrets are now available.
+                        <ul id="todo-list"> </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="mainContainer">
             <div class="container-top">
                 <div class="containerContainer">
@@ -108,13 +121,10 @@
     <div class="ui ui-app">
         <canvas id="visualizerCanvas" width="1920px" height="1080px"> </canvas>
 
-
         <div id="alert">
             <div id="alert-title"> Achievement reached! </div>
             <div class="alert-sub"> Started DXClient. </div>
         </div>
-
-
 
         <div id="infoWindow">
             <div class="infoWindow-title"> Client Info </div>
@@ -156,6 +166,12 @@
             <a class="taskbarItem taskY" href="https://yannmatrixdev.github.io">
                 <span class="taskY taskbar-icon material-symbols-outlined">
                     sports_mma
+                </span>
+            </a>
+
+            <a class="taskbarItem taskK" href="/app/index.html">
+                <span class="taskK taskbar-icon material-symbols-outlined">
+                    keyboard_option_key
                 </span>
             </a>
         </div>
@@ -320,10 +336,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="profStat" style="border: 2px solid #6bc1ef" onclick="copyLink(1)"> @enzenra </div>
-                <div class="profStat" style="border: 2px solid #ff5a5a" onclick="copyLink(2)"> @Aston </div>
-                <div class="profStat" style="border: 2px solid #8000ff" onclick="copyLink(3)"> @decodejs </div>
-                <div class="profStat" style="border: 2px solid #8ea6f7" onclick="copyLink(4)"> code#0730 </div>
+                <a class="profStat" style="border: 2px solid #6bc1ef" onclick="copyLink(1)"> @enzenra </a>
+                <a class="profStat" style="border: 2px solid #ff5a5a" onclick="copyLink(2)"> @Aston </a>
+                <a class="profStat" style="border: 2px solid #8000ff" onclick="copyLink(3)"> @decodejs </a>
+                <a class="profStat" style="border: 2px solid #8ea6f7" onclick="copyLink(4)"> code#0730 </a>
             </div>
         </div>
 

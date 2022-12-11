@@ -88,7 +88,7 @@ a {
     justify-content: space-between;
 }
 
-.logInput-input {
+#logInput-input {
     width: 95%;
     background: #fff2;
     border: 0;
@@ -108,8 +108,8 @@ a {
     cursor: pointer;
 }
 
-.logInput-input:hover,
-.logInput-input:focus-within {
+#logInput-input:hover,
+#logInput-input:focus-within {
     background: #fff3;
 }
 
