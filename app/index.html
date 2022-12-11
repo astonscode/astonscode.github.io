@@ -11,7 +11,7 @@
     <meta content="game" property="og:description">
     <meta content="https://decodexuwu.github.io" property="og:url">
     <meta content="https://decodexuwu.github.io/src/img/icon.png" property="og:image">
-    <title> DXOS 8.1 </title>
+    <title> KEYCODE BETA</title>
     <script src="./src/js/menu.js" defer></script>
     <script src="./src/js/game.js" defer></script>
     <link rel="manifest" href="/manifest.json">
@@ -29,7 +29,7 @@
 
 <body>
     <div id="errorWindow">
-        <div class="error-title"> :( </div>s
+        <div class="error-title"> :( </div>
         <div class="error-info">
             <div class="error-body"> It seems your PC has ran into a hardware problem. I'm gonna collect some error info, and restart it for you. </div>
             <div class="errorPercent"> 99% complete </div>
@@ -39,36 +39,46 @@
 
     <div id="backgroundImage">
         <img src="./src/img/background_0.png" class="backgroundImage">
+        <div id="backgroundGradient"> </div>
     </div>
 
-    <div id="sidebar" class="onMenu">
-        <div class="sideBtns">
-            <div class="side-start sidebar-btn">
-                <div class="sidebar-icon material-icons"> play_arrow </div>
-                <div class="sidebar-btnTitle"> START </div>
+    <div id="windowsHolder">
+        <div id="titleWindow" class="active">
+            <div id="gameTitle">
+                <div class="titleVal"> keycode </div>
+                <div class="titleSub"> beta </div>
             </div>
 
-            <div class="side-group sidebar-btn">
-                <div class="sidebar-icon material-icons"> group </div>
-                <div class="sidebar-btnTitle"> MULTIPLAYER </div>
-            </div>
+            <div id="sidebar" class="onMenu">
+                <div class="sideBtns">
+                    <div class="side-start sidebar-btn">
+                        <div class="sidebar-icon material-icons"> play_arrow </div>
+                        <div class="sidebar-btnTitle"> START </div>
+                    </div>
 
-            <div class="side-chat sidebar-btn">
-                <div class="sidebar-icon material-icons"> chat </div>
-                <div class="sidebar-btnTitle"> CHAT </div>
-            </div>
+                    <div class="side-group sidebar-btn">
+                        <div class="sidebar-icon material-icons"> group </div>
+                        <div class="sidebar-btnTitle"> MULTIPLAYER </div>
+                    </div>
 
-            <div class="side-profile sidebar-btn">
-                <div class="sidebar-icon material-icons"> person </div>
-                <div class="sidebar-btnTitle"> PROFILE </div>
-            </div>
+                    <div class="side-chat sidebar-btn">
+                        <div class="sidebar-icon material-icons"> chat </div>
+                        <div class="sidebar-btnTitle"> CHAT </div>
+                    </div>
 
-            <div class="side-settings sidebar-btn">
-                <div class="sidebar-icon material-icons"> settings </div>
-                <div class="sidebar-btnTitle"> SETTINGS </div>
+                    <div class="side-profile sidebar-btn">
+                        <div class="sidebar-icon material-icons"> person </div>
+                        <div class="sidebar-btnTitle"> PROFILE </div>
+                    </div>
+
+                    <div class="side-settings sidebar-btn">
+                        <div class="sidebar-icon material-icons"> settings </div>
+                        <div class="sidebar-btnTitle"> SETTINGS </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
     </div>
 
 </body>

@@ -1,7 +1,5 @@
-/**
- * Code by dom (@dcode)
- * 
- */
+// All code by me
+// (4-45) Code by dom (@dcode)
 
 let dateDisplay = document.querySelector(".date");
 let timeDisplay = document.querySelector(".time");
@@ -74,10 +72,12 @@ searchInput.addEventListener("keydown", e => {
 
 document.addEventListener("DOMContentLoaded", (() => {
     int = rollRandom(1, 100)
-    if (int > 95) {
-        crash()
+    if (int > 97) {
+        crash("normal")
+    } else if (int > 99) {
+        crash("fatal")
     }
-    console.log("%cCRASH", "background: #61aaff; border-radius: 3px; padding: 0 4px", `Window Crash Rate: ${int}%`)
+    console.log("%cCRASH", "background: #61aaff; border-radius: 3px; padding: 0 4px", `PC Degredation Report: Crash Rate clocked at ${int}%`)
 }))
 
 document.querySelector(`.closeSearch`).addEventListener("click", () => {
@@ -167,22 +167,27 @@ function startApp() {
         startupSound.volume = 0.5;
         backgroundAudio.volume = 0.2;
 
-        barWidth = 50;
+        barWidth = 0;
 
         barGrow = setInterval(() => {
             document.getElementById("startupBar").style.width = `${barWidth++}%`;
-
             progressCheck = setInterval(() => {
-                if (barWidth == 0) {
-                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Watching Squeejii...`
-                } else if (barWidth >= 55) {
-                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Doing Homework...`
-                } else if (barWidth >= 75) {
-                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Coding...`
-                } else if (barWidth >= 95) {
+                if (barWidth > 0) {
+                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Watching Squeejii play Rocket League...`
+                }
+                if (barWidth >= 25) {
+                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Getting Turnt...`
+                }
+                if (barWidth >= 50) {
+                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Doing AP Chem Homework...`
+                }
+                if (barWidth >= 75) {
+                    document.getElementById("startupText").innerHTML = `(${barWidth}%) Coding Alluvirum...`
+                }
+                if (barWidth >= 95) {
                     document.getElementById("startupText").innerHTML = `(${barWidth}%) Listening to Playboi Carti...`
                 }
-            }, 250)
+            }, 50)
 
             if (barWidth >= 100) {
                 clearInterval(progressCheck)
@@ -215,6 +220,7 @@ function startApp() {
 //Shut down DXOS 
 function clearApp() {
     document.querySelector(".ui-app").classList.remove("active");
+    backgroundAudio.stop()
     setTimeout(() => {
         document.querySelector(".ui-web").classList.add("active");
     }, 2550)
@@ -316,10 +322,19 @@ function goIframe() {
     console.log("%cGET", "background: #c683ff; border-radius: 3px; padding: 0 4px", `Attempting to connect to https://${searchInput} [5]`)
 }
 
-function crash() {
-    console.log("%cFATAL ERROR", "background: #f00; border-radius: 3px; padding: 0 4px", `Website has crashed. Please reload or wait until DXOS is done analysing the problem. Estimated time: Over 3 billion years`)
-    document.title = "Aw, Snap!"
-    document.getElementById("errorWindow").classList.add("active");
+function crash(type) {
+    if (type == "normal") {
+        console.log("%cFATAL ERROR", "background: #f00; border-radius: 3px; padding: 0 4px", `Website has crashed. Please reload or wait until DXOS is done analysing the problem. Estimated time: Over 3 billion years`)
+        document.title = "Aw, Snap!"
+        document.getElementById("errorWindow").classList.add("active");
+    }
+    if (type == "fatal") {
+        console.log("%cFATAL ERROR", "background: #f00; border-radius: 3px; padding: 0 4px", `Website has crashed. Please reload or wait until DXOS is done analysing the problem. Estimated time: Over 3 billion years`)
+        document.title = "🄰🅆,S̸̯̠̔̄͌͊̅͑̄͋̚͝ņ̵̨̹̺͇̯̣̩̥͖̂̍̆̀̒͆͌̏͊̚ą̸̡̘̥͕͚̜̄p̴̛̖̟͉̱̈̇̇̄̉̐͂̅̆!̸̹̖̖͙̣̜̦̏"
+        document.getElementById("errorWindow").classList.add("active");
+        document.getElementById("errorWindow").classList.add("more-fatal");
+    }
+
 }
 
 const songArray = {
@@ -343,13 +358,13 @@ function getSongInfo(id) {
         document.querySelector(`.songName`).innerHTML = songArray.song1.name
         document.querySelector(`.songArtist`).innerHTML = songArray.song1.artist
         document.getElementById(`songImg`).src = songArray.song1.src
-        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Playing Freestyle 2 by Ken Carson`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Playing Freestyle 2 by Ken Carson.`)
     } else if (id == 2) {
         document.getElementById(`musicControls`).style.background = `linear-gradient(to bottom, #00000085, #00000085), url(${songArray.song2.src})`
         document.querySelector(`.songName`).innerHTML = songArray.song2.name
         document.querySelector(`.songArtist`).innerHTML = songArray.song2.artist
         document.getElementById(`songImg`).src = songArray.song2.src
-        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Playing pick up the phone by Young Thug and Travis Scott`)
+        console.log("%cUSER", "background: #047eff; border-radius: 3px; padding: 0 4px", `Playing pick up the phone by Young Thug and Travis Scott.`)
     } else {
         console.log("%cERR", "background: #f55; border-radius: 3px; padding: 0 4px", `No hay un opcion que existe con ese identificacíon.`)
     }

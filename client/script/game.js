@@ -1,4 +1,4 @@
-let version = `1.0.0`;
+const version = `1.0.0`;
 let userName = "aiziru"
 let userLevel = 468;
 let colorVal = "#fff";
@@ -10,8 +10,9 @@ document.querySelector(".upperLevel").innerHTML = `(${userLevel})`
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Content loaded. ");
-    issueNew(0, 7)
-    issueNew(1, 3)
+    issueNew(0, 1)
+    let fakeTime
+    issueNew(1, 1)
 })
 
 document.addEventListener("keydown", e => {
@@ -87,10 +88,10 @@ function issueNew(type, code) {
             newLog.innerHTML = `
             <div id="log-left">
                 <div id="userLevel" style='color: ${colorVal}'> (${userLevel}) </div>
-                <div id="userName"> ${userName} </div> : ${document.querySelector(".logInput-input").value}
+                <div id="userName"> ${userName} </div> : ${document.getElementById(`logInput-input`).value}
             </div>`
 
-            if (document.querySelector(".logInput-input").value == ``) {
+            if (document.getElementById(`logInput-input`).value == ``) {
                 newLog = null
             }
 
@@ -103,7 +104,7 @@ function issueNew(type, code) {
 
         logHistory.appendChild(newLog)
 
-        document.querySelector(".logInput-input").value = ``
+       inputValue = ``
 
         x = `player`
     }
@@ -215,4 +216,9 @@ function userChecking() {
     if (userLevel >= 500) {
         colorVal = "#8fb4ff"
     }
+}
+const inputValue = document.getElementById(`logInput-input`).value;
+
+if(inputValue.startsWith(`change`)) {
+    let x = document.createElement(`div`)
 }

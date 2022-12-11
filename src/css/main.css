@@ -649,6 +649,10 @@ input:focus+.slider {
     margin: 12px;
 }
 
+.making-an element:before[href="w3schools.org"] {
+    content: 'idk'
+}
+
 .ui-web {
     display: none;
     width: 100vw;
@@ -660,6 +664,29 @@ input:focus+.slider {
 
 .ui-web.active {
     display: flex;
+}
+
+#changelog {
+    display: none;
+    width: 700px;
+    height: 500px;
+    background: var(--client-bg);
+    padding: 12px;
+    position: fixed;
+    top: calc(100vh - 85%);
+    z-index: 9;
+    border-radius: 12px;
+}
+
+.updateItem {
+    padding: 8px;
+    background: var(--main-bg);
+    border-radius: 8px;
+}
+
+#update-title,
+.update-heading {
+    font-size: 24px;
 }
 
 .container-top {
@@ -847,6 +874,10 @@ input:focus+.slider {
     background: var(--accent-light);
     z-index: 20;
     display: none;
+}
+
+#errorWindow.more-fatal {
+    background: red;
 }
 
 #errorWindow.active {
