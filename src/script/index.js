@@ -190,6 +190,7 @@ function startApp() {
             }, 50)
 
             if (barWidth >= 100) {
+                barWidth = undefined;
                 clearInterval(progressCheck)
                 console.log("%cPROGRESS", "background: #1c9d76; border-radius: 3px; padding: 0 4px", `DXApp has been loaded.`)
                 backgroundAudio.play();
