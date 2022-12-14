@@ -479,7 +479,7 @@ input:focus+.slider {
     background: linear-gradient(to bottom, #00000085, #00000085), url(/src/img/album/1.png);
     background-size: 830px !important;
     background-position: -300px -200px !important;
-    display: flex;
+    display: none;
     flex-direction: column;
     box-shadow: 0 0 0 3px var(--accent), 0 0 15px #000;
     width: 500px;
