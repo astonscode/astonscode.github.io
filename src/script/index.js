@@ -338,6 +338,7 @@ function crash(type) {
 
 }
 
+// Music
 const songArray = {
     song1: {
         name: `Freestyle 2`,
