@@ -1,82 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#6d7fb2" />
-    <meta name="description" content="..." />
-    <meta content="keycode" property="og:title" />
-    <meta content="game" property="og:description" />
-    <meta content="https://decodexuwu.github.io" property="og:url" />
-    <meta
-      content="https://decodexuwu.github.io/src/img/icon.png"
-      property="og:image"
-    />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#6d7fb2"/>
+    <meta name="description" content="..."/>
+    <meta content="keycode" property="og:title"/>
+    <meta content="game" property="og:description"/>
+    <meta content="https://decodexuwu.github.io" property="og:url"/>
+    <meta content="https://decodexuwu.github.io/src/img/icon.png" property="og:image"/>
     <title>KEYCODE BETA</title>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
-    <script src="./src/js/menu.js" defer></script>
-    <script src="./src/js/game.js" defer></script>
-    <script src="./src/js/funct.js" defer></script>
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./src/css/main.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script> -->
+    <script src="./src/js/menu.js"  defer></script>
+    <script src="./src/js/game.js"  defer></script>
+    <script src="./src/js/funct.js"  defer></script>
+    <script src="./src/js/module.js" defer></script>
+    <script src="./src/js/classes/ex.js" defer></script>
+    <link rel="manifest" href="/manifest.json"/>
+    <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="./src/css/main.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.js"></script>
   </head>
 
   <body>
     <div id="backgroundImage">
-      <img src="./src/img/background_0.png" class="backgroundImage" />
+      <img src="./src/img/background_0.png" class="backgroundImage"/>
       <div id="backgroundGradient"></div>
     </div>
 
     <div id="windowsHolder">
-      <div id="titleWindow" class="inactive">
-        <div id="titlesWindow">
-          <div class="window-title">Titles</div>
-          <div class="window-list">
-            <div class="titleItem" style="border: 2px solid #df9bff">
-              <div class="titleName">God Blade</div>
-              <div class="titleDesc">
-                Achieve 100% accuracy on a five ranked song.
-              </div>
-            </div>
-
-            <div class="titleItem" style="border: 2px solid #ffc400">
-              <div class="titleName">Rose</div>
-              <div class="titleDesc">Reach Level 450.</div>
-            </div>
-
-            <div class="titleItem" style="border: 2px solid #ffc400">
-              <div class="titleName">Legend of Keycode</div>
-              <div class="titleDesc">Reach Level 500.</div>
-            </div>
-
-            <div class="titleItem" style="border: 2px solid lime">
-              <div class="titleName">Keycode Ascendant</div>
-              <div class="titleDesc">Reach Max Level.</div>
-            </div>
+      <div id="titleWindow" class="active">
+        <div id="titlesWindow" class="active">
+          <div class="window-title titleWindowTitle">Titles</div>
+          <div class="window-list titlesList">
           </div>
         </div>
 
@@ -107,6 +70,11 @@
               <div class="sidebar-btnTitle">PROFILE</div>
             </div>
 
+            <div class="side-customize sidebar-btn">
+              <div class="sidebar-icon material-icons">brush</div>
+              <div class="sidebar-btnTitle">CUSTOMIZE</div>
+            </div>
+
             <div class="side-settings sidebar-btn">
               <div class="sidebar-icon material-icons">settings</div>
               <div class="sidebar-btnTitle">SETTINGS</div>
@@ -116,13 +84,13 @@
 
         <div id="bottomRight">
           <div class="mini-profileFlex">
-            <img src="/src/img/pfps/img_0.png" alt="" class="miniImg" />
+            <img src="/src/img/pfps/img_0.png" alt="" class="miniImg"/>
             <div class="userName">
               <div class="userVal">
-                <div class="userLevel"></div>
-                <div class="userNameVal"></div>
+                <div class="userLevel"> [468] </div>
+                <div class="userNameVal"> ENDORIUS </div>
               </div>
-              <div class="userRank"></div>
+              <div class="userRank"> Velocitas</div>
             </div>
           </div>
         </div>
@@ -164,7 +132,7 @@
         </div>
       </div>
 
-      <div id="gameWindow" class="active">
+      <div id="gameWindow" class="inactive">
         <div id="powerupAlert">
           <div class="powerupTitle">+ ENHANCEMENT</div>
           <div class="powerup-desc">3x POINTS UP</div>
@@ -174,22 +142,14 @@
           <div id="player-one" class="playerItem">
             <div id="player-one" class="playerInfo">
               <div id="player-one" class="playerImgContainer">
-                <img
-                  src="/src/img/pfps/img_0.png"
-                  id="player-one"
-                  class="playerImg"
-                />
+                <img src="/src/img/pfps/img_0.png"id="player-one" class="playerImg"/>
               </div>
               <div id="player-one" class="player-end">
                 <div id="player-one" class="playerName">
                   <div id="player-one" class="playerNameVal">aizi</div>
                   <div id="player-one" class="playerLevel">[500]</div>
                 </div>
-                <div
-                  id="player-one"
-                  class="playerTitle"
-                  style="color: #ff9c9c; text-shadow: 0 0 5px #ff000094"
-                >
+                <div id="player-one" class="playerTitle" style="color: #ff9c9c; text-shadow: 0 0 5px #ff000094">
                   Season I Keycode Champion
                 </div>
                 <div id="player-one" class="playerStreak">5 - 0</div>
@@ -199,11 +159,7 @@
           <div id="player-two" class="playerItem">
             <div id="player-two" class="playerInfo">
               <div id="player-two" class="playerImgContainer">
-                <img
-                  src="/src/img/pfps/img_1.png"
-                  id="player-two"
-                  class="playerImg"
-                />
+                <img src="/src/img/pfps/img_1.png" id="player-two"class="playerImg"/>
               </div>
               <div id="player-two" class="player-end">
                 <div id="player-two" class="playerName">
@@ -219,31 +175,33 @@
           </div>
         </div>
 
+        <div id="game"> </div>
+
         <div id="bottomBar" class="multiplayer">
           <div class="playerStats">
-            <div class="gameStat p1-streak">350</div>
-            <div class="gameStat p1-acc">100% (SS)</div>
-            <div class="gameStat p1-wlr">1/1</div>
+            <div class="gameStat p1-streak"> </div>
+            <div class="gameStat p1-acc"> 100% {MFC}</div>
+            <div class="gameStat p1-wlr"> </div>
           </div>
           <div class="playerActions">
             <div class="keyPressItem">
               <div class="keyPreview key100">A</div>
-              <div class="keyCounter id-100">0</div>
+              <div class="keyCounter id-100"></div>
             </div>
 
             <div class="keyPressItem">
               <div class="keyPreview key200">S</div>
-              <div class="keyCounter id-200">0</div>
+              <div class="keyCounter id-200"></div>
             </div>
 
             <div class="keyPressItem">
               <div class="keyPreview key300">K</div>
-              <div class="keyCounter id-300">0</div>
+              <div class="keyCounter id-300"></div>
             </div>
 
             <div class="keyPressItem">
               <div class="keyPreview key400">L</div>
-              <div class="keyCounter id-400">0</div>
+              <div class="keyCounter id-400"></div>
             </div>
           </div>
           <div class="playerScore">

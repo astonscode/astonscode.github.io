@@ -41,23 +41,23 @@
     <div id="backgroundImage">
         <img src="/src/img/main.png" class="backgroundImage">
     </div>
-
     <div id="startupModal">
         <div id="startupSplash">
             <div class="startupTitle animate__animated animate__backInLeft"> dxclient </div>
         </div>
-
-        <div id="startupBar">
-        </div>
-
-        <div id="startupText"> (Starting client - 0%) Listening to Yeat... </div>
-
-        <div id="startupVersion"> v8.1 </div>
+        <div id="startupBar"> </div>
+        <div id="startupText"> Starting Client - 0%</div>
+        <div id="startupVersion"> v8.1.2 </div>
     </div>
 
+    <div id="shutdownModal"> 
+        <div id="shutdownSplash">
+            <div class="shutdownTitle"> :( </div>
+            <div class="shutdownQuit"> Shutting down... </div>
+        </div>
+    </div>
     <!-- Website UI -->
     <div class="ui ui-web active">
-
         <div id="changelog">
             <div class="updateItem">
                 <div id="update-title"> 8.1.0 </div>
@@ -85,23 +85,45 @@
             </div>
 
             <div class="container-content">
-                <div id="top-todo">
-                    <div class="todo-header"> Top things to do here
-                        <span class="todoIcon material-icons"> expand_more </span>
-                    </div>
-                    <div class="todoItem" onclick="startApp()"> Open DXClient </div>
-                    <div class="todoItem"> Get Level 25 in Keycode
-                    </div>
-                    <div class="todoItem"> Find all the easter eggs </div>
-                </div>
-
                 <div id="main-header">
-                    <div class="header-title"> welcome. </div>
-                    <div class="header-sub"> this website is under construction.. beware </div>
+                    <div class="header-title"> decodex </div>
+                    <div class="header-sub"> up next. </div>
                 </div>
 
                 <div id="start">
                     <div class="startIcon material-icons-outlined" onclick="startApp()"> power_settings_new
+                    </div>
+                </div>
+
+                <div id="achieveList">
+                    <div class="achieveItem item100">
+                        <div class="achieveTop">
+                            <div class="acheiveIcon material-icons"> brush </div>
+                        </div>
+                        <div class="achieveBottom">
+                            <div class="achieveDesc-title"> Design Knowledge </div>
+                            <div class="achieveDesc-body"> Decode spends most of his time designing, whether it be logos, sites, or games, they're all under his belt. </div>
+                        </div>
+                    </div>
+
+                    <div class="achieveItem item200">
+                        <div class="achieveTop">
+                            <div class="acheiveIcon material-icons"> data_object </div>
+                        </div>
+                        <div class="achieveBottom">
+                            <div class="achieveDesc-title"> Coding Prowess </div>
+                            <div class="achieveDesc-body"> He also codes for 70% of the day, not knowing what time it is and will most of the time miss dinner. </div>
+                        </div>
+                    </div>
+
+                    <div class="achieveItem item300">
+                        <div class="achieveTop">
+                            <div class="acheiveIcon material-icons"> accessibility </div>
+                        </div>
+                        <div class="achieveBottom">
+                            <div class="achieveDesc-title"> User-Oriented </div>
+                            <div class="achieveDesc-body"> The sheer time spent in trying to make all of his sites accessible is what Decode is most proud of. His skill knows no limits, and his knowledge can only grow. </div>
+                        </div>
                     </div>
                 </div>
 
@@ -115,9 +137,7 @@
 
 
     </div>
-
     <!-- App UI -->
-
     <div class="ui ui-app">
         <canvas id="visualizerCanvas" width="1920px" height="1080px"> </canvas>
 
@@ -177,29 +197,29 @@
         </div>
 
         <div id="taskbar">
-            <div class="taskbarItem taskSe" onclick="toggleWindow(4)">
+            <div class="taskbarItem taskSe" onclick="toggleWindow(4)" onclick="hoverTick.play()">
                 <span class="taskSe taskbar-icon material-icons"> search </span>
             </div>
 
-            <div class="taskbarItem taskP" onclick="toggleWindow(1)">
+            <div class="taskbarItem taskP" onclick="toggleWindow(1)" onclick="hoverTick.play()">
                 <span class="taskP taskbar-icon material-icons">
                     person
                 </span>
             </div>
 
-            <div class="taskbarItem taskC" onclick="clearApp()">
+            <div class="taskbarItem taskC" onclick="clearApp()" onclick="hoverTick.play()">
                 <span class="taskC taskbar-icon material-symbols-outlined">
                     power_rounded
                 </span>
             </div>
 
-            <div class="taskbarItem taskI" onclick="toggleWindow(3)">
+            <div class="taskbarItem taskI" onclick="toggleWindow(3)" onclick="hoverTick.play()">
                 <span class="taskI taskbar-icon material-symbols-outlined">
                     info
                 </span>
             </div>
 
-            <div class="taskbarItem taskS" onclick="toggleWindow(2)">
+            <div class="taskbarItem taskS" onclick="toggleWindow(2)" onclick="hoverTick.play()">
                 <span class="taskS taskbar-icon material-symbols-outlined">
                     settings
                 </span>
@@ -355,6 +375,4 @@
             </div>
         </div>
     </div>
-
-
 </body>
