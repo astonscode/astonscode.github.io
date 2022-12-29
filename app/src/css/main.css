@@ -8,6 +8,55 @@
   src: url("./fonts/font1.ttf");
 }
 
+:root {
+  /* Rarities */
+  --common: #979797;
+  --uncommon: #7eff7e;
+  --rare: #4391ff;
+  --epic: #ae3dff;
+  --legendary: #ffbb0f;
+  --mythical: #ff4141;
+  --unobtainable: #04ff00;
+  --special: #e29fff;
+  --limited: #fff;
+}
+
+.common {
+  border: 3px solid var(--common)
+}
+
+.uncommon {
+  border: 3px solid var(--uncommon);
+}
+
+.rare {
+  border: 3px solid var(--rare);
+}
+
+.epic {
+  border: 3px solid var(--epic);
+}
+
+.legendary {
+  border: 3px solid var(--legendary);
+}
+
+.mythical {
+  border: 3px solid var(--mythical);
+}
+
+.unobtainable {
+  border: 3px solid var(--unobtainable);
+}
+
+.special {
+  border: 3px solid var(--special);
+}
+
+.limited {
+  border: 3px solid var(--limited);
+}
+
 * {
   font-family: gamefont, titlefont, "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
@@ -71,6 +120,7 @@
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(0.5);
   }
@@ -136,10 +186,15 @@
   text-shadow: 0 0 5px #9d8442;
 }
 
+.window-list.titlesList {
+  overflow-y: auto;
+  height: 90%;
+}
+
 #titlesWindow {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -1200px;
   height: 100vh;
   width: 60vw;
   background: black;
@@ -483,7 +538,7 @@
 }
 
 .keyPreview.pressed {
-  border-color: #7b7b7b;
+  border: 3px solid #7b7b7b;
   transform: scale(0.98);
 }
 
