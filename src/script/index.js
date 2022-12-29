@@ -513,4 +513,4 @@ function changeSong(newSongId) {
   }
 }
 
-toggleFunc("app");
+toggleFunc("menu");
