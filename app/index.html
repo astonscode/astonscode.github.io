@@ -37,7 +37,7 @@
 
     <div id="windowsHolder">
       <div id="titleWindow" class="active">
-        <div id="titlesWindow" class="active">
+        <div id="titlesWindow" class="subWindow left inactive">
           <div class="window-title titleWindowTitle">Titles</div>
           <div class="window-list titlesList">
           </div>
@@ -50,22 +50,18 @@
 
         <div id="sidebar" class="onMenu">
           <div class="sideBtns">
-            <div class="side-start sidebar-btn">
+            <div class="side-start sidebar-btn" onclick="toggleWindow(2)">
               <div class="sidebar-icon material-icons">play_arrow</div>
               <div class="sidebar-btnTitle">START</div>
             </div>
 
             <div class="side-group sidebar-btn">
-              <div class="sidebar-icon material-icons">group</div>
-              <div class="sidebar-btnTitle">MULTIPLAYER</div>
+              <div class="sidebar-icon material-icons-outlined">shopping_bag</div>
+              <div class="sidebar-btnTitle"> SHOP </div>
             </div>
 
-            <div class="side-chat sidebar-btn">
-              <div class="sidebar-icon material-icons">chat</div>
-              <div class="sidebar-btnTitle">CHAT</div>
-            </div>
 
-            <div class="side-profile sidebar-btn">
+            <div class="side-profile sidebar-btn" onclick="toggleWindow(1)">
               <div class="sidebar-icon material-icons">person</div>
               <div class="sidebar-btnTitle">PROFILE</div>
             </div>
@@ -88,26 +84,84 @@
             <div class="userName">
               <div class="userVal">
                 <div class="userLevel"> [468] </div>
-                <div class="userNameVal"> ENDORIUS </div>
+                <div class="userNameVal"> AIZI </div>
               </div>
               <div class="userRank"> Velocitas</div>
             </div>
           </div>
         </div>
+
+        <div id="profileWindow" class="subWindow bottom"> 
+          <div class="closeWindow">
+            <div class="material-icons closeWindowIcon" onclick="toggleWindow(1)"> expand_less </div>
+          </div>
+          <div id="profileTop">
+            <img src="/src/img/pfps/img_0.png" id="profileImage">
+            <div id="profileName">
+              <div class="profileNameVal"> AIZI </div>
+              <div class="profileBadges">
+                <div class="material-icons dev badge"> construction </div> 
+                <div class="material-icons supporter badge"> favorite </div> 
+                <div class="material-icons rank rankAsc badge"> keyboard_double_arrow_up </div> 
+              </div>
+            </div> 
+          </div>
+          
+            <div id="profileTrophies" class="section"> 
+              <div class="section-title"> Trophies </div>
+              <div class="trophy section-item"> First Place Competitive '22 </div>
+              <div class="trophy section-item"> First Place Casual '22 </div>
+            </div>
+
+            <div id="profileAchievements" class="section">
+              <div class="section-title"> Achievements </div>
+              <div class="achievement section-item"> Competitor </div>
+              <div class="achievement section-item"> League Member </div>
+            </div>
+        </div>
+
+        <div id="settingsWindow" class="subWindow bottom"> 
+            <div id="userSettings" class="section">
+              <div class="section-title"> USER </div>
+            </div>
+            <div id="gameSettings" class="section">
+              <div class="section-title"> GAME </div>
+              <div class="settingsList">
+                <div class="setting-flex">
+                  <div class="settingTitle"> Game Accent Colors </div>
+                  <div class="settingOption">
+                    <input type="color" id="accent-100" class="colorSwatch">
+                    <input type="color" id="accent-200" class="colorSwatch">
+                  </div>
+                </div>
+
+                <div class="setting-flex">
+                  <div class="settingTitle"> Scroll </div>
+                  <div class="settingOption">
+                    <input type="range" id="scrollSlider">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="onlineSettings" class="section">
+              <div class="section-title"> ONLINE </div>
+            </div>
+        </div>
       </div>
 
       <div id="startWindow" class="inactive">
-        <div id="backBtn">
-          <div class="backIcn material-icons">arrow_back_ios</div>
+
+        <div id="backBtn" onclick>
+          <div class="backIcn material-icons">backspace</div>
         </div>
 
         <div id="startItems">
-          <div class="startItem singlePlayer">
+          <div class="startItem singlePlayer" onclick="toggleWindow(3)">
             <div class="startInfo">
               <div class="startIcon material-icons">person</div>
               <div class="startItemTitle">SINGLE PLAYER</div>
               <div class="startItemDesc">
-                Reach for a new high score while dodging the blocks!
+                Reach for a new high score!
               </div>
             </div>
           </div>
@@ -117,28 +171,30 @@
               <div class="startIcon material-icons">group</div>
               <div class="startItemTitle">MULTIPLAYER</div>
               <div class="startItemDesc">
-                Face off with someone online and test your skills!
+                Face off online and test your skills!
               </div>
             </div>
           </div>
 
           <div class="startItem example">
             <div class="startInfo">
-              <div class="startIcon material-icons">question_mark</div>
-              <div class="startItemTitle">PLACEHOLDER</div>
-              <div class="startItemDesc">Description Placeholder</div>
+              <div class="startIcon material-icons">school</div>
+              <div class="startItemTitle">TUTORIAL</div>
+              <div class="startItemDesc">Learn the Basics of Keycode! </div>
             </div>
           </div>
         </div>
       </div>
 
       <div id="gameWindow" class="inactive">
+        <div id="timeDisplay"></div>
+        
         <div id="powerupAlert">
           <div class="powerupTitle">+ ENHANCEMENT</div>
           <div class="powerup-desc">3x POINTS UP</div>
         </div>
 
-        <div id="topBar" class="multiplayer">
+        <div id="topBar" class="multiplayer expandedUi">
           <div id="player-one" class="playerItem">
             <div id="player-one" class="playerInfo">
               <div id="player-one" class="playerImgContainer">
@@ -146,7 +202,7 @@
               </div>
               <div id="player-one" class="player-end">
                 <div id="player-one" class="playerName">
-                  <div id="player-one" class="playerNameVal">aizi</div>
+                  <div id="player-one" class="playerNameVal"> AIZI </div>
                   <div id="player-one" class="playerLevel">[500]</div>
                 </div>
                 <div id="player-one" class="playerTitle" style="color: #ff9c9c; text-shadow: 0 0 5px #ff000094">
@@ -164,7 +220,7 @@
               <div id="player-two" class="player-end">
                 <div id="player-two" class="playerName">
                   <div id="player-two" class="playerNameVal">Iona</div>
-                  <div id="player-two" class="playerLevel">[20]</div>
+                  <div id="player-two" class="playerLevel">[250]</div>
                 </div>
                 <div id="player-two" class="playerTitle" style="color: #ec80ff">
                   Developer
@@ -175,9 +231,30 @@
           </div>
         </div>
 
+        <div id="topBar" class="multiplayer minUi">
+          <div id="player-one" class="playerItemMin">
+              <img src="/src/img/pfps/img_0.png"  id="player-one" class="miniPfp">
+              <div id="player-one" class="userNameMini"> 
+                <div id="player-one" class="playerBadge grandMaster"> GM </div>
+                <div id="player-one" class="playerBadges"> 
+                  <div class="playerIconBadge material-icons" style="color: #f55"> construction </div>
+                </div>
+                <div id="player-one" class="miniNameVal"> aizi </div> <div id="player-one" class="eloRating"> (2545) </div></div>
+          </div>
+
+          <div id="player-two" class="playerItemMin">
+              <img src="/src/img/pfps/img_3.png"  id="player-two" class="miniPfp">
+              <div id="player-two" class="userNameMini"> 
+                <div id="player-two" class="playerBadge"> </div>
+                <div id="player-two" class="playerBadges "> 
+                  <div class="playerIconBadge material-icons"> code </div>
+                </div>
+                <div id="player-two" class="miniNameVal"> Panda. </div> <div id="player-two" class="eloRating"> (400) </div> </div>
+          </div>
+        </div>
         <div id="game"> </div>
 
-        <div id="bottomBar" class="multiplayer">
+        <div id="bottomBar" class="multiplayer expandedUi">
           <div class="playerStats">
             <div class="gameStat p1-streak"> </div>
             <div class="gameStat p1-acc"> 100% {MFC}</div>
@@ -215,7 +292,35 @@
             </div>
           </div>
         </div>
+
+        <div id="bottomBar" class="multiplayer minUi">
+          <div id="playerStreak"> 1,298x </div>
+          <div id="playerScore"> 2,233,942 [SS]</div>
+        </div>
+
+        <div id="algorithmBar">
+            <div class="algrBar-p1">
+              <div class="p1-adv"> </div>
+            </div>
+            <div class="algrBar-p2">
+              <div class="p2-adv"> </div>
+            </div>
+          </div>
+      </div>
+
+      <div id="gameTesting" class="inactive"> 
+            <div id="visualizer">
+              <div class="buttonsGrid">
+                <div id="button-100"> </div>
+              </div>
+            </div>
       </div>
     </div>
   </body>
 </html>
+
+<style>
+  .expandedUi {
+    display: none !important
+  }
+</style>

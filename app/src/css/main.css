@@ -232,6 +232,151 @@
   color: #fff5;
 }
 
+.subWindow.bottom {
+  position: fixed;
+  z-index: 13;
+  padding: 16px;
+  bottom: -1420px;
+  left: 0;
+  background: #21262b;
+  width: 100%;
+  height: 95%;
+  transition: .8s;
+}
+
+.subWindow.bottom.active {
+  bottom: 0;
+}
+
+.settingsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-flex {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colorSwatch {
+  background: #0000;
+  border: 0;
+}
+
+.colorSwatch::-webkit-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+#accent-100:after {
+  content: 'PRIMARY'
+}
+
+#accent-200:after {
+  content: 'SECONDARY'
+}
+
+#accent-100:after, #accent-200:after {
+  padding-bottom: 4px;
+}
+
+.colorSwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 30px;
+  transition: .3s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.colorSwatch:hover, .colorSwatch:focus {
+  height: 60px;
+  background: #fff1;
+}
+
+#profileImage {
+  width: 100px;
+  border-radius: 12px;
+}
+
+#profileTop {
+  display: flex;
+  align-items: center;
+}
+
+.profileNameVal {
+  font-size: 32px;
+}
+
+#profileName {
+  margin-left: 16px;
+}
+
+.profileBadges {
+  display: flex;
+}
+
+.badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 18px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.badge.dev {
+  background: #006eff;
+}
+
+.badge.supporter {
+  background: #ff6fb0;
+}
+
+.badge.rankAsc {
+  background: #34ffd0
+}
+
+.section {
+  margin: 12px;
+  margin-left: 0;
+  background: #0005;
+  width: 85%;
+  padding: 12px;
+}
+
+.section-title {
+  font-size: 38px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid white;
+}
+
+.section-item {
+  padding: 12px;
+}
+
+.closeWindow {
+  text-align: center;
+}
+
+.closeWindowIcon {
+  transition: .3s;
+  cursor: pointer;
+}
+
+.closeWindowIcon:hover {
+  transform: rotate(180deg);
+}
+
 #sidebar.scrolled {
   right: -400px;
 }
@@ -293,13 +438,6 @@
   border: 3px solid #fff;
   border-bottom: 0;
   border-right: 0;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-#bottomRight:hover {
-  right: 0;
-  bottom: 0;
 }
 
 .miniImg {
@@ -311,6 +449,10 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+}
+
+#player-one.eloRating, #player-two.eloRating {
+  margin-left: 8px;
 }
 
 .userName {
@@ -359,7 +501,7 @@
 #startItems {
   position: fixed;
   top: 0;
-  left: -120px;
+  left: -90px;
   width: 120vw;
   height: 100vh;
   display: flex;
@@ -415,23 +557,23 @@
 }
 
 #backBtn {
-  z-index: 9999;
   position: fixed;
-  background: #0005;
-  padding: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #00000070;
+  z-index: 9999;
   display: flex;
   align-items: center;
-  align-content: center;
-}
-
-.backIcn {
-  font-size: 32px !important;
+  justify-content: center;
+  transition: .3s;
+  cursor: pointer
 }
 
 #backBtn:hover {
-  background: #0000004a;
+  background: #000000ad
 }
 
 /* Game Window */
@@ -598,4 +740,106 @@
 #powerupAlert.active {
   opacity: 1;
   left: 25px;
+}
+
+.miniPfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+}
+
+.playerItemMin {
+  display: flex;
+  align-items: center;
+}
+
+.userNameMini {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.playerBadge {
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.playerBadge.grandMaster {
+  background: var(--mythical)
+}
+
+.playerBadge.fideMaster {
+  background: var(--legendary)
+}
+
+#player-two.playerItemMin {
+  flex-direction: row-reverse;
+}
+
+#player-two.miniPfp {
+  margin-left: 8px;
+}
+
+#bottomBar.minUi {
+  background: #0000;
+  width: 99vw;
+  padding: 12px;
+}
+
+.playerIconBadge {
+  margin: 0 8px;
+}
+
+#player-one .playerBadge {
+  margin-left: 8px;
+}
+
+.playerBadges {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#timeDisplay {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  font-size: 24px;
+}
+
+#algorithmBar {
+  background: #fff3;
+  height: 25px;
+  width: 90vw;
+  bottom: 12px;
+  left: 10px;
+  position: absolute;
+  border-radius: 4px;
+  display: none;
+}
+
+.algrBar-p1, .algrBar-p2 {
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.algrBar-p1 {
+  border-radius: 4px 0 0 4px;
+  background: #ff9191;
+  width: 50%;
+}
+
+.algrBar-p2 {
+  border-radius: 0 4px 4px 0;
+  background: white;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.p1-adv, .p2-adv {
+  margin: 0 8px;
+  color: black;
 }
