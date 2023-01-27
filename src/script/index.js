@@ -512,5 +512,4 @@ function changeSong(newSongId) {
     console.log(`Unreadable id provided.`);
   }
 }
-
 toggleFunc("menu");

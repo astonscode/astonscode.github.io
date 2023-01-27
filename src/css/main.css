@@ -74,6 +74,7 @@ a {
 }
 
 .backgroundImage {
+  background: #202020;
   width: 100vw;
   height: 100vh;
   filter: saturate(0.6);
@@ -172,7 +173,7 @@ a {
   height: 100vw;
   background: black;
   position: fixed;
-  right: -1080px;
+  right: -100vw;
   top: 0;
   width: 75vw;
   transform: skewX(-10deg);
@@ -183,7 +184,7 @@ a {
 }
 
 #menuWindow:hover {
-  right: -1020px;
+  right: -90vw;
   cursor: pointer;
 }
 
@@ -430,7 +431,7 @@ input:focus+.slider {
   border: 5px solid white;
   padding: 12px;
   top: 15px;
-  left: -820px;
+  left: -120vw;
   width: 50%;
   height: 50%;
   transition: 0.4s;
