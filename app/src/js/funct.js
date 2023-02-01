@@ -1,10 +1,103 @@
-// variable declaration
-let userName = "Aiziru"
-let userLevel = 511
-let userElo = "2545"
-const maxLevel = 500
-let userTitle
-let colorVal
+userTitleArray = [
+	//common
+	"Hunted",
+	"Hunter",
+	"Enhanced",
+	"Superspeed",
+	"Zooming",
+	"On Fire",
+	"Flaming",
+	"Precise",
+	"Accurate",
+	"Keycoder",
+	"Veteran",
+	//uncommon
+	"Marksman",
+	"Deadshot",
+	"Reactive",
+	//rare
+	"Lightspeed",
+	"Hyperspeed",
+	//epic
+	"Godspeed",
+	"Inevitable",
+	"Ultraviolet",
+	"Flame Fist",
+	"Force of Speed",
+	//legendary
+	"Velocitas",
+	"Nora",
+	"Flame God",
+	"Flame Goddess",
+	"Precise and Accurate",
+	//mythical
+	"Legend of Keycode",
+	//unobtainable
+	"Keycode Ascendant [MAX]",
+	//special
+	"Season 1 Keycode Semi-Finalist",
+	"Season 1 Keycode Finalist",
+	"Season 1 Keycode Champion",
+	"Developer",
+	"Frontend",
+	"Backend",
+	"Full-Stack",
+	"Bot",
+	"Stockfish's Rival",
+	//limited
+	"Alpha Bronze",
+	"Alpha Silver",
+	"Alpha Gold",
+	"Alpha Platinum",
+	"Alpha Diamond",
+	"Alpha Champion",
+	"Alpha Grand Champion",
+	"Alpha Master",
+	"Alpha Grandmaster",
+	"Alpha Destroyer",
+	"Alpha Titan",
+	"Alpha Radiant",
+	"Alpha Legend"
+]
+
+userTitleStyling = [
+	// just styles title colors
+	"color:  var(--common)",
+	"color: var(--uncommon)",
+	"color: var(--rare)",
+	"color: var(--epic)",
+	"color: var(--legendary)",
+	"color: var(--mythical)",
+	"color: var(--unobtainable)",
+	"color: var(--special)",
+	"color: var(--limited)",
+	"color: #ec80ff",
+	"color: #ff9c9c; text-shadow: 0 0 5px #ff000094"
+]
+
+function styleTitle(id) {
+	if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 10) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[0]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 13) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[1]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 15) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[2]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 20) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[3]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 25) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[4]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) == 26) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[5]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) == 27) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[6]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 36) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[7]
+	} else if (userTitleArray.indexOf(userTitleArray[userTable[id].title]) <= 49) {
+		document.querySelector(`.userTitle`).style = userTitleStyling[8]
+	} else {
+		console.log(`uh...`)
+	}
+}
 
 function levelChange(type, amt) {
 	if (type == "add") {
@@ -26,29 +119,31 @@ function levelChange(type, amt) {
 const userTable = [
 	{
 		id: 1673534922588,
-		name: `aizi`,
+		name: `aiziru`,
 		level: 500,
 		email: `niggasinparis@gmail.com`,
 		password: `something-robust`,
 		enableLeveling: true,
 		tagged: false,
 		src: `/src/img/pfps/img_0.png`,
-		title: 4,
+		title: 26,
 		devBadges: `construction`,
-		elo: 2545
+		elo: 2310,
+		type: 0
 	},
 	{
 		id: 1673535348908,
-		name: `Codex`,
+		name: `Codex 8.1`,
 		level: 500,
 		email: `test@decodex.io`,
 		password: `seems-fishy`,
 		enableLeveling: true,
 		tagged: false,
 		src: `/src/img/pfps/img_2.png`,
-		title: 4,
+		title: 36,
 		devBadges: `code_blocks`,
-		elo: 3700
+		elo: 3700,
+		type: 1
 	},
 	{
 		id: 1673617385860,
@@ -59,12 +154,41 @@ const userTable = [
 		enableLeveling: true,
 		tagged: false,
 		src: ``,
-		elo: 400
+		title: 2,
+		elo: 400,
+		type: 0
+	},
+	{
+		id: 1674977457638,
+		name: `User`,
+		level: 1,
+		email: `user@decodexuwu.github.io`,
+		password: `eobardwithnomask`,
+		enableLeveling: true,
+		tagged: false,
+		src: ``,
+		title: 9,
+		elo: 400,
+		type: 2
 	}
 ]
 
 function log(label, color, log) {
 	console.log(`%c${label}`, `padding: 4px;margin:8px;background-color:${color};color:#fff`, log)
+}
+
+function displayUser(id) {
+	document.querySelector(`.miniImg`).src = userTable[id].src
+	document.querySelector(`.userLevel`).innerHTML = `[${userTable[id].level}]`
+	document.querySelector(`.userNameVal`).innerHTML = userTable[id].name
+	document.querySelector(`.userTitle`).innerHTML = userTitleArray[userTable[id].title]
+	userTitleArray.indexOf(userTitleArray[userTable[id].title])
+	document.querySelector(`.userTitle`).style = userTitleStyling[1]
+	styleTitle(id)
+
+	if (userTable[id].src === ``) {
+		document.querySelector(`.miniImg`).src = `./src/img/default_0.png`
+	}
 }
 
 function configPlayer(id, playerSide) {
@@ -103,7 +227,9 @@ function createGame(id, id2, white) {
 	}
 }
 
-function move() {}
+function genUserId() {
+	return Date.now()
+}
 
 function changePassword(id, string) {
 	if (typeof string == "string") {
@@ -137,9 +263,11 @@ setInterval(() => {
 	checkTime()
 }, 20)
 
-function runCode() {
+function exec() {
 	log("WEB", "#fcca03", `Content loaded.`)
 	createGame(0, 1, 1)
+	displayUser(0)
+	log("GET", "#9532a8", userTitleArray)
 }
 
-document.addEventListener("DOMContentLoaded", runCode)
+document.addEventListener("DOMContentLoaded", exec)
