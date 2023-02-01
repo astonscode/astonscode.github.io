@@ -31,7 +31,7 @@ body {
 }
 
 * {
-  font-family: "Quicksand", "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--text-pri);
   user-select: none;
 }
@@ -63,28 +63,12 @@ a {
 }
 
 #backgroundImage {
-  z-index: -9;
-  position: fixed;
-  transition: 0.5s ease-in-out;
-}
-
-#backgroundImage.active {
-  transform: scale(2.5);
-  transition: 0.5s;
-}
-
-.backgroundImage {
-  background: #202020;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  filter: saturate(0.6);
-  box-shadow: inset 0 0 0 5px white;
-  transition: 0.4s;
   position: fixed;
-}
-
-.backgroundImage.active {
-  filter: saturate(1);
+  background: var(--main-bg);
 }
 
 .ui-app {
@@ -118,7 +102,7 @@ a {
 
 .taskbarItem:hover {
   color: var(--accent);
-  box-shadow: 0 2px;
+  filter: drop-shadow(0, 0, 0, 5px, var(--accent))
 }
 
 .taskbar-icon {
@@ -159,7 +143,7 @@ a {
   width: 100vw;
   height: 100vh;
   left: -100vw;
-  background: linear-gradient(45deg, #6d7fb290, #0000);
+  background: #000000a6;
   transition: 0.4s;
   z-index: -1;
 }
@@ -167,6 +151,7 @@ a {
 #windowCloser.active {
   opacity: 1;
   left: 0;
+  z-index: 9;
 }
 
 #menuWindow {
@@ -921,6 +906,10 @@ input:focus+.slider {
   border: 0;
 }
 
+.achieveIcon {
+  color: var(--accent)
+}
+
 .achieveDesc-title, .achieveDesc-body {
   text-align: center;
 }
@@ -928,6 +917,10 @@ input:focus+.slider {
 .achieveDesc-title {
   font-size: 32px;
   margin: 8px;
+}
+
+.achieveDesc-body {
+  color: var(--text-sec)
 }
 
 #main-header {
