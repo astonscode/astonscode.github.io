@@ -8,6 +8,37 @@ function toggleFunc(param) {
 		})
 	}
 }
+
+function toggleMenu(id) {
+	if (id == 1) {
+		document.getElementById(`aboutContainer`).classList.toggle(`active`)
+	}
+}
+
+const quotes = [
+	{
+		quote: "He only is my rock and my salvation; I shall not be shaken.",
+		verse: "Psalm 62:6"
+	},
+	{
+		quote: "I am the way and the truth and the life. For no one comes to the Father except through me.",
+		verse: "John 14:6"
+	},
+	{
+		quote: "The Lord will fight for you. All you have to do is be still.",
+		verse: "Exodus 14:14"
+	},
+	{
+		quote: "I can do all things through Christ who gives me strength.",
+		verse: "Phillipians 4:13"
+	}
+]
+
+function genQuote() {
+	let quoteId = rollRandom(0, quotes.length - 1)
+	document.querySelector(`.header-sub`).innerHTML = `"${quotes[quoteId].quote}" - ${quotes[quoteId].verse}`
+}
+
 // constants
 const clientId = rollRandom(10000000, 99999999)
 
@@ -28,10 +59,6 @@ backgroundAudio.loop = true
 
 // event listeners
 
-document.querySelector(`.header-title`).onclick = function (e) {
-	document.getElementById("achieveList").classList.toggle(`active`)
-}
-
 searchInput.addEventListener("keydown", (e) => {
 	if (e.key === "Enter") {
 		goIframe()
@@ -46,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		crash("fatal")
 	}
 	console.log("%cCRASH", "background: #61aaff;  border-radius: 4px 0; padding: 4px;color: white", `PC Degredation Report: Crash Rate clocked at ${int}%`)
+	genQuote()
 })
 
 document.querySelector(`.closeSearch`).addEventListener("click", () => {
@@ -128,21 +156,7 @@ function startApp() {
 		barGrow = setInterval(() => {
 			document.getElementById("startupBar").style.width = `${barWidth++}%`
 			progressCheck = setInterval(() => {
-				if (barWidth > 0) {
-					document.getElementById("startupText").innerHTML = `(${barWidth}%) Watching Squeejii play Rocket League...`
-				}
-				if (barWidth >= 25) {
-					document.getElementById("startupText").innerHTML = `(${barWidth}%) Playing Kombat League...`
-				}
-				if (barWidth >= 50) {
-					document.getElementById("startupText").innerHTML = `(${barWidth}%) Doing AP Chem Homework...`
-				}
-				if (barWidth >= 75) {
-					document.getElementById("startupText").innerHTML = `(${barWidth}%) Coding Alluvirum...`
-				}
-				if (barWidth >= 95) {
-					document.getElementById("startupText").innerHTML = `(${barWidth}%) Listening to Playboi Carti...`
-				}
+				document.getElementById("startupText").innerHTML = `${barWidth}%`
 			}, 50)
 
 			if (barWidth >= 100) {
@@ -165,7 +179,7 @@ function startApp() {
 	}, 4500)
 }
 
-//Shut down DXOS
+/* Shut down DXOS
 function clearApp() {
 	document.querySelector(".ui-app").classList.remove("active")
 	document.getElementById("shutdownModal").classList.add("active")
@@ -175,6 +189,7 @@ function clearApp() {
 		document.querySelector(".ui-web").classList.add("active")
 	}, 2550)
 }
+*/
 
 function getChromeVersion() {
 	var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)

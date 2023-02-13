@@ -1,0 +1,10 @@
+:root {
+    --accent: #8800ff;
+    --accent-light: #be73ff;
+    --accent-dark: #a034ff80;
+    --main-bg: #0e0e0e;
+    --client-bg: #0a050f;
+    --text-pri: #fff;
+    --text-sec: #ffffff95;
+    --change-theme-bg: #af01ff33;
+}

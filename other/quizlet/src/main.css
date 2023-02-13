@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+* {
+    color: #fff;
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #20233e;
+}
+
+#navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    padding: 8px;
+    background: #0000004a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navItem {
+    margin: 0 8px;
+    padding: 12px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.navItem:hover {
+    box-shadow: inset 0 -3px #fff;
+}
+
+.navTitle {
+    font-size: 32px;
+}
+
+#selection {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - 1%);
+    padding: 12px;
+    background: #0008;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    bottom: -500px;
+    transition: .3s;
+}
+
+#selection.active {
+    opacity: 1;
+    bottom: 0;
+}
+
+.select-funct {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.select-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    margin: 0 8px;
+    transition: .3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#select-bottom {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+#select-top {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 32px;
+    margin-bottom: 8px;
+}
+
+.select-item.economics {
+    background: #188144;
+}
+
+.select-item.english {
+    background: #303030;
+}
+
+.select-item.spanish {
+    background: #ffb400;
+}
+
+.select-item.geometry {
+    background: #0065ff;
+}
+
+.select-item.history {
+    background: #f55;
+}
+
+.select-item.chemistry {
+    background: #9500ff;
+}
+
+.select-item:hover {
+    transform: scale(1.25);
+    margin: 0 24px;
+}

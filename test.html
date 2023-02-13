@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1be">
     <meta name="description" content="woah its a decode website">
-    <meta content="dx v7" property="og:title">
+    <meta content="dx v8.2" property="og:title">
     <meta content="we don't talk about that" property="og:description">
     <meta content="https://decodexuwu.github.io" property="og:url">
     <meta content="https://decodexuwu.github.io/src/img/icon.png" property="og:image">
     <title> dx v7 </title>
-    <script src="/src/script/index.js" defer></script>
     <script src="/src/script/themeHandler.js" defer></script>
     <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon">
@@ -28,42 +27,126 @@
 </head>
 
 <body>
-    <div id="backgroundImage">
-        <img src="/src/img/main.png" class="backgroundImage" style="filter: saturate(1)">
+    <div id="backgroundImage"> </div>
+    <div id="stanceHolder">
+        <div id="stanceContainer">
+            <div class="stance-top">
+                <div class="stance-name"> Stance Name </div>
+            </div>
+            <div class="stance-bottom">
+                <div class="stance-id"> -1 </div>
+                <div class="stance-moves"> 0 </div>
+                <div class="stance-user"> Unknown </div>
+            </div>
+        </div>
     </div>
-
-    <audio src="/src/audio/main_1.mp3" id="mainBg" controls></audio>
-    <canvas id="visualizerCanvas" width="1920px" height="1080px"> </canvas>
 </body>
 
+<script defer>
+    const keybind = "q"
+    const stanceStyles = [{
+        name: "Death Step",
+        moves: 5,
+        user: `Sanji [Grandmaster], Aston`,
+        id: 0,
+    }, {
+        name: "Hapkido",
+        moves: 32,
+        user: `Scorpion, Aston`,
+        id: 1,
+    }, {
+        name: "Wing Chun",
+        moves: 68,
+        user: `Ip Man [Grandmaster], Aston`,
+        id: 2
+    }]
+
+    let activeId = 0
+
+    document.addEventListener(`DOMContentLoaded`, () => {
+        return keybind
+        console.log(`Content loaded.`)
+    })
+
+    function showStance() {
+        activeId++
+        document.querySelector(`.stance-name`).innerHTML = stanceStyles[activeId].name
+        document.querySelector(`.stance-id`).innerHTML = stanceStyles[activeId].id
+        document.querySelector(`.stance-moves`).innerHTML = stanceStyles[activeId].moves
+        document.querySelector(`.stance-user`).innerHTML = stanceStyles[activeId].user
+        if (activeId > 2) {
+            activeId = 0
+        } else if (activeId > 2) {
+            console.error("%cERROR", "background: #f55;padding: 8px;margin:8px;color:#fff", "Active Id is over limit. ")
+        }
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key == keybind) {
+            showStance()
+        } else {
+            console.error("%cERROR", "background: #f55;padding: 8px;margin:8px;color:#fff", "Keybind Error")
+        }
+    })
+</script>
+
+
 <style>
-    #mainBg {
-        z-index: 12;
+    #stanceHolder {
+        width: 99vw;
+        height: 99vh;
         position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
-    #visualizerCanvas {
-        z-index: 11;
-        position: fixed;
-        left: 0;
-        top: 0;
+    #stanceContainer {
+        width: calc(100vw - 30%);
+        height: calc(100vh - 85%);
+        background: #151515;
+        border: 3px solid #ab860f;
+        box-shadow: 0 0 5px #6c091cb5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 12px;
+    }
+    
+    .stance-name {
+        background: black;
+        padding: 12px;
+        border: 2px solid white;
+        width: 80%;
+    }
+    
+    .stance-top,
+    .stance-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        height: 100%;
+        margin: 12px;
+    }
+    
+    .stance-bottom {
+        flex-direction: row;
+    }
+    
+    .stance-id,
+    .stance-moves,
+    .stance-user {
+        background: black;
+        width: 30%;
+        padding: 8px;
+        border: 2px solid white;
+        margin: 0 8px;
+    }
+    
+    * {
+        color: white;
     }
 </style>
-
-<script>
-    let htmlCanvasElm = document.querySelector("#visualizerCanvas");
-    let backgroundNoise = document.querySelector("#mainBg");
-    let wave = new Wave(backgroundNoise, htmlCanvasElm);
-    let accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent');
-
-    setInterval(() => {
-        accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent');
-        wave.addAnimation(new wave.animations.Wave({
-            lineWidth: 10,
-            lineColor: accentColor,
-            count: 40
-        }));
-    }, 500)
-</script>

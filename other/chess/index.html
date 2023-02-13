@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> chs </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+    <script src="./src/chess-mod-min.js" defer></script>
+    <link rel="stylesheet" href="./src/chess-mod-min.css">
+</head>
+
+<body>
+    <div id="backgroundImage"></div>
+    <div id="navBar">
+        <div id="top">
+            <div id="btn-flip" class="button" onclick="boardMethod(1)"> Flip Board </div>
+            <div id="btn-fen" class="button" onclick="boardMethod(2)"> Set Position (FEN) </div>
+            <div id="btn-notation" class="button" onclick="boardMethod(3)"> Toggle Notation </div>
+            <div id="btn-custom" class="button">
+                <div class="customIcon material-icons"> add_to_photos </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <div class="optionFlex">
+                <div class="optionLabel"> </div>
+                <input type="color" name="color100" id="accent-100" class="colorInput">
+                <input type="color" name="color200" id="accent-200" class="colorInput">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="fenInputHolder">
+        <input type="text" id="fenInput" placeholder="FEN object string here...">
+    </div>
+
+    <div id="board-100" style="width: 400px"></div>
+    <img src="img/chesspieces/wikipedia/wP.png" id="e82f-43b4-b441-152a-76a9-f1c9-3ea0-faaf" alt="" class="piece-417db" data-piece="wP" style="width: 49px; height: 49px; display: none;">
+</body>
+
+</html>
