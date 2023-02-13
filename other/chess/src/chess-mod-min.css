@@ -1,0 +1,99 @@
+* {
+    user-select: none;
+    color: #fff;
+    font-family: monospace;
+}
+
+body {
+    text-align: center;
+}
+
+#board-100 {
+    position: fixed;
+    left: calc(100vw - 60%);
+    top: calc(100vh - 70%);
+}
+
+:root {
+    --white: #fff;
+    --black: #9c00ff;
+    --accent: #626a7b;
+}
+
+.white-1e1d7 {
+    background: var(--white);
+    color: var(--black);
+}
+
+.black-3c85d {
+    background: var(--black);
+    color: var(--white);
+}
+
+#backgroundImage {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #303030;
+}
+
+#navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    display: flex;
+    background: #fff1;
+    margin: 8px;
+    border-radius: 12px;
+    flex-direction: column;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--accent);
+    margin-right: 8px;
+    transition: .3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.button:hover {
+    box-shadow: 0 0 0 2px white;
+    ;
+}
+
+.button:last-of-type {
+    margin-right: 0;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+}
+
+.optionFlex {
+    margin: 8px;
+}
+
+.colorInput {
+    background: #0000;
+    border: 0;
+}
+
+.colorInput::-webkit-color-swatch {
+    border: 0;
+    border-radius: 12px;
+}
+
+.highlight-white {
+    box-shadow: 0 0 0 5px #00a2ff;
+}
+
+.highlight-black {
+    box-shadow: 0 0 0 5px red;
+}

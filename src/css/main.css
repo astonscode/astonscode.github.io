@@ -68,7 +68,7 @@ a {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background: var(--main-bg);
+  background: var(--client-bg);
 }
 
 .ui-app {
@@ -98,6 +98,8 @@ a {
   transition: 0.3s;
   padding-bottom: 3px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .taskbarItem:hover {
@@ -257,10 +259,11 @@ a {
   position: fixed;
   background: black;
   padding: 12px;
-  border: 5px solid white;
+  border-radius: 12px;
+  border-bottom: 15px solid var(--accent);
   height: 50vh;
-  width: 300px;
-  left: -500px;
+  width: 500px;
+  left: -1200px;
   top: 15px;
   transition: 0.3s;
 }
@@ -367,6 +370,7 @@ a {
   border-bottom: 1px solid #fff5;
 }
 
+
 /* From w3 */
 
 .switch {
@@ -412,8 +416,9 @@ input:focus+.slider {
 
 #infoWindow {
   position: fixed;
-  background: black;
-  border: 5px solid white;
+  background: var(--main-bg);
+  border-radius: 8px;
+  border-bottom: 15px solid var(--accent);
   padding: 12px;
   top: 15px;
   left: -120vw;
@@ -435,10 +440,15 @@ input:focus+.slider {
 
 .body-stat {
   display: flex;
+  border-radius: 4px;
   padding: 8px;
-  background: #fff3;
+  background: #fff1;
   justify-content: space-between;
   margin-bottom: 8px;
+}
+
+.statName {
+  color: #fff9;
 }
 
 #mainBg {
@@ -466,8 +476,7 @@ input:focus+.slider {
   left: 10px;
   padding: 12px;
   border-radius: 12px;
-  background: linear-gradient(to bottom, #00000085, #00000085),
-    url(/src/img/album/1.png);
+  background: linear-gradient(to bottom, #00000085, #00000085), url(/src/img/album/1.png);
   background-size: 830px !important;
   background-position: -300px -200px !important;
   display: none;
@@ -574,8 +583,8 @@ input:focus+.slider {
   border-radius: 4px;
   border: 3px solid var(--accent);
   background: var(--main-bg);
-  width: calc(100vw - 5%);
-  height: calc(100vh - 15%);
+  width: calc(100vw - 2%);
+  height: calc(100vh - 5%);
   display: flex;
   flex-direction: column;
 }
@@ -629,6 +638,7 @@ input:focus+.slider {
 .closeSearchIcon:hover {
   color: #f55;
 }
+
 
 /* Web UI */
 
@@ -858,7 +868,9 @@ input:focus+.slider {
 }
 
 @keyframes gradient-border {
-  0%, 200% {
+
+  0%,
+  200% {
     background-position: 0 0;
   }
 
@@ -868,6 +880,10 @@ input:focus+.slider {
 }
 
 #startupBar {
+  background: #fff2;
+}
+
+#startupBar.animated {
   background-image: linear-gradient(to right, var(--accent), var(--accent-light), #5ef0ff, #fff, #7fc9ff);
   animation: gradient-border 2s linear infinite;
   background-size: 400% 100%;
@@ -877,19 +893,56 @@ input:focus+.slider {
   box-shadow: 0 0 0 3px #fff5, 0 0 25px 5px var(--accent-dark);
 }
 
-#achieveList {
+#aboutContainer {
   position: fixed;
-  display: flex;
-  transition: .3s;
+  bottom: -100vw;
+  left: 0;
   opacity: 0;
-  width: 80%;
-  justify-content: space-evenly;
-  bottom: 120px;
-  border-radius: 8px;
+  width: 100%;
+  height: 95vh;
+  background: #303030;
+  padding: 12px;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#achieveList.active {
-  opacity: 1
+#aboutContainer.active {
+  bottom: 0;
+  opacity: 1;
+}
+
+.about-header {
+  display: flex;
+  font-size: 32px;
+  align-items: center;
+  border-bottom: 2px solid #fff5;
+}
+
+.about-icon {
+  margin: 0 8px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.about-icon:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+.about-body {
+  margin: 8px;
+  padding: 12px;
+  width: 80%;
+}
+
+#achieveList {
+  display: flex;
+  transition: .3s;
+  width: 80%;
+  justify-content: space-evenly;
+  border-radius: 8px;
 }
 
 .achieveItem {
@@ -910,7 +963,8 @@ input:focus+.slider {
   color: var(--accent)
 }
 
-.achieveDesc-title, .achieveDesc-body {
+.achieveDesc-title,
+.achieveDesc-body {
   text-align: center;
 }
 
@@ -928,9 +982,13 @@ input:focus+.slider {
 }
 
 .header-title {
-  font-size: 32px;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font: 500 32px Poppins;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.header-title:hover {
+  color: var(--accent-light);
 }
 
 .header-sub {
@@ -962,10 +1020,17 @@ input:focus+.slider {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .profStat:hover {
   background: #fff5;
+}
+
+.profStat:hover:before {
+  content: 'content_copy';
+  margin-right: 8px;
+  font-family: 'Material Symbols Outlined';
 }
 
 #errorWindow {
@@ -996,3 +1061,34 @@ input:focus+.slider {
 .error-info {
   margin: 12px;
 }
+
+
+/* 
+#consoleInput {
+    width: 97%;
+    border-radius: 0;
+    background: #0005;
+    border: 0;
+    outline: 0;
+    padding: 8px;
+    font-family: monospace;
+}
+
+#console {
+    width: 600px;
+    height: 300px;
+    background: var(--change-theme-bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.log-history {
+    height: 90%;
+    background: #0005;
+    margin: 4px;
+}
+*/

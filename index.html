@@ -11,11 +11,11 @@
     <meta content="Hello! I'm Aston, or something..." property="og:description">
     <meta content="https://decodexuwu.github.io" property="og:url">
     <meta content="https://decodexuwu.github.io/src/img/icon.png" property="og:image">
-    <title> system-8.1as </title>
+    <title> Aston [8.1] </title>
     <script src="/src/script/index.js" defer></script>
     <script src="/src/script/themeHandler.js" defer></script>
     <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" href="/src/img/icon.png" type="image/x-icon">
+    <link rel="icon" href="/src/img/icon.png">
     <link rel="apple-touch-icon" href="/src/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/src/css/main.css">
     <link rel="stylesheet" href="/src/css/theme_de.css" id="themeLink">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.js"></script>
-
 </head>
 
 <body>
@@ -46,11 +45,11 @@
         </div>
         -->
         <div id="startupBar"> </div>
-        <div id="startupText"> Starting Client - 0%</div>
+        <div id="startupText"> ... </div>
         <div id="startupVersion"> v8.1.2 </div>
     </div>
 
-    <div id="shutdownModal"> 
+    <div id="shutdownModal">
         <div id="shutdownSplash">
             <div class="shutdownTitle"> :( </div>
             <div class="shutdownQuit"> Shutting down... </div>
@@ -58,18 +57,6 @@
     </div>
     <!-- Website UI -->
     <div class="ui ui-web active">
-        <div id="changelog">
-            <div class="updateItem">
-                <div id="update-title"> 8.1.0 </div>
-                <div class="updateInfo">
-                    <div class="update-heading"> Welcome to DXOS 8.1! </div>
-                    <div class="update-body"> Welcome to DXOS 8.1! A plethora of new features and secrets are now available.
-                        <ul id="todo-list"> </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div id="mainContainer">
             <div class="container-top">
                 <div class="containerContainer">
@@ -86,8 +73,8 @@
 
             <div class="container-content">
                 <div id="main-header">
-                    <div class="header-title"> aston </div>
-                    <div class="header-sub"> “I am the way and the truth and the life. For no one comes to the Father except through me." – John 14:6 </div>
+                    <div class="header-title" onclick="toggleMenu(1)"> aston </div>
+                    <div class="header-sub"></div>
                 </div>
 
                 <div id="start">
@@ -95,39 +82,65 @@
                     </div>
                 </div>
 
-                <div id="achieveList">
-                    <div class="achieveItem item100">
-                        <div class="achieveTop">
-                            <div class="acheiveIcon material-icons"> brush </div>
-                        </div>
-                        <div class="achieveBottom">
-                            <div class="achieveDesc-title"> Design Knowledge </div>
-                            <div class="achieveDesc-body"> I spend most of my time designing, whether it be logos, sites, or games, they're all under my belt. </div>
-                        </div>
+                <div id="aboutContainer">
+                    <div class="about-header">
+                        <div class="about-icon material-icons" onclick="toggleMenu(1)"> contacts </div>
+                        <div class="about-title"> About Me </div>
                     </div>
-
-                    <div class="achieveItem item200">
-                        <div class="achieveTop">
-                            <div class="acheiveIcon material-icons"> data_object </div>
-                        </div>
-                        <div class="achieveBottom">
-                            <div class="achieveDesc-title"> Coding Prowess </div>
-                            <div class="achieveDesc-body"> I also code for 70% of the day, not knowing what time it is and will most of the time miss dinner. </div>
-                        </div>
+                    <div class="about-body">
+                        Hi. I'm Aston, a web developer who has zero to no time on his hands for anything, but still makes cool stuff on the internet.
                     </div>
-
-                    <div class="achieveItem item300">
-                        <div class="achieveTop">
-                            <div class="acheiveIcon material-icons"> accessibility </div>
+                    <div class="about-body">
+                        I mainly code games and little HTML/JS projects I plan to turn into something to put into my college portfolio. If the people reading this <strong>are</strong> the people reviewing my portfolio, I made this in 2023. So I'm guessing
+                        it's probably 2025-26 right now, and we have hovering cars and have found a solution to the rising levels of greenhouse gases in our ozone layer. If we haven't, the future's pretty dull.
+                    </div>
+                    <div class="about-body">
+                        Either way, even if you're a college reviewer or just a simple internet person, hi, and I hope you find what you're looking for.
+                    </div>
+                    <div class="about-body">
+                        P.S. - I hid a bunch of secrets around the website. Go find them all and you'll get a special theme ;)
+                    </div>
+                    <div class="about-body">
+                        with love, <br> aston
+                    </div>
+                    <div id="achieveList">
+                        <div class="achieveItem item100">
+                            <div class="achieveTop">
+                                <div class="acheiveIcon material-icons"> brush </div>
+                            </div>
+                            <div class="achieveBottom">
+                                <div class="achieveDesc-title"> Design Knowledge </div>
+                                <div class="achieveDesc-body"> I spend most of my time designing, whether it be logos, sites, or games, they're all under my belt. </div>
+                            </div>
                         </div>
-                        <div class="achieveBottom">
-                            <div class="achieveDesc-title"> User-Oriented </div>
-                            <div class="achieveDesc-body"> The sheer time spent in making all my sites accessible is what I am most proud of. My sites started off super clunky and inaccessible. But now, and forever forward, it will be different. </div>
+
+                        <div class="achieveItem item200">
+                            <div class="achieveTop">
+                                <div class="acheiveIcon material-icons"> data_object </div>
+                            </div>
+                            <div class="achieveBottom">
+                                <div class="achieveDesc-title"> Coding Prowess </div>
+                                <div class="achieveDesc-body"> I also code for 70% of the day, not knowing what time it is and will most of the time miss dinner. </div>
+                            </div>
+                        </div>
+
+                        <div class="achieveItem item300">
+                            <div class="achieveTop">
+                                <div class="acheiveIcon material-icons"> accessibility </div>
+                            </div>
+                            <div class="achieveBottom">
+                                <div class="achieveDesc-title"> User-Oriented </div>
+                                <div class="achieveDesc-body"> The sheer time spent in making all my sites accessible is what I am most proud of. My sites started off super clunky and inaccessible. But now, and forever forward, it will be different. </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
+                <!-- <div id="console">
+                    <div class="log-history"> </div>
+                    <input type="text" id="consoleInput" placeholder="code goes here...">
+                </div>
+            -->
             </div>
 
             <div id="changeTheme" onclick="changeTheme()">
@@ -177,12 +190,6 @@
         </div>
 
         <div id="taskbarTop">
-            <a class="taskbarItem taskF" href="/client/index.html">
-                <span class="taskF taskbar-icon material-symbols-outlined">
-                    swords
-                </span>
-            </a>
-
             <a class="taskbarItem taskY" href="https://yannmatrixdev.github.io">
                 <span class="taskY taskbar-icon material-symbols-outlined">
                     sports_mma
@@ -207,7 +214,7 @@
                 </span>
             </div>
 
-            <div class="taskbarItem taskC" onclick="clearApp()" onclick="hoverTick.play()">
+            <div class="taskbarItem taskC" onclick="location.reload()" onclick="hoverTick.play()">
                 <span class="taskC taskbar-icon material-symbols-outlined">
                     power_rounded
                 </span>
