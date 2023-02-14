@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 * {
     color: #fff;
     user-select: none;
@@ -71,6 +72,7 @@
 .select-funct {
     font-size: 48px;
     font-weight: 800;
+    width: 800px;
 }
 
 .select-item {
@@ -129,4 +131,51 @@
 .select-item:hover {
     transform: scale(1.25);
     margin: 0 24px;
+}
+
+#mainContainer {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+
+.section-header {
+    font-size: 32px;
+    border-bottom: 2px solid white;
+    padding: 12px;
+    margin: 8px;
+    font-weight: bold;
+}
+
+.courseGrid {
+    display: flex;
+    flex-direction: column;
+}
+
+.courseItem {
+    background: #202020;
+    padding: 12px;
+    border-radius: 8px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 12px 8px;
+}
+
+.course-label {
+    font-size: 32px;
+    margin: 8px;
+}
+
+.openCourse {
+    padding: 8px;
+    background: #555ba9;
+    border-radius: 4px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.openCourse:hover {
+    background: #7e87ff;
 }
