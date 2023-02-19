@@ -82,9 +82,8 @@ a {
 #taskbar {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 25px;
+  height: 100px;
+  left: -13px;
   border-top: 3px solid var(--accent);
   background: var(--main-bg);
   display: flex;
@@ -92,6 +91,7 @@ a {
   padding: 12px;
   transition: 0.3s;
   justify-content: space-around;
+  transform: skewX(-12deg);
 }
 
 .taskbarItem {
@@ -100,11 +100,16 @@ a {
   cursor: pointer;
   display: flex;
   align-items: center;
+  width: calc(100vw/5);
+  height: 100px;
+  justify-content: center;
 }
 
 .taskbarItem:hover {
   color: var(--accent);
-  filter: drop-shadow(0, 0, 0, 5px, var(--accent))
+  filter: drop-shadow(0, 0, 0, 5px, var(--accent));
+  background: #fff1;
+  box-shadow: inset 0 0 0 3px var(--accent-dark);
 }
 
 .taskbar-icon {
@@ -900,7 +905,7 @@ input:focus+.slider {
   opacity: 0;
   width: 100%;
   height: 95vh;
-  background: #303030;
+  background: var(--change-theme-bg);
   padding: 12px;
   transition: .3s;
   display: flex;
@@ -979,12 +984,28 @@ input:focus+.slider {
 
 #main-header {
   text-align: center;
+  transition: .3s;
+}
+
+#main-header.blurred,
+#start.blurred {
+  filter: blur(2px);
+  opacity: 0.5;
 }
 
 .header-title {
   font: 500 32px Poppins;
   transition: .3s;
   cursor: pointer;
+}
+
+p {
+  transition: .3s;
+  cursor: pointer;
+}
+
+p:hover {
+  color: #00ffd0;
 }
 
 .header-title:hover {

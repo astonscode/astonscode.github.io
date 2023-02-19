@@ -12,6 +12,8 @@ function toggleFunc(param) {
 function toggleMenu(id) {
 	if (id == 1) {
 		document.getElementById(`aboutContainer`).classList.toggle(`active`)
+		document.getElementById(`main-header`).classList.toggle(`blurred`)
+		document.getElementById(`start`).classList.toggle(`blurred`)
 	}
 }
 
@@ -201,7 +203,7 @@ function rollRandom(min, max) {
 }
 
 //Local Storage
-console.log("%cNEW VAR", "background: #ffe300;  border-radius: 4px 0; padding: 4px;color: white", `New Client ID logged as ${clientId}`)
+console.log("%cVARIABLE", "background: #ffe300;  border-radius: 4px 0; padding: 4px;color: black", `New Client ID logged as ${clientId}`)
 
 localStorage.setItem("localId", clientId)
 
@@ -289,12 +291,13 @@ function goIframe() {
 }
 
 function crash(type) {
-	if (type == "normal") {
+	if (type == 1) {
 		console.log("%cFATAL ERROR", "background: #f00;  border-radius: 4px 0; padding: 4px;color: white", `Website has crashed. Please reload or wait until DXOS is done analysing the problem. Estimated time: Over 3 billion years`)
 		document.title = "Aw, Snap!"
 		document.getElementById("errorWindow").classList.add("active")
+		window.location = "chrome://crash"
 	}
-	if (type == "fatal") {
+	if (type == 2) {
 		console.log("%cFATAL ERROR", "background: #f00;  border-radius: 4px 0; padding: 4px;color: white", `Website has crashed. Please reload or wait until DXOS is done analysing the problem. Estimated time: Over 3 billion years`)
 		document.title = "🄰🅆,S̸̯̠̔̄͌͊̅͑̄͋̚͝ņ̵̨̹̺͇̯̣̩̥͖̂̍̆̀̒͆͌̏͊̚ą̸̡̘̥͕͚̜̄p̴̛̖̟͉̱̈̇̇̄̉̐͂̅̆!̸̹̖̖͙̣̜̦̏"
 		document.getElementById("errorWindow").classList.add("active")
