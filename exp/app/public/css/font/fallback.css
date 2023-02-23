@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'PT Sans Offline';
+    src: url("./a/a_400.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans Offline';
+    src: url("./a/a_400i.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PT Sans Offline';
+    src: url("./a/a_500.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans Offline';
+    src: url("./a/a_500i.ttf");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_100.ttf");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_100i.ttf");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_200.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_200i.ttf");
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_300.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_300i.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_400.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_400i.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_500.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_500i.ttf");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_600.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_600i.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_700.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Offline';
+    src: url("./b/b_700i.ttf");
+    font-weight: 700;
+    font-style: italic;
+}

@@ -120,7 +120,7 @@ const userTable = [
 	{
 		id: 1673534922588,
 		name: `aiziru`,
-		level: 500,
+		level: 501,
 		email: `niggasinparis@gmail.com`,
 		password: `something-robust`,
 		enableLeveling: true,
@@ -179,7 +179,7 @@ function log(label, color, log) {
 
 function displayUser(id) {
 	document.querySelector(`.miniImg`).src = userTable[id].src
-	document.querySelector(`.userLevel`).innerHTML = `[${userTable[id].level}]`
+	document.querySelector(`.userLevel`).innerHTML = `${userTable[id].level}`
 	document.querySelector(`.userNameVal`).innerHTML = userTable[id].name
 	document.querySelector(`.userTitle`).innerHTML = userTitleArray[userTable[id].title]
 	userTitleArray.indexOf(userTitleArray[userTable[id].title])
@@ -214,14 +214,30 @@ function configPlayer(id, playerSide) {
 	}
 }
 
+function levelCheck() {
+	if (level == 0) {
+		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #6f6f6f, #595959)`
+	} else if (level >= 30) {
+		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #67ff32, #99ff7d)`
+	} else if (level >= 60) {
+		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #3275ff, #39efff)`
+	} else if (level == 90) {
+		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #c032ff, #d169ff)`
+	} else if (level == 120) {
+		document.querySelector(`.userLevel`).style.linearGradient = ``
+	} else {
+		console.log(`hm...`)
+	}
+}
+
 function createGame(id, id2, white) {
 	// P1 Config Visuals
 	configPlayer(id, 1)
 	configPlayer(id2, 2)
 
-	log("GAME", "#0c9496", `A game has been made between users ${userTable[id].name} (${userTable[id].elo}) and ${userTable[id2].name} (${userTable[id2].elo}). `)
+	log("GAME", "#0c9496", `A game has been made between users ${userTable[id].name}(${userTable[id].elo}) and ${userTable[id2].name}(${userTable[id2].elo}).`)
 	if (white == 0) {
-		log("GAME", "#0c9496", `${userTable[id].name} moves first.`)
+		log("GAME", "#0c9496", `${userTable[id].name} moves first. `)
 	} else {
 		log("GAME", "#0c9496", `${userTable[id2].name} moves first.`)
 	}
@@ -254,7 +270,10 @@ function formatTime(date) {
 	const curHours = date.getHours() % 12 || 12
 	const curMinutes = date.getMinutes()
 	const checkAm = date.getHours() < 12
-	return `${curHours.toString().padStart(2, "0")}:${curMinutes.toString().padStart(2, "0")}${checkAm ? "a" : "p"}`
+	return `
+        $ { curHours.toString().padStart(2, "0") }: $ { curMinutes.toString().padStart(2, "0") }
+        $ { checkAm ? "a" : "p" }
+        `
 }
 
 setInterval(() => {
@@ -264,9 +283,9 @@ setInterval(() => {
 }, 20)
 
 function exec() {
-	log("WEB", "#fcca03", `Content loaded.`)
+	log("WEB", "#fcca03", "Content loaded.")
 	createGame(0, 1, 1)
-	displayUser(0)
+	displayUser(3)
 	log("GET", "#9532a8", userTitleArray)
 }
 

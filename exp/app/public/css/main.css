@@ -1,0 +1,91 @@
+* {
+    font-family: 'PT Sans', 'Noto Sans', 'PT Sans Offline', 'Noto Sans Offline', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    user-select: none;
+}
+
+#screens {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+.screenWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.warningText {
+    width: calc(100vw - 5%);
+    height: calc(100vh - 30%);
+    text-align: center;
+    border: 2px solid #ffffff17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 0;
+    border-right: 0;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+#transitionScreen {
+    z-index: 99;
+    background: black;
+    opacity: 0;
+    transition: 1s;
+}
+
+#warning,
+.loading,
+#transitionScreen {
+    display: none !important;
+}
+
+#titleImg {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: scale(0.8);
+}
+
+#backgroundImage {
+    position: fixed;
+    z-index: -1;
+    background: linear-gradient(45deg, #070615, #110c2b, #0d1535, #132450, #443663);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#startInfo {
+    position: absolute;
+    bottom: 48px;
+    font-size: 28px;
+    animation: grow 1s infinite alternate;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.95);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

@@ -68,7 +68,7 @@ a {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background: var(--client-bg);
+  background: #8eb0ff;
 }
 
 .ui-app {
@@ -83,15 +83,14 @@ a {
   position: fixed;
   bottom: 0;
   height: 100px;
-  left: -13px;
-  border-top: 3px solid var(--accent);
+  left: 0;
   background: var(--main-bg);
   display: flex;
   align-items: flex-start;
-  padding: 12px;
   transition: 0.3s;
   justify-content: space-around;
   transform: skewX(-12deg);
+  box-shadow: -15px 0 var(--main-bg), 15px 0 var(--main-bg);
 }
 
 .taskbarItem {
@@ -109,7 +108,7 @@ a {
   color: var(--accent);
   filter: drop-shadow(0, 0, 0, 5px, var(--accent));
   background: #fff1;
-  box-shadow: inset 0 0 0 3px var(--accent-dark);
+  box-shadow: inset 0 -10px 0 var(--accent);
 }
 
 .taskbar-icon {
