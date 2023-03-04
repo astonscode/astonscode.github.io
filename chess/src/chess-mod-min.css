@@ -116,6 +116,12 @@ body {
     border-radius: 4px;
     width: 280px;
     display: flex;
+    flex-direction: column;
+}
+
+.opening-name {
+    text-align: left;
+    color: #fff5;
 }
 
 .user {
