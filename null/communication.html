@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,33 +10,35 @@
     <link rel="stylesheet" href="./communication.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <div id="topLeft">
         <div id="timerDisplay"></div>
-        <div id="powerDisplay"> <div class="powerIcon material-icons"> bolt </div> 100%</div>
+        <div id="powerDisplay">
+            <div class="powerIcon material-icons"> bolt </div> 100%</div>
     </div>
 
-    
+
 
     <div id="endGame"> 6 AM </div>
-     
+
     <div id="controls">
         <div id="maskCtrl" class="controlItem">
             <div class="ctrlKey"> [M] </div>
             <div class="ctrlDesc"> MASK </div>
         </div>
 
-        <div  id="flashCtrl" class="controlItem">
+        <div id="flashCtrl" class="controlItem">
             <div class="ctrlKey"> [F] </div>
             <div class="ctrlDesc"> FLASHLIGHT </div>
         </div>
 
-        <div  id="snareCtrl" class="controlItem">
+        <div id="snareCtrl" class="controlItem">
             <div class="ctrlKey"> [S] </div>
             <div class="ctrlDesc"> SNARE </div>
         </div>
 
-        <div  id="camCtrl" class="controlItem">
+        <div id="camCtrl" class="controlItem">
             <div class="ctrlKey"> [C] </div>
             <div class="ctrlDesc"> CAMERA </div>
         </div>
@@ -45,31 +48,31 @@
         <div id="roomGrid">
             <div id="column-1" class="column">
                 <div id="topVent" class="vent"></div>
-                <div id="office" class="room"> 
+                <div id="office" class="room">
                     <div id="entity" class="player"></div>
                 </div>
                 <div id="bottomVent" class="vent"></div>
             </div>
-            <div id="column-2" class="column"> 
+            <div id="column-2" class="column">
                 <div id="vent1a" class="ventLine"></div>
-                <div id="room1"  class="room" onclick="useFlashlight(`room1`)"> </div>
+                <div id="room1" class="room"> </div>
                 <div id="vent1b" class="ventLine"></div>
             </div>
             <div id="column-3" class="column">
                 <div id="room2a" class="subRoom"> </div>
-                <div id="room2"  class="room"> </div>
+                <div id="room2" class="room"> </div>
                 <div id="room2b" class="subRoom"> </div>
             </div>
-            <div id="column-4" class="column"> 
-                <div id="room3"  class="room"> </div>
+            <div id="column-4" class="column">
+                <div id="room3" class="room"> </div>
             </div>
             <div id="column-5" class="column">
                 <div id="room4a" class="subRoom"> </div>
-                <div id="room4"  class="room"> </div>
+                <div id="room4" class="room"> </div>
                 <div id="room4b" class="subRoom"> </div>
             </div>
             <div id="column-6" class="column">
-                <div id="room5"  class="room"> 
+                <div id="room5" class="room">
                     <div id="entity" class="fredbear"> </div>
                     <div id="entity" class="nightmare"> </div>
                 </div>
@@ -77,4 +80,5 @@
         </div>
     </div>
 </body>
+
 </html>

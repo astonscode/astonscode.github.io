@@ -25,6 +25,7 @@ document.getElementById("accent-200").addEventListener("change", () => {
 })
 
 document.addEventListener("click", refreshPGN)
+document.addEventListener("click", positionChecking)
 
 function boardMethod(method) {
 	if (method == 1) {
@@ -160,3 +161,42 @@ function onMouseoutSquare(square, piece) {
 function onSnapEnd() {
 	board.position(game.fen())
 }
+
+function positionChecking() {
+	let positionHTML = document.querySelector(`.opening-name`)
+	let pgnVar = game.pgn()
+	if (pgnVar.startsWith("1. e4 e5")) {
+		positionHTML.innerHTML = "King's Pawn Opening"
+	}
+	if (pgnVar.startsWith("1. e4 e5 2. Ke2")) {
+		positionHTML.innerHTML = "King's Pawn Opening: The Bongcloud"
+	}
+	if (pgnVar.startsWith("1. e4 c5")) {
+		positionHTML.innerHTML = "Sicilian Defense"
+	}
+	if (pgnVar.startsWith("1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4")) {
+		positionHTML.innerHTML = "Sicilian Defense: Open Variation"
+	}
+	if (pgnVar.startsWith("1. e4 c5 2. Nc3")) {
+		positionHTML.innerHTML = "Sicilian Defense: Closed Variation"
+	}
+	if (pgnVar.startsWith("1. Nf3 d5 2. d4 Qd6")) {
+		positionHTML.innerHTML = "Aston's Defense"
+	}
+	if (pgnVar.startsWith("1. Nf3 d5 2. d4 Qd6 3. c4 e6")) {
+		positionHTML.innerHTML = "Aston's Defense: Father's Attack"
+	}
+	if (pgnVar.startsWith("1. d4 d5")) {
+		positionHTML.innerHTML = "Queen's Pawn Opening"
+	}
+	if (pgnVar.startsWith("1. d4 d5 2. c4")) {
+		positionHTML.innerHTML = "Queen's Gambit"
+	}
+	if (pgnVar.startsWith("1. d4 d5 2. c4 dxc4")) {
+		positionHTML.innerHTML = "Queen's Gambit Accepted"
+	}
+
+	return positionHTML.innerHTML
+}
+
+$(window).resize(board.resize)
