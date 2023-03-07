@@ -19,7 +19,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 99vw;
+    width: 100vw;
     padding: 8px;
     background: #0000004a;
     display: flex;
@@ -178,4 +178,39 @@
 
 .openCourse:hover {
     background: #7e87ff;
+}
+
+.none-found {
+    text-align: center;
+    padding: 12px;
+    font-size: 32px;
+    top: 300px;
+    position: relative;
+}
+
+.null-icon {
+    font-size: 64px;
+}
+
+#add-class {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    padding: 18px;
+    background: #0000004a;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-class:hover {
+    box-shadow: 0 0 0 1.5px white;
+    transform: scale(.9)
+}
+
+.add-icon {
+    font-size: 24px;
 }

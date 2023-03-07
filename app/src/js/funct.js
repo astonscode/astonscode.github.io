@@ -126,7 +126,7 @@ const userTable = [
 		enableLeveling: true,
 		tagged: false,
 		src: `/src/img/pfps/img_0.png`,
-		title: 26,
+		title: 49,
 		devBadges: `construction`,
 		elo: 2310,
 		type: 0
@@ -148,7 +148,7 @@ const userTable = [
 	{
 		id: 1673617385860,
 		name: `noolan`,
-		level: 350,
+		level: 65,
 		email: `nolan.rau@gmail.com`,
 		password: `imadingus`,
 		enableLeveling: true,
@@ -185,6 +185,7 @@ function displayUser(id) {
 	userTitleArray.indexOf(userTitleArray[userTable[id].title])
 	document.querySelector(`.userTitle`).style = userTitleStyling[1]
 	styleTitle(id)
+	levelCheck(id)
 
 	if (userTable[id].src === ``) {
 		document.querySelector(`.miniImg`).src = `./src/img/default_0.png`
@@ -212,19 +213,26 @@ function configPlayer(id, playerSide) {
 		p2miniName.innerHTML = userTable[id].name
 		p2eloRating.innerHTML = `(${userTable[id].elo})`
 	}
+
+	levelCheck(id)
 }
 
-function levelCheck() {
-	if (level == 0) {
-		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #6f6f6f, #595959)`
-	} else if (level >= 30) {
-		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #67ff32, #99ff7d)`
-	} else if (level >= 60) {
-		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #3275ff, #39efff)`
-	} else if (level == 90) {
-		document.querySelector(`.userLevel`).style.linearGradient = `linear-gradient(45deg, #c032ff, #d169ff)`
-	} else if (level == 120) {
-		document.querySelector(`.userLevel`).style.linearGradient = ``
+function levelCheck(id) {
+	let level = userTable[id].level
+	if (level == 1) {
+		document.querySelector(`.userLevel`).style.background = `linear-gradient(45deg, #6f6f6f, #595959)`
+	}
+	if (level >= 30) {
+		document.querySelector(`.userLevel`).style.background = `linear-gradient(45deg, #67ff32, #99ff7d)`
+	}
+	if (level >= 60) {
+		document.querySelector(`.userLevel`).style.background = `linear-gradient(45deg, #3275ff, #39efff)`
+	}
+	if (level >= 90) {
+		document.querySelector(`.userLevel`).style.background = `linear-gradient(45deg, #c032ff, #d169ff)`
+	}
+	if (level >= 120) {
+		document.querySelector(`.userLevel`).style.background = `linear-gradient(45deg, #ffcc6b, #ffa600)`
 	} else {
 		console.log(`hm...`)
 	}
@@ -270,9 +278,7 @@ function formatTime(date) {
 	const curHours = date.getHours() % 12 || 12
 	const curMinutes = date.getMinutes()
 	const checkAm = date.getHours() < 12
-	return `
-        $ { curHours.toString().padStart(2, "0") }: $ { curMinutes.toString().padStart(2, "0") }
-        $ { checkAm ? "a" : "p" }
+	return `${curHours.toString().padStart(2, "0")}:${curMinutes.toString().padStart(2, "0")}${checkAm ? "a" : "p"}
         `
 }
 
