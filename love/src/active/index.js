@@ -11,7 +11,7 @@ function rollRandom(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-let arrayInt = 1
+let arrayInt = 0
 let activeArray
 
 const quotes = ["i love you so much.", "i want you to spend everyday with me.", "why can't you be here right now?", "stop not kissing me please", "be so for real", "i miss her so much even though she's right here", "i swear i'm okay", "our kids are gonna be beautiful", "i wonder what our house is gonna look like", "please just hug me", "i'm cold, i need a hug", "I'm missing from you", "You have my heart and my dick", "When I look at your eyes I am home", "I will never leave you my love", "If I said I won't leave, just know I mean that shit", "Hold my hand, I'll hold yours forever"]
