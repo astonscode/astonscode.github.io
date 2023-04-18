@@ -20,17 +20,18 @@ function handleThemeInput() {
 }
 
 const themeInput = document.querySelector(`.themeInput`)
+let directory = "/css/client_themes"
 
 function themeChecking() {
 	themeValue = document.querySelector(`.themeInput`).value
 	if (themeValue == "Default I") {
-		themeLink.setAttribute("href", `src/css/theme_de.css`)
+		themeLink.setAttribute("href", `/src/css/theme_de.css`)
 	} else if (themeValue == "Aston I") {
-		themeLink.setAttribute("href", `src/${directory}/aston.css`)
+		themeLink.setAttribute("href", `/src/css/client_themes/aston.css`)
 	} else if (themeValue == "Josin I") {
-		themeLink.setAttribute("href", `src/${directory}/josin.css`)
+		themeLink.setAttribute("href", `/src/css/client_themes/josin.css`)
 	} else if (themeValue == "Kat I") {
-		themeLink.setAttribute("href", `src/${directory}/kat.css`)
+		themeLink.setAttribute("href", `/src/css/client_themes/josin.css`)
 	}
 }
 
