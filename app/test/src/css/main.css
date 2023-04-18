@@ -1,0 +1,14 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+#background {
+    background: #202020;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1
+}
