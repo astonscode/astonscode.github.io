@@ -1,0 +1,79 @@
+* {
+    font-family: 'Lora', sans-serif;
+    user-select: none;
+}
+
+#top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ad3e58;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item {
+    color: white;
+}
+
+#settings {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    color: white;
+    border-radius: 32px;
+    align-items: center;
+    flex-direction: row;
+    padding: 6px;
+    background: #0002;
+}
+
+.switchMode {
+    padding: 12px;
+    border-radius: 32px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.switchMode:hover {
+    background: #0004;
+}
+
+.settings-icon {
+    padding: 6px;
+}
+
+.settingItem {
+    margin: 0 10px;
+}
+
+.settingItem.colorSettings {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#colorInput {
+    background: #0000;
+    border: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#colorInput::-webkit-color-swatch {
+    box-shadow: 0 0 0 3px white;
+    border-radius: 50%;
+    border: 0;
+}
+
+.colorDisplay {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 8px;
+}

@@ -1,47 +1,48 @@
-function toggleFunc(param) {
-    if (param == "menu") {
-        console.log("%cDEV", "background: #3e74ff; border-radius: 4px 0; padding: 4px;color: white", `Functionality toggled as [menu]`)
-    } else if (param == "app") {
-        console.log("%cDEV", "background: #3e74ff; border-radius: 4px 0; padding: 4px;color: white", `Functionality toggled as [app]`)
-        document.addEventListener("DOMContentLoaded", () => {
-            startApp()
-        })
-    }
+/* function toggleFunc() {
+	if (param == "menu") {
+		console.log("%cDEV", "background: #3e74ff; border-radius: 4px 0; padding: 4px;color: white", `Functionality toggled as [menu]`)
+	} else if (param == "app") {
+		console.log("%cDEV", "background: #3e74ff; border-radius: 4px 0; padding: 4px;color: white", `Functionality toggled as [app]`)
+		document.addEventListener("DOMContentLoaded", () => {
+			startApp()
+		})
+	}
 }
 
 function toggleMenu(id) {
-    if (id == 1) {
-        document.getElementById(`aboutContainer`).classList.toggle(`active`)
-        document.getElementById(`main-header`).classList.toggle(`blurred`)
-        document.getElementById(`start`).classList.toggle(`blurred`)
-    }
+	if (id == 1) {
+		document.getElementById(`aboutContainer`).classList.toggle(`active`)
+		document.getElementById(`main-header`).classList.toggle(`blurred`)
+		document.getElementById(`start`).classList.toggle(`blurred`)
+	}
 }
 
-const quotes = [{
-        quote: "He only is my rock and my salvation; I shall not be shaken.",
-        verse: "Psalm 62:6"
-    },
-    {
-        quote: "I am the way and the truth and the life. For no one comes to the Father except through me.",
-        verse: "John 14:6"
-    },
-    {
-        quote: "The Lord will fight for you. All you have to do is be still.",
-        verse: "Exodus 14:14"
-    },
-    {
-        quote: "I can do all things through Christ who gives me strength.",
-        verse: "Phillipians 4:13"
-    },
-    {
-        quote: "Verily I say unto you, in as much as ye have done it unto one of the least of these, my bretheren, ye have done it unto me. ",
-        verse: "Matthew 25:40"
-    }
+const quotes = [
+	{
+		quote: "He only is my rock and my salvation; I shall not be shaken.",
+		verse: "Psalm 62:6"
+	},
+	{
+		quote: "I am the way and the truth and the life. For no one comes to the Father except through me.",
+		verse: "John 14:6"
+	},
+	{
+		quote: "The Lord will fight for you. All you have to do is be still.",
+		verse: "Exodus 14:14"
+	},
+	{
+		quote: "I can do all things through Christ who gives me strength.",
+		verse: "Phillipians 4:13"
+	},
+	{
+		quote: "Verily I say unto you, in as much as ye have done it unto one of the least of these, my bretheren, ye have done it unto me. ",
+		verse: "Matthew 25:40"
+	}
 ]
 
 function genQuote() {
-    let quoteId = rollRandom(0, quotes.length - 1)
-    document.querySelector(`.header-sub`).innerHTML = `"${quotes[quoteId].quote}" - ${quotes[quoteId].verse}`
+	let quoteId = rollRandom(0, quotes.length - 1)
+	document.querySelector(`.header-sub`).innerHTML = `"${quotes[quoteId].quote}" - ${quotes[quoteId].verse}`
 }
 
 // constants
@@ -65,138 +66,127 @@ backgroundAudio.loop = true
 // event listeners
 
 searchInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        goIframe()
-    }
+	if (e.key === "Enter") {
+		goIframe()
+	}
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    int = rollRandom(1, 100)
-    if (int > 97) {
-        crash("normal")
-    } else if (int > 99) {
-        crash("fatal")
-    }
-    console.log("%cCRASH", "background: #61aaff;  border-radius: 4px 0; padding: 4px;color: white", `PC Degredation Report: Crash Rate clocked at ${int}%`)
-    genQuote()
+	int = rollRandom(1, 100)
+	if (int > 97) {
+		crash("normal")
+	} else if (int > 99) {
+		crash("fatal")
+	}
+	console.log("%cCRASH", "background: #61aaff;  border-radius: 4px 0; padding: 4px;color: white", `PC Degredation Report: Crash Rate clocked at ${int}%`)
+	genQuote()
 })
 
 document.querySelector(`.closeSearch`).addEventListener("click", () => {
-    document.getElementById("searchHolder").classList.toggle("active")
-        // backgroundAudio.play();
-    searchToggled = false
+	document.getElementById("searchHolder").classList.toggle("active")
+	// backgroundAudio.play();
+	searchToggled = false
 })
 
 document.getElementById("windowCloser").addEventListener("click", () => {
-    document.getElementById("menuWindow").classList.remove("active")
-    document.getElementById("windowCloser").classList.remove("active")
-    document.getElementById("backgroundImage").classList.remove("active")
+	document.getElementById("menuWindow").classList.remove("active")
+	document.getElementById("windowCloser").classList.remove("active")
+	document.getElementById("backgroundImage").classList.remove("active")
 })
 
 document.getElementById(`songImg`).addEventListener(`click`, () => {
-    document.getElementById(`musicFullscreen`).classList.toggle("active")
+	document.getElementById(`musicFullscreen`).classList.toggle("active")
 })
 
 document.getElementById(`fullscreenExit`).addEventListener(`click`, () => {
-    document.getElementById(`musicFullscreen`).classList.toggle("active")
+	document.getElementById(`musicFullscreen`).classList.toggle("active")
 })
 
 function disabled(id) {
-    document.getElementById("backgroundImage").classList.add("shake")
-    let timer = setTimeout(() => {
-        document.getElementById("backgroundImage").classList.remove("shake")
-    }, 1000)
+	document.getElementById("backgroundImage").classList.add("shake")
+	let timer = setTimeout(() => {
+		document.getElementById("backgroundImage").classList.remove("shake")
+	}, 1000)
 
-    if (id == 1) {
-        document.querySelector(".taskbar-icon.taskF").classList.add("disabled")
-        let iconTimer = setTimeout(() => {
-            document.querySelector(".taskbar-icon.taskF").classList.remove("disabled")
-        }, 1000)
-    } else if (id == 2) {
-        document.querySelector(".taskbar-icon.taskT").classList.add("disabled")
-        let iconTimer = setTimeout(() => {
-            document.querySelector(".taskbar-icon.taskT").classList.remove("disabled")
-        }, 1000)
-    }
+	if (id == 1) {
+		document.querySelector(".taskbar-icon.taskF").classList.add("disabled")
+		let iconTimer = setTimeout(() => {
+			document.querySelector(".taskbar-icon.taskF").classList.remove("disabled")
+		}, 1000)
+	} else if (id == 2) {
+		document.querySelector(".taskbar-icon.taskT").classList.add("disabled")
+		let iconTimer = setTimeout(() => {
+			document.querySelector(".taskbar-icon.taskT").classList.remove("disabled")
+		}, 1000)
+	}
 }
 
 function toggleWindow(id) {
-    if (id == 1) {
-        document.getElementById("miniWindow").classList.toggle("active")
-    } else if (id == 2) {
-        document.getElementById("menuWindow").classList.add("active")
-        document.getElementById("windowCloser").classList.add("active")
-        document.getElementById("backgroundImage").classList.add("active")
-        document.getElementById("miniWindow").classList.remove("active")
-    } else if (id == 3) {
-        document.getElementById("infoWindow").classList.toggle("active")
-    } else if (id == 4) {
-        document.getElementById("searchHolder").classList.toggle("active")
-        backgroundAudio.pause()
-        searchToggled = true
-    } else {
-        console.log("%cERR", "background: #f55;  border-radius: 4px 0; padding: 4px;color: white", `No hay una ventana que existe con ese identificacíon.`)
-    }
+	if (id == 1) {
+		document.getElementById("miniWindow").classList.toggle("active")
+	} else if (id == 2) {
+		document.getElementById("menuWindow").classList.add("active")
+		document.getElementById("windowCloser").classList.add("active")
+		document.getElementById("backgroundImage").classList.add("active")
+		document.getElementById("miniWindow").classList.remove("active")
+	} else if (id == 3) {
+		document.getElementById("infoWindow").classList.toggle("active")
+	} else if (id == 4) {
+		document.getElementById("searchHolder").classList.toggle("active")
+		backgroundAudio.pause()
+		searchToggled = true
+	} else {
+		console.log("%cERR", "background: #f55;  border-radius: 4px 0; padding: 4px;color: white", `No hay una ventana que existe con ese identificacíon.`)
+	}
 }
 
 function startApp() {
-    document.title = "[loading client...]"
-    console.log("%cPROGRESS", "background: #1c9d76;  border-radius: 4px 0; padding: 4px;color: white", `DXApp loading. Please wait...`)
-    themeLink.setAttribute("href", `src/css/theme_de.css`)
-    theme = 0
-    document.getElementById("startupModal").classList.add("active")
-        // document.getElementById("startupSplash").classList.add("active");
-        // document.querySelector(".startupTitle").classList.add("active")
-    startupSound.loop = false
-    startupSound.play()
+	document.title = "[loading client...]"
+	console.log("%cPROGRESS", "background: #1c9d76;  border-radius: 4px 0; padding: 4px;color: white", `DXApp loading. Please wait...`)
+	themeLink.setAttribute("href", `src/css/theme_de.css`)
+	theme = 0
+	document.getElementById("startupModal").classList.add("active")
+	// document.getElementById("startupSplash").classList.add("active");
+	// document.querySelector(".startupTitle").classList.add("active")
+	startupSound.loop = false
+	startupSound.play()
 
-    startup = setInterval(() => {
-        document.querySelector(".ui-web").classList.remove("active")
-        document.getElementById("startupBar").classList.add("active")
-        document.getElementById("startupVersion").classList.add("active")
-        startupSound.volume = 0.5
-        backgroundAudio.volume = 0.2
+	startup = setInterval(() => {
+		document.querySelector(".ui-web").classList.remove("active")
+		document.getElementById("startupBar").classList.add("active")
+		document.getElementById("startupVersion").classList.add("active")
+		startupSound.volume = 0.5
+		backgroundAudio.volume = 0.2
 
-        barWidth = 0
+		barWidth = 0
 
-        barGrow = setInterval(() => {
-            document.getElementById("startupBar").style.width = `${barWidth++}%`
-            progressCheck = setInterval(() => {
-                document.getElementById("startupText").innerHTML = `${barWidth}%`
-            }, 50)
+		barGrow = setInterval(() => {
+			document.getElementById("startupBar").style.width = `${barWidth++}%`
+			progressCheck = setInterval(() => {
+				document.getElementById("startupText").innerHTML = `${barWidth}%`
+			}, 50)
 
-            if (barWidth >= 100) {
-                barWidth = undefined
-                document.title = "[client]"
-                clearInterval(progressCheck)
-                console.log("%cPROGRESS", "background: #1c9d76;  border-radius: 4px 0; padding: 4px;color: white", `DXApp has been loaded.`)
-                    // backgroundAudio.play();
-                document.getElementById("startupBar").style.width = `100%`
-                clearInterval(barGrow)
-                document.querySelector(".ui-app").classList.add("active")
-                document.getElementById("startupModal").classList.remove("active")
-                    // document.getElementById("startupSplash").classList.remove("active");
-                document.getElementById("startupBar").classList.remove("active")
-                document.getElementById("startupVersion").classList.remove("active")
-                document.getElementById("startupModal").style.display = "none"
-                    // audioControls(2);
-            }
-        }, 50)
-        clearInterval(startup)
-    }, 4500)
+			if (barWidth >= 100) {
+				barWidth = undefined
+				document.title = "[client]"
+				clearInterval(progressCheck)
+				console.log("%cPROGRESS", "background: #1c9d76;  border-radius: 4px 0; padding: 4px;color: white", `DXApp has been loaded.`)
+				// backgroundAudio.play();
+				document.getElementById("startupBar").style.width = `100%`
+				clearInterval(barGrow)
+				document.querySelector(".ui-app").classList.add("active")
+				document.getElementById("startupModal").classList.remove("active")
+				// document.getElementById("startupSplash").classList.remove("active");
+				document.getElementById("startupBar").classList.remove("active")
+				document.getElementById("startupVersion").classList.remove("active")
+				document.getElementById("startupModal").style.display = "none"
+				// audioControls(2);
+			}
+		}, 50)
+		clearInterval(startup)
+	}, 4500)
 }
 
-/* Shut down DXOS
-function clearApp() {
-	document.querySelector(".ui-app").classList.remove("active")
-	document.getElementById("shutdownModal").classList.add("active")
-	backgroundAudio.pause()
-	setTimeout(() => {
-		document.getElementById("shutdownModal").classList.remove("active")
-		document.querySelector(".ui-web").classList.add("active")
-	}, 2550)
-}
-*/
 
 function getChromeVersion() {
     var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)
@@ -219,7 +209,7 @@ if (clientId != localStorage.getItem("localId")) {
 }
 
 function resetStorage(code) {
-    if (code == 1 /* erases all */ ) {
+    if (code == 1 ) {
         localStorage.removeItem(localId)
     } else {
         return `Process could not be completed. Code value must be equal to 1. (Given: ${code})`
@@ -389,3 +379,76 @@ function changeSong(newSongId) {
     }
 }
 toggleFunc("menu")
+*/
+
+/* Shut down DXOS
+function clearApp() {
+	document.querySelector(".ui-app").classList.remove("active")
+	document.getElementById("shutdownModal").classList.add("active")
+	backgroundAudio.pause()
+	setTimeout(() => {
+		document.getElementById("shutdownModal").classList.remove("active")
+		document.querySelector(".ui-web").classList.add("active")
+	}, 2550)
+}
+*/
+
+//example of object-orientation style
+let player = {
+	score: 0,
+	multiplier: 1,
+	scoreInt: 10,
+	getScore: function () {
+		return score + multiplier * scoreInt
+	}
+}
+
+player.getScore()
+
+let web = {
+	webId: rollRandom(10000000, 99999999),
+	quotes: [
+		{
+			quote: "He only is my rock and my salvation; I shall not be shaken.",
+			verse: "Psalm 62:6"
+		},
+		{
+			quote: "I am the way and the truth and the life. For no one comes to the Father except through me.",
+			verse: "John 14:6"
+		},
+		{
+			quote: "The Lord will fight for you. All you have to do is be still.",
+			verse: "Exodus 14:14"
+		},
+		{
+			quote: "I can do all things through Christ who gives me strength.",
+			verse: "Phillipians 4:13"
+		},
+		{
+			quote: "Verily I say unto you, in as much as ye have done it unto one of the least of these, my bretheren, ye have done it unto me. ",
+			verse: "Matthew 25:40"
+		}
+	],
+	quoteId: rollRandom(0, quotes.length - 1),
+	genQuote: function () {
+		document.querySelector(`.header-sub`).innerHTML = `"${quotes[quoteId].quote}" - ${quotes[quoteId].verse}`
+	}
+}
+
+let dxclient = {
+	startupSound: new Audio("/src/audio/startup.mp3"),
+	clientId: rollRandom(10000000, 99999999),
+	searchToggled: false,
+	start: function () {
+		document.getElementById("startupModal").classList.add("active")
+		document.querySelector(".ui-web").classList.remove("active")
+		document.getElementById("startupBar").classList.add("active")
+		document.getElementById("startupVersion").classList.add("active")
+		startupSound.loop = false
+		startupSound.play()
+	}
+}
+
+let search = {
+	searchInput: document.getElementById("searchInput").value
+}

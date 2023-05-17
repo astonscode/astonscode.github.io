@@ -195,8 +195,9 @@ function positionChecking() {
 	if (pgnVar.startsWith("1. d4 d5 2. c4 dxc4")) {
 		positionHTML.innerHTML = "Queen's Gambit Accepted"
 	}
-
-	return positionHTML.innerHTML
+	if (pgnVar.startsWith("1. e4 e5 2. Nf3 Nc6 3. Bb5")) {
+		positionHTML.innerHTML = "Ruy Lopez Opening"
+	}
 }
 
 $(window).resize(board.resize)

@@ -1,3 +1,11 @@
+:root {
+    --text: #fff;
+    --empty: #000;
+    --home: #283647;
+    --about: #382e57;
+    --timeline: #212d4a;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -5,12 +13,12 @@ html {
 * {
     user-select: none;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: #fff;
 }
 
 body {
     margin: 0;
-    background: black;
+    background: var(--empty);
 }
 
 a {
@@ -18,12 +26,76 @@ a {
     color: inherit;
 }
 
+#uh {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 98;
+}
+
+#uh.active {
+    display: block;
+}
+
 .section {
     height: 100vh;
+    transition: .5s;
+}
+
+.section.transparent {
+    filter: blur(15px)
+}
+
+#settingsWindow {
+    position: fixed;
+    top: 1000px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    transition: .3s;
+    display: flex;
+    z-index: 9;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+#settingsWindow.active {
+    opacity: 1;
+    top: 0;
+}
+
+#settings-title {
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.code-label {
+    text-align: right;
+    font: 16px 'Roboto Mono';
+}
+
+#devCodeContainer {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+#devCode {
+    background: #fff1;
+    border: 0;
+    padding: 8px;
+    outline: 0;
+    text-align: right;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #home {
-    background: #283647;
+    background: var(--home);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,8 +114,47 @@ a {
 }
 
 .subtitle {
+    text-align: center;
+}
+
+.settings-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 8px;
+    font-family: 'Roboto Mono';
+    cursor: pointer;
+    transition: .3s;
+    margin: 8px;
+}
+
+.settings-button:hover {
+    background: #fff;
+    color: black;
+}
+
+.settings-button:hover>.button-icon {
+    color: black;
+}
+
+.button-icon.material-icons {
+    margin-right: 8px;
+    transition: .3s;
+}
+
+#mainQuote {
     font-size: 16px;
     color: #ffcd91;
+}
+
+#quoteVerse {
+    color: #8d704d;
+    transition: .3s;
+    cursor: pointer;
+}
+
+#quoteVerse:hover {
+    color: #c69d6b;
 }
 
 #aboutHolder {
@@ -55,22 +166,67 @@ a {
 }
 
 .about-body {
+    margin-right: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 20px;
     line-height: 2;
     font-weight: 600;
     text-align: center;
+    filter: drop-shadow(0 0 3px #0005);
 }
 
 #about {
-    background: #382e57;
+    background: var(--about);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+#about-left,
+#about-right {
+    width: 50%;
+}
+
+#about-right {
+    line-height: 3.5;
+    padding: 12px;
+    background: #151515;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+#about-left {
+    border-radius: 8px;
+    background: #202020;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    filter: drop-shadow(0 0 3px #000);
+}
+
+.left-top {
+    border-radius: 8px 8px 0 0;
+    background: #0004;
+    padding: 12px;
+    padding-bottom: 6px;
+    font-style: italic;
+    font-family: 'Roboto Mono';
+    color: #fff8;
+}
+
+.code-lint {
+    padding: 12px;
+    padding-top: 0;
+}
+
+span:not(.nav-label) {
+    font-family: 'Roboto Mono';
 }
 
 .navBar {
@@ -113,8 +269,109 @@ a {
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s;
+    background: #fff5;
+    padding: 4px 8px;
 }
 
 ::-webkit-scrollbar {
     width: 0px;
+}
+
+#timeline {
+    background: var(--timeline);
+    display: flex;
+    justify-content: center;
+}
+
+.timeline {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+}
+
+.timeline-component {
+    margin: 20px;
+    margin-top: 0;
+}
+
+.component-bg {
+    padding: 1.5em;
+    background: #ffffff2a;
+    border-radius: 8px;
+}
+
+.component-date.component-date-right {
+    text-align: right;
+}
+
+.timeline-middle {
+    position: relative;
+    background: #fff;
+}
+
+.timeline-point {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: white;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.component-title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.component-body {
+    color: #fff;
+    line-height: 2;
+}
+
+#timeline-title {
+    position: absolute;
+    margin: 20px;
+    left: 0;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+#etc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 99;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes flashing {
+    0% {
+        color: black
+    }
+    50% {
+        color: #ff000063
+    }
+    100% {
+        color: red;
+    }
+}
+
+.etc-text {
+    font-family: 'VT323', monospace;
+    font-size: 144px;
+    animation: flashing 0.7s infinite alternate ease-out;
+}
+
+#etc-time {
+    font-family: 'Roboto Mono';
 }
