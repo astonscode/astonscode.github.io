@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#303030">
     <meta name="description" content="...">
+	<title> アストンーホーム</title>
     <meta content="..." property="og:title">
     <meta content="Welcome." property="og:description">
     <meta content="https://astonscode.github.io" property="og:url">
@@ -33,7 +34,7 @@
 
 <body>
     <div id="settingsWindow">
-        <div id="settings-title"> settings </div>
+        <div id="settings-title"> 設定 </div>
         <div id="devCodeContainer">
             <input id="devCode" type="text">
         </div>
@@ -50,7 +51,7 @@
                 <div class="button-icon material-icons"> memory </div>
                 client.start(x)
             </div>
-            <div class="settings-button" onclick="app.toggleSettings()">
+            <div class="settings-button" onclick="application.toggleSettings()">
                 <div class="button-icon material-icons"> close </div>
                 settings.close()
             </div>
@@ -59,9 +60,9 @@
 
     <div id="langWindow">
         <div class="langInner">
-            <div class="lang-title"> Language </div>
-            <div class="lang-item selected" data-lang="en" onclick="app.setLanguage(`en`)"> English </div>
-            <div class="lang-item" data-lang="jp" onclick="app.setLanguage(`jp`)"> 日本語 </div>
+            <div class="lang-title"> 言語 </div>
+            <div class="lang-item" data-lang="en" onclick="app.setLanguage(`en`)"> English </div>
+            <div class="lang-item selected" data-lang="jp" onclick="app.setLanguage(`jp`)"> 日本語 </div>
         </div>
     </div>
     <div id="navBar" class="navBar-transparent">
@@ -71,18 +72,18 @@
              </a>
              <div class="navRight">
                 <a href="#" class="navItem">
-                    <div class="displayTitle"> about </div>
+                    <div class="displayTitle"> について </div>
                 </a>
                 <a href="#" class="navItem"> 
-                    <div class="displayTitle"> examples </div>
+                    <div class="displayTitle"> サンプル </div>
                 </a>
                 <a href="#" class="navItem">
-                    <div class="displayTitle"> contact </div>
+                    <div class="displayTitle"> チャット </div>
                 </a>
         </div>
         </div>
         <div class="navRight">
-            <div class="langSwitch" onclick="app.toggleLang()">
+            <div href="#" class="langSwitch">
                 <div class="langIcon material-icons"> language </div>
             </div>
         </div>
@@ -90,14 +91,14 @@
 
     <div id="home" class="section" data-label="Home">
         <div id="titleHolder">
-            <div id="title"> aston </div>
+            <div id="title"> アストン </div>
             <div class="subtitle"></div>
         </div>
         <div id="bottomTerms">
-            <div class="settings-icon" onclick="app.toggleSettings()"> 
+            <div class="settings-icon" onclick="application.toggleSettings()"> 
                 <div class="settingsIcon material-icons"> settings </div>
             </div>
-            <div class="version terms-item"> 10.3.1 </div>
+            <div class="version terms-item"> 「　10.3.1　」 </div>
         </div>
     </div>
     <div id="about" class="section" data-label="About"> 
@@ -108,5 +109,5 @@
 </body>
 
 <script defer>
-    const link = "Home"
+    window.title = "アストン　ー　ホーム"
 </script>

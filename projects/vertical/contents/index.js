@@ -1,31 +1,16 @@
+const rollRandom = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+
 const body = document.body
 
-let global = {
-	errorCode: [
-		{
-			id: 404,
-			desc: "No data."
-		},
-		{
-			id: 200,
-			desc: "We good."
-		},
-		{
-			id: 201,
-			desc: "We did it."
-		}
-	],
-	name: "Aston",
-	version: "10.0.1",
+const app = {
+	name: "aston",
+	version: "10.3.1",
 	git: {
 		link: "https://github.com/astonscode/astonscode.github.io",
 		author: "astonscode (https://github.com/astonscode)"
 	},
-	log: function (x) {
-		console.log(x)
-	},
-	x: new Audio("/src/audio/0.mp3"),
-	createUUID: function () {
+	log: (x) => console.log(x),
+	createUUID() {
 		let dt = new Date().getTime()
 		let uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
 			let r = (dt + Math.random() * 16) % 16 | 0
@@ -33,50 +18,41 @@ let global = {
 			return (c == "x" ? r : (r & 0x3) | 0x8).toString(16)
 		})
 		return uuid
+	},
+	site() {
+		document.title = `${app.name} | ${link}`
+		document.body.setAttribute("data-version", app.version)
+		console.log(`Initialized. (${app.name} - ${app.version})`)
+	},
+	importFont(param, ital) {
+		let x = document.createElement(`link`)
+		if (wght == undefined) {
+			wght = 400
+		}
+		if (ital == undefined) {
+			ital = false
+		}
+		x.setAttribute("href", `https://fonts.googleapis.com/css2?family=${param}&display=swap`)
+		document.head.appendChild(x)
+	},
+	toggleSettings() {
+		app.select("#settingsWindow").classList.toggle("active")
+	},
+	toggleLang() {
+		app.select("#langWindow").classList.toggle("active")
+	},
+	select(n) {
+		return document.querySelector(n)
+	},
+	setLanguage(x) {
+		localStorage.setItem("lang", x)
+	},
+	getLanguage() {
+		return localStorage.getItem("lang")
 	}
 }
 
-function initializeNav() {
-	const sections = document.querySelectorAll(`.section`)
-	const navContainer = document.createElement(`nav`)
-	const navItems = Array.from(sections).map((section) => {
-		return `
-           <div class="nav-item" data-for-section="${section.id}">
-            <a href="#${section.id}" class="nav-link"></a>
-            <span class="nav-label"> ${section.dataset.label} </span>
-        </div>
-        `
-	})
-
-	navContainer.classList.add("navBar")
-	navContainer.innerHTML = navItems.join(``)
-
-	const observer = new IntersectionObserver(
-		(entries) => {
-			document.querySelectorAll(`.nav-link`).forEach((navLink) => {
-				navLink.classList.remove("nav-selected")
-			})
-
-			const visibleSection = entries.filter((entry) => entry.isIntersecting)[0]
-			document.querySelector(`.nav-item[data-for-section="${visibleSection.target.id}"] .nav-link`).classList.add(`nav-selected`)
-		},
-		{threshold: 0.5}
-	)
-
-	sections.forEach((section) => {
-		observer.observe(section)
-	})
-
-	body.appendChild(navContainer)
-}
-
-initializeNav()
-
-function rollRandom(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-let quote = {
+const quote = {
 	quotes: [
 		{
 			quote: "Truly he is my rock and my salvation; he is my fortress, I will not be shaken.",
@@ -102,84 +78,32 @@ let quote = {
 			quote: "Verily I say unto you, in as much as ye have done it unto one of the least of these, my bretheren, ye have done it unto me. ",
 			verse: "Matthew 25:40",
 			src: "https://www.bible.com/bible/111/mat.25.40"
-		},
-		{}
-	],
-	link: function () {
-		window.open(this.quotes[quoteId].src, "_blank")
-	},
-	generate: function () {
-		quoteId = rollRandom(0, this.quotes.length - 1)
-		document.querySelector(`.subtitle`).innerHTML = `<div id="mainQuote"> ${this.quotes[quoteId].quote} </div> <div id="quoteVerse" onclick="quote.link()">${this.quotes[quoteId].verse}</div>`
-		document.getElementById(`mainQuote`).addEventListener(`click`, quote.regenerate)
-	},
-	regenerate: function () {
-		quote.generate()
-	},
-	remove: function () {
-		document.querySelector(`.subtitle`).innerHTML = ``
-	}
-}
-
-let aston = {
-	age: 17,
-	height: 176,
-	nicknames: ["Ash", "Ass", "That Nigga", "Daddy"],
-	getAge: function () {
-		return this.age
-	},
-	getHeight: function () {
-		return this.height
-	},
-	genNick: function () {
-		let x = rollRandom(0, this.nicknamves.length - 1)
-		return this.nicknames[x]
-	},
-	modify: function (keyword, change) {
-		if (keyword == "age") {
-			this.age = change
-		} else if (keyword == "height") {
-			this.height = change
-		} else if (keyword == "nicknames") {
-			this.nicknames.push(change)
-		} else if (keyword == "race") {
-			this.race = change
-		} else {
-			console.log("bro doesnt know how to do code")
 		}
+	],
+	link() {
+		window.open(quote.quotes[quoteId].src, "_blank")
+	},
+	generate() {
+		quoteId = rollRandom(0, quote.quotes.length - 1)
+		app.select(`.subtitle`).innerHTML = `<div id="mainQuote"> ${this.quotes[quoteId].quote} </div> <div id="quoteVerse" onclick="quote.link()">${this.quotes[quoteId].verse}</div>`
+		app.select(`#mainQuote`).addEventListener(`click`, quote.regenerate)
+	},
+	regenerate() {
+		quote.generate()
+	},
+	remove() {
+		app.select(`.subtitle`).innerHTML = ``
 	}
 }
 
-document.addEventListener("keydown", (e) => {
-	if (e.key.toLowerCase() === "s" && e.shiftKey) {
-		document.getElementById("settingsWindow").classList.toggle("active")
-		document.querySelector(".section").classList.toggle("transparent")
-	}
-})
-
-document.addEventListener("keydown", (e) => {
-	if (e.key.toLowerCase() === "q" && e.shiftKey) {
-		quote.generate()
-	}
-})
-
-document.addEventListener("keydown", (e) => {
-	if (e.key.toLowerCase() === "e" && e.shiftKey) {
-		document.getElementById("uh").classList.toggle("active")
-		global.x.play()
-	}
-})
-
-let mini = {}
-
-let client = {
+const client = {
 	sessionId: rollRandom(10000000, 99999999),
-	dxuuid: function () {
+	dxuuid: () => {
 		let x = localStorage.getItem("dxuuid")
 		if (x !== null) {
 			return localStorage.getItem("dxuuid")
 		} else {
-			let y = global.createUUID()
+			let y = app.createUUID()
 			localStorage.setItem("dxuuid", y)
 			console.log("%cLS", "margin:8px;background:white;color:black;padding:8px;", "DXClient UUID set.")
 			return y
@@ -187,8 +111,45 @@ let client = {
 	}
 }
 
-let settings = {
-	// genQuote: quote.generate()
-	// toggleTheme: global.theme.toggle(),
-	// clientStart: client.start(x)
+const settings = {
+	genQuote() {
+		quote.generate()
+	}
 }
+
+document.addEventListener("keydown", (e) => {
+	if (e.key.toLowerCase() === "s" && e.shiftKey) {
+		app.toggleSettings()
+	}
+})
+
+document.addEventListener("keydown", (e) => {
+	if (e.key.toLowerCase() === "l" && e.shiftKey) {
+		app.toggleLang()
+	}
+})
+document.addEventListener("keydown", (e) => {
+	if (e.key.toLowerCase() === "q" && e.shiftKey) {
+		quote.generate()
+	}
+})
+
+document.addEventListener("scroll", () => {
+	let i = window.scrollY
+	if (i > 10) {
+		app.select(`#navBar`).classList.remove("navBar-transparent")
+	} else {
+		app.select(`#navBar`).classList.add("navBar-transparent")
+	}
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+	let l = app.getLanguage()
+	if (l === `en`) {
+		console.log(0)
+	} else if (l === `jp`) {
+		console.log(1)
+	}
+})
+
+app.site()
