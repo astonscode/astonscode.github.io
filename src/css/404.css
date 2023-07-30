@@ -24,23 +24,13 @@ body {
     margin-top: 20px;
     transition: .3s;
     padding: 12px;
+    opacity: .3;
 }
 
 .homeLink:hover {
-    box-shadow: 0 0 0 2px var(--accent-dark);
+    opacity: 1;
 }
 
-#bottomThing {
-    position: fixed;
-    bottom: 15px;
-    left: 15px;
-    padding: 12px;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-#bottomThing:hover {
-    background: var(--change-theme-bg);
+pre {
+    text-align: center;
 }
