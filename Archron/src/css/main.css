@@ -359,25 +359,25 @@ a {
 }
 
 .gamemodeItem.comp {
-    background: url('/archron/src/img/gamemodes/banners/p_banner_0.png');
+    background: url('/Archron/src/img/gamemodes/banners/p_banner_0.png');
     background-position: center;
     background-size: cover;
 }
 
 .gamemodeItem.unr {
-    background: url('/archron/src/img/gamemodes/banners/p_banner_1.png');
+    background: url('/Archron/src/img/gamemodes/banners/p_banner_1.png');
     background-position: 600px top;
     background-size: cover;
 }
 
 .gamemodeItem.ffa {
-    background: url('/archron/src/img/gamemodes/banners/p_banner_2.png');
+    background: url('/Archron/src/img/gamemodes/banners/p_banner_2.png');
     background-size: cover;
     background-position-x: 700px;
 }
 
 .gamemodeItem.tdm {
-    background: url('/archron/src/img/gamemodes/banners/p_banner_3.png');
+    background: url('/Archron/src/img/gamemodes/banners/p_banner_3.png');
     background-size: 1920px;
     background-position-x: 800px;
 }
