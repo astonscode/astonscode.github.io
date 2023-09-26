@@ -234,7 +234,6 @@ function levelCheck(id) {
 	if (level >= 120) {
 		document.querySelector(`.userLevel`).style.background = `linear-gradient(45deg, #ffcc6b, #ffa600)`
 	} else {
-		console.log(`hm...`)
 	}
 }
 
