@@ -171,20 +171,6 @@ const enemies = {
 	}
 }
 
-class Zombie {
-	constructor() {
-		this.health = 900
-		this.level = 1
-	}
-}
-
-class Skeleton {
-	constructor() {
-		this.health = 450
-		this.level = 1
-	}
-}
-
 document.addEventListener("keydown", (e) => {
 	if (e.key.toLowerCase() === key100) {
 		doKeyPress(1)

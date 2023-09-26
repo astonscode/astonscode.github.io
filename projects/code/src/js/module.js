@@ -1,4 +1,4 @@
-function titleArray (action, input, index) {
+function titleArray(action, input, index) {
   if (action == `add`) {
     userTitleArray[userTitleArray.length] = input
   } else if (action == `removeLast`) {
@@ -10,7 +10,7 @@ function titleArray (action, input, index) {
   }
 }
 
-function userChecking () {
+function userChecking() {
   if (userLevel >= 30) {
     colorVal = '#5dff4e'
     userTitle = userTitleArray[1]
