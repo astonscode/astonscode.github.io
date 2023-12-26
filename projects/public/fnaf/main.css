@@ -1,0 +1,102 @@
+* {
+    color: white;
+    font-family: 'VCR OSD Mono', sans-serif;
+    user-select: none;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #202020;
+    z-index: -1;
+}
+
+.statusContainer {
+    background: #0005;
+    padding: 12px;
+    margin: 12px;
+}
+
+#statusTitle {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+#nightInfo {
+    display: flex;
+    flex-direction: row;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+#separator {
+    margin: 0 18px;
+    color: #fff8
+}
+
+#timeExpanded {
+    margin: 8px;
+    color: #fff5;
+    margin-left: 0;
+}
+
+#aiActive, #aiValue, #aiLocation {
+    margin: 12px 0;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+#timeExpanded:before {
+    content: 'Instance Runtime: '
+}
+
+.statusContainer.inactive {
+    box-shadow: inset 5px 0 #555555;
+    padding-left: 24px;
+}
+
+.statusContainer.active {
+    box-shadow: inset 5px 0 #73c9a7;
+    padding-left: 24px;
+}
+
+.statusContainer.error {
+    box-shadow: inset 5px 0 #f55;
+    padding-left: 24px;
+}
+
+#statusControls {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    padding: 14px;
+    background: #fff1;
+    transition: .3s;
+    cursor: pointer;
+    margin-right: 14px;
+}
+
+.button:hover {
+    background: #ffffff15;
+    box-shadow: 0 0 0 2px white;
+}
+
+#inputMenu {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 50%;
+}
+
+#inputValue {
+    background: #0004;
+    border: 0;
+    outline: 0;
+    padding: 12px;
+    width: 75%;
+}
