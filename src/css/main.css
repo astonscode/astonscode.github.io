@@ -1,11 +1,11 @@
 :root {
     --text-primary: #fff;
-    --bg-primary: #050505;
+    --bg-primary: #202020;
 }
 
 * {
     user-select: none;
-    font-family: 'Omori Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-primary);
 }
 
@@ -41,29 +41,26 @@
     z-index: -1;
 }
 
-.navItem {
-    font-size: 26px;
+#center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mid {
+    font-size: 7.5em;
+    margin: 5rem;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#separator {
+    width: 10px;
+    height: 1px;
+    background: #ffffff6e;
     margin: 0 12px;
-    padding: 6px 12px;
-    cursor: pointer;
-    transition: .2s;
-}
-
-#settingsIcon {
-    margin: 0 12px;
-    padding: 12px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.navItem:hover, #settingsIcon:hover {
-    box-shadow: 0 0 0 2.5px white;
-}
-
-#mainNav {
-    box-shadow: 0 0 0 5px white;
-    top: 32px;
-    left: 32px;
-    padding: 12px;
-    transform: skewX(18deg);
 }
