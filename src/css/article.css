@@ -1,0 +1,108 @@
+#title, #section-head {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#creation-date {
+    font-size: 1.75em;
+}
+
+#heading {
+    margin-bottom: 1.5em;
+    line-height: 3em;
+}
+
+#body {
+    line-height: 2;
+    width: 80%;
+    padding: 12px;
+    background: #0003;
+    box-shadow: -5px 5px var(--accent-primary);
+    margin-bottom: 2em;
+}
+
+#article {
+    top: 1.5em;
+    left: 1.5em;
+    width: 95%;
+    overflow-y: auto;
+    height: 90%;
+}
+
+.concept {
+    width: 25em;
+}
+
+#scroller {
+    margin-top: 1em;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #0003; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary); 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary-light); 
+}
+
+#preview {
+    z-index: 9;
+    background: #0006;
+    backdrop-filter: blur(2px);
+}
+
+#conceptImg {
+    box-shadow: -10px 10px var(--accent-primary), 0 0 0 2px var(--accent-primary);
+    width: 95%;
+}
+
+#description {
+    height: 70%;
+    width: 35em;
+    background: var(--bg-primary);
+    box-shadow: -10px 10px var(--accent-primary), 0 0 0 2px var(--accent-primary);
+    padding: 12px;
+}
+
+#name {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#bottom {
+    margin-top: 1em;
+    background: #0003;
+    padding: 12px;
+}
+
+#imageContainer {
+    width: 64%;
+}
+
+#arrows {
+    margin-top: 2em;
+}
+
+.arrow {
+    padding: 8px;
+    background: #0007;
+    cursor: pointer;
+    transition: 300ms;
+    margin-left: 0.5em;
+}
+
+.arrow:hover {
+    color: white
+}
+
+#closeViewer:hover {
+    color: #f55;
+}
