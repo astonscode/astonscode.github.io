@@ -6,6 +6,7 @@
     <title> aston </title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
     <link rel="shortcut icon" href="./src/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./src/css/main.css">
@@ -13,15 +14,45 @@
     <script src="./src/script/index.js" defer></script>
 </head>
 <body>
-    <div id="background" class="full"></div>
-    <div id="center" class="full">
-        <div id="top">
+    <div id="background" class="fixed full"></div>
+    <div id="center" class="abs full">
+        <div id="left" class="cen flex-row">
             <div id="time"></div>
             <div id="separator"> </div>
             <div id="message"> welcome </div>
         </div>
-        <div id="mid"> アストン </div>
-        <div id="bottom"> insta / discord /  github </div>
+        <div id="mid" class="flex-column"> 
+            <img src="./src/img/icon.png" id="icon" width="50em">
+            <div id="title"> アストン </div>
+            
+        </div>
+        <div id="right" class="cen flex-row">
+            <a href="https://instagram.com/astonsmid" class="link" target="_blank">insta</a>
+            <div id="discord" class="link" onclick="global.copy(`aston.js`);initTooltip(`discord id copied.`)">discord</div>
+            <a href="https://github.com/astonscode" class="link" target="_blank">github</a>
+        </div>
     </div>
+    <div id="footer" class="flex-row centered abs">
+        <div id="info" class="material-symbols-outlined ms500" onclick="windows.open(0)"> atr </div>
+    </div>
+
+    <div id="nav" class="window fixed">
+        <div class="head flex-row"> 
+            <div id="close" class="material-icons ms300" style="margin-right: 20px;" onclick="windows.close(0)"> close </div>
+            NAVIGATION </div>
+        <div class="linkSection">
+            <div class="s-link flex-row">
+                <a class="name" href="/commissions.html"> commissions </a>
+                <div class="material-icons"> north_east </div>
+            </div>
+            <div class="s-link flex-row">
+                <div class="name"> contact </div>
+                <div class="material-icons"> north_east </div>
+            </div>
+        </div>
+        <div id="foot" class="abs"> &copy; aston. 2020 - 2024. unauthorized reproduction of this site is illegal. </div>
+    </div>
+
+    <div id="tooltip" class="abs ms500"> </div>
 </body>
 </html>
