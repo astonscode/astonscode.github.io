@@ -1,0 +1,42 @@
+#icon {
+    width: 3em;
+}
+
+#header {
+    justify-content: space-between;
+    padding: 1em;
+    margin: 1em;
+    background: #fff1;
+    border-radius: 0.5em;
+}
+
+#title {
+    margin: 0 0.5em;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#play {
+    background: #fff2;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    box-shadow: inset 0 0 0 2.5px #f55;
+}
+
+#section {
+    background: #fff1;
+    border-radius: 0.5em;
+    padding: 1em;
+    line-height: 2;
+    width: 95%;
+    margin-left: 1em;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.subhead {
+    font-size: 2rem;
+}
