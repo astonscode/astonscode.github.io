@@ -1,16 +1,23 @@
 class Game {
-    constructor() {
-        this.turn = 0
+    constructor(aiEnabled = false, aiOptions = null) {
+        this.turn = 1
         this.playerTurn = 0
         this.playerTurnTranslated = "X"
         this.boxes = []
         this.moveList = []
         this.ableToMove = true
         this.scores = [0,0]
+        this.aiEnabled = aiEnabled
+        this.ai = aiEnabled && aiOptions ? new CPU(this, aiOptions.goingFirst, aiOptions.skill) : null
+
         this.scaffold()
         this.checkWin()
         this.detect()
         this.updateScores()
+        
+        if (this.aiEnabled && this.ai.goingFirst) {
+            this.aiMove() // Make the first AI move if AI is going first
+        }
     }
 
     scaffold() {
@@ -57,6 +64,7 @@ class Game {
             console.log(`Draw...`)
             highlightBoxes([...Array(9).keys()], 'drawn') // Highlight all boxes
             this.ableToMove = false
+            this.updateScores()
             return true
         }
     
@@ -65,24 +73,40 @@ class Game {
 
     detect() {
         for (let i = 0; i < this.boxes.length; i++) {
-            this.boxes[i].addEventListener("click", ()=>{
+            this.boxes[i].addEventListener("click", () => {
                 if (this.ableToMove && this.boxes[i].innerHTML === "") {  // Check if the box is empty
                     console.log(`${this.playerTurnTranslated} at`, this.boxes[i])
                     this.moveList.push(i)
                     console.log(this.moveList)
                     this.boxes[i].innerHTML = this.playerTurnTranslated
 
-                    this.checkWin()
-
-                    this.turn++
-                    this.playerTurn = 1 - this.playerTurn  // Switch player turn
-                    this.turnTranslate()
+                    if (!this.checkWin()) {
+                        this.turn++
+                        this.playerTurn = 1 - this.playerTurn  // Switch player turn
+                        this.turnTranslate()
+                        if (this.aiEnabled && this.ai && this.playerTurnTranslated === this.ai.mark) {
+                            this.aiMove()
+                        }
+                    }
                 } else if (!this.ableToMove) {
                     console.log(`Reset game to play again.`)
                 } else {
                     console.log(`Box already filled. Choose another one.`)
                 }
             })
+        }
+    }
+
+    aiMove() {
+        if (this.aiEnabled && this.ai) {
+            setTimeout(() => {
+                this.ai.move()
+                if (!this.checkWin()) {
+                    this.turn++
+                    this.playerTurn = 1 - this.playerTurn  // Switch player turn
+                    this.turnTranslate()
+                }
+            }, 500) // Add delay for AI move for better UX
         }
     }
 
@@ -99,6 +123,9 @@ class Game {
         this.moveList = []
         this.ableToMove = true
         console.log(`[GAME] Game reset.`)
+        if (this.aiEnabled && this.ai && this.ai.goingFirst) {
+            this.aiMove() // Make the first AI move if AI is going first
+        }
     }
 
     turnTranslate() {
@@ -122,4 +149,54 @@ class Game {
     }
 }
 
-const _instance = new Game() 
+class CPU {
+    constructor(reference, goingFirst, skill) {
+        this.reference = reference
+        this.turn = reference.turn
+        this.goingFirst = goingFirst ? true : false
+        this.isMyTurn = this.currentTurn()
+        this.random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+        this.mark = goingFirst ? "X" : "O"
+
+        this.skill = skill
+
+        this.currentTurn()
+    }
+
+    currentTurn() {
+        return this.turn % 2 === (this.goingFirst ? 0 : 1)
+    }
+
+    move() {
+        let moveMade = false
+        switch(this.skill) {
+            case 0: // Literal Ash Baby (Completely Random)
+                while (!moveMade) {
+                    const index = this.random(0, 8)
+                    if (this.reference.boxes[index].innerHTML === "") {
+                        this.reference.boxes[index].innerHTML = this.mark
+                        this.reference.moveList.push(index)
+                        moveMade = true
+                        console.log(`AI (${this.mark}) at`, this.reference.boxes[index])
+                    }
+                }
+                break
+            case 1:
+                if (this.turn == 1 && this.goingFirst) {
+                    let corners = [0, 2, 6, 9]
+                    let index = this.random(0, corners.length)
+                    console.log(index)
+                    console.log(corners[index])
+
+                    if (this.reference.boxes[corners[index]].innerHTML == "") {
+                        this.reference.boxes[corners[index]].innerHTML = this.mark
+                        this.reference.moveList.push(corners[index])
+                        moveMade = true
+                        console.log(`AI (${this.mark}) at`, this.reference.boxes[corners[index]])
+                    }
+                }
+        }
+    }
+}
+
+const _instance = new Game(false)
