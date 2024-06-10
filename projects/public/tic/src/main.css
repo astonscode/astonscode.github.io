@@ -21,14 +21,17 @@
 
 .gameZone.highlight-x {
     background-color: #006aff !important; /* Color for player X */
+	cursor: default;
 }
 
 .gameZone.highlight-o {
     background-color: #f55 !important; /* Color for player O */
+	cursor: default;
 }
 
 .gameZone.drawn {
     background-color: #323232 !important; /* Color for a draw */
+	cursor: default;
 }
 
 
