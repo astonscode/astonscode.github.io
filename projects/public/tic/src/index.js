@@ -157,7 +157,9 @@ class CPU {
         this.isMyTurn = this.currentTurn()
         this.random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
         this.mark = goingFirst ? "X" : "O"
-
+        this.map = [[null, null, null],
+                    [null, null, null],
+                    [null, null, null]]
         this.skill = skill
 
         this.currentTurn()
@@ -170,7 +172,7 @@ class CPU {
     move() {
         let moveMade = false
         switch(this.skill) {
-            case 0: // Literal Ash Baby (Completely Random)
+            case 0:
                 while (!moveMade) {
                     const index = this.random(0, 8)
                     if (this.reference.boxes[index].innerHTML === "") {
@@ -182,19 +184,7 @@ class CPU {
                 }
                 break
             case 1:
-                if (this.turn == 1 && this.goingFirst) {
-                    let corners = [0, 2, 6, 9]
-                    let index = this.random(0, corners.length)
-                    console.log(index)
-                    console.log(corners[index])
-
-                    if (this.reference.boxes[corners[index]].innerHTML == "") {
-                        this.reference.boxes[corners[index]].innerHTML = this.mark
-                        this.reference.moveList.push(corners[index])
-                        moveMade = true
-                        console.log(`AI (${this.mark}) at`, this.reference.boxes[corners[index]])
-                    }
-                }
+                
         }
     }
 }

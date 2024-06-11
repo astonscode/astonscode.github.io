@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> yah. </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body>
+    <div id="viewport">
+        <img src="./src/img/a.png" id="id-1">
+
+        <div id="id-2" style="top:3em;left:13em" onclick="toggle(document.getElementById(`id-4`))"> 
+            <div id="id-2dis"> </div>
+            <div id="id-2tit"> thoughts </div>
+        </div>
+
+        <div id="id-3" style="bottom:8em;right:12em" onclick="toggle(document.getElementById(`id-5`))"> 
+            <div id="id-3dis"> </div>
+            <div id="id-3tit"> calendar </div>
+        </div>
+    </div>
+
+    <div id="id-4" class="none"> 
+        <div id="top">
+            <div class="bk material-symbols-outlined" onclick="toggle(document.getElementById(`id-4`))"> chevron_left </div>
+            <div class="toptit"> thoughts </div>
+        </div>
+        <p style="line-height: 2;margin-left: 2em;letter-spacing: normal;"> 
+            06.11.24 <br>
+            the days go by without a trace of yesterday. <br> 
+            a past forgotten. <br>
+            a future never reached. <br>
+            i think about it most days. but decide not to against my better judgement. <br>
+            my body feels heavier and heavier with each passing day, burdened down with expectations. <br>
+            ive been talking to God a lot more lately. <br>
+            i dont try to be formal with him anymore, i just tell him whats on my mind. <br>
+            something tells me he hears everything i say. <br>
+            i go hours without a phone. <br>
+            no notifications. <br>
+            complete silence. <br>
+            my peace. <br> 
+        </p>
+    </div>
+
+    <div id="id-5" class="none"> 
+        <div id="top">
+            <div class="bk material-symbols-outlined" onclick="toggle(document.getElementById(`id-5`))"> chevron_left </div>
+            <div class="toptit"> calendar </div>
+        </div>
+        <p style="line-height: 2;margin-left: 2em"> 
+            | | | | | | |
+        </p>
+    </div>
+</body>
+
+<style>
+    * {
+        color: white;
+        user-select: none;
+        font-family: monospace;
+        font-weight: bold;
+        letter-spacing: 0.25em;
+    }
+
+    .none {
+        display: none;
+    }
+
+    #viewport {
+        background: #050505;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+    }
+
+    #id-1 {
+        width: 8em;
+    }
+
+    #id-2, #id-3 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        --1to1: 8em;
+        width: var(--1to1);
+        height: var(--1to1);
+        justify-content: center;
+    }
+
+    #id-2:active, #id-3:active {
+        box-shadow: 0 0 0 1px #fff1;
+    }
+
+    #id-2dis, #id-3dis {
+        background: white;
+        width: 4em;
+        height: 4em;
+        border-radius: 0.5em;
+        margin: 1em;
+        animation: yah 0.01s infinite;
+    }
+
+    #id-2tit, #id-3tit {
+        margin-top: 1em;
+    }
+
+    #id-4, #id-5 {
+        background: #050505;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #top {
+        display: flex;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .toptit {
+        padding: 0 1em;
+    }
+
+    .bk.material-symbols-outlined {
+        padding: 0.5em;
+        cursor: pointer;
+    }
+
+    .bk.material-symbols-outlined:hover {
+        color: #fff5;
+    }
+</style>
+
+<script>
+    function toggle(id) {
+        id.classList.toggle("none")
+    }
+</script>
+</html>
