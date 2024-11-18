@@ -24,7 +24,7 @@ const widgets = {
             return widgets.getTime()
         }   
     }, 100),
-    messageArray: ["welcome", "sunken", "dark roads", "breakthrough", "adhd", "we must. keep. going.", "you got this", "limitless", "light up the night"], 
+    messageArray: ["welcome", "breakthrough", "stay focused my brother", "keep. going.", "you got this", "limitless", "light up the night", "sheer heart attack", "wonder of u"], 
     changeMsg(int) {
         if (document.getElementById("message") != undefined) {
             document.getElementById("message").textContent = this.messageArray[int]
