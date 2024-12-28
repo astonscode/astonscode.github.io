@@ -1,0 +1,14 @@
+bwbwwbbbwbwbbwbwbbbwbwbbwbwb
+
+wbwwbwbwbbwbbwbbwbwwbwb
+
+bwbbwbwbbwbwbbwbwbbwbwbbw
+
+wbwwbwbwwbwbwwb
+
+loop .txt
+
+lit/dark
+some/none
+
+: mror :3

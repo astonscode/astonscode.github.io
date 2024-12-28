@@ -1,0 +1,23 @@
+.full {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#container {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text * {
+    color: white;
+}
+
+#text {
+    padding: 30em;
+    background: #fff1;
+}
