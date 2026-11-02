@@ -15,7 +15,6 @@ Occupation: SJF Operative
 
 Routine checkup for patient, now enforced under Section 7c of Codec 11-A.
 
-
 # Medical History
 
 Physical History: Patient displays a visible, faded lateral cervical laceration. Suggests a past injury to the side of the neck, though no accompanying medical history is available for context. No other reported chronic illnesses or injuries.
