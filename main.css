@@ -19,19 +19,19 @@
 }
 
 * {
-    color: #fff;
+    color: #000;
     font-family: "defvar", monospace;
 }
 
 #bg {
     z-index: -1;
-    background: #020202;
+    background: #fff;
 }
 
 .window {
     width: 95%;
     height: 90%;
-    box-shadow: 0 0 0 2.5px #ffffff15;
+    box-shadow: 0 0 0 2.5px #833710a1;
     padding: 1rem;
     transition: 300ms;
 }
@@ -60,8 +60,8 @@ a {
 }
 
 a:hover {
-    color: #fff;
-    box-shadow: 0 2.5px white
+    color: #c9755b;
+    box-shadow: 0 2.5px #c9755b;
 }
 
 .title-link {
