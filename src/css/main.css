@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: "defvar";
-    src: url('./src/css/fonts/defvar.ttf');
+    src: url('/src/css/fonts/defvar.ttf');
 }
 
 * {
@@ -25,13 +25,13 @@
 
 #bg {
     z-index: -1;
-    background: #fff;
+    background: #d1ab98;
 }
 
 .window {
     width: 95%;
     height: 90%;
-    box-shadow: 0 0 0 2.5px #833710a1;
+    box-shadow: 0 0 0 2.5px #9d6f57;
     padding: 1rem;
     transition: 300ms;
 }
@@ -61,9 +61,37 @@ a {
 
 a:hover {
     color: #c9755b;
-    box-shadow: 0 2.5px #c9755b;
 }
 
 .title-link {
-    margin: 0 1em
+    margin: 0 1em;
+    transition: 300ms;
+}
+
+.title-link:after {
+    content: ' ';
+    font-size: 0;
+    display: block;
+    background: #fff0;
+    margin-top: 3px;
+    height: 3px;
+    width: 0;
+    transition: 300ms;
+    border-radius: 0 0 2px 2px;
+}
+
+.title-link:hover:after {
+    background: #c9755b;
+    width: 100%;
+}
+
+.title-links {
+    width: 14em;
+    justify-content: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
