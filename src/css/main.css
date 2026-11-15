@@ -28,23 +28,42 @@
     background: linear-gradient(45deg, #553b2e, #edd4c7);
 }
 
+#bg {
+    --s1: #303030;
+    --s2: #191919;
+    background: 
+      repeating-linear-gradient( 45deg,#0000 calc(-650%/13) calc(50%/13),var(--s1) 0 calc(100%/13),
+      #0000 0 calc(150%/13),var(--s1) 0 calc(200%/13),
+      #0000 0 calc(250%/13),var(--s1) 0 calc(300%/13)),repeating-linear-gradient( 45deg,#0000 calc(-650%/13) calc(50%/13),var(--s1) 0 calc(100%/13),
+      #0000 0 calc(150%/13),var(--s1) 0 calc(200%/13),
+      #0000 0 calc(250%/13),var(--s1) 0 calc(300%/13)) 36px 36px,
+      repeating-linear-gradient(-45deg,#0000 calc(-650%/13) calc(50%/13),var(--s1) 0 calc(100%/13),
+      #0000 0 calc(150%/13),var(--s1) 0 calc(200%/13),
+      #0000 0 calc(250%/13),var(--s1) 0 calc(300%/13)),repeating-linear-gradient(-45deg,#0000 calc(-650%/13) calc(50%/13),var(--s1) 0 calc(100%/13),
+      #0000 0 calc(150%/13),var(--s1) 0 calc(200%/13),
+      #0000 0 calc(250%/13),var(--s1) 0 calc(300%/13)) 36px 36px var(--s2);
+    background-size: 72px 72px;
+}
+
 .window {
-    width: 95%;
+    width: 95%; 
     height: 90%;
-    box-shadow: 0 0 0 2.5px #9d6f57;
+    background: #c1866755;
     padding: 1rem;
     transition: 300ms;
+    backdrop-filter: blur(2px);
 }
 
 #titleImg {
     width: 5em;
     margin: 1.5em 0;
     cursor: pointer;
-    transition: 600ms ease-out
+    transition: 200ms ease-out
 }
 
 #titleImg:hover {
-    transform: rotate(360deg);
+    transform: rotate(45deg);
+    filter: invert(1) brightness(0.5) sepia(1) hue-rotate(-15deg);
 }
 
 .flex-column-centered { 
@@ -66,7 +85,7 @@ a {
 }
 
 a:hover {
-    color: #e99981;
+    color: #c2725b;
 }
 
 .title-link {
@@ -111,10 +130,11 @@ a:hover {
     width: min(90%, 500px);
     height: min(90%, 600px);
     padding: 1.5rem;
-    background: #fcf6e7;
+    background: #daa48d;
     backdrop-filter: blur(5px);
     border-radius: 15px;
-    box-shadow: 0 0 0 10px #834935;
+    box-shadow: 0 0 0 10px #b0735d;
+    color: black;
 }
 
 #textbox .center:hover {
