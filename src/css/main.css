@@ -52,6 +52,7 @@
     padding: 1rem;
     transition: 300ms;
     backdrop-filter: blur(2px);
+    position: fixed;
 }
 
 #titleImg {
@@ -143,4 +144,8 @@ a:hover {
 
 #textbox.opened {
     display: block;
+}
+
+.loadingWindow {
+    background: black;
 }
